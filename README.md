@@ -18,8 +18,8 @@ Klimat/ odczucia wizualne/ kolorystyka:
 Kolorystyka gry jest naturalna, bagniste ciepłe kolory - nic przesadzonego, 
 przyjemna dla oczu. Kreska, rysunki obiektów i tła są cozy - mają relaksować gracza.
 
-/n Wykorzystywana Technologia:
-/n Silnik do gier: Unity
-/n Animacja, Modele: Blender
-/n Prace Graficzne: later
+Wykorzystywana Technologia:    
+Silnik do gier: Unity    
+Animacja, Modele: Blender    
+Prace Graficzne: later    
 
