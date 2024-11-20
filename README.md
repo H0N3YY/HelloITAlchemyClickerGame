@@ -11,13 +11,11 @@ DOM KOTKÓW W KROPKI
   - Klikaj **mistyczną kulę**, aby zdobywać punkty.  
   - Wydawaj punkty na ulepszanie kuli, zwiększając ilość punktów zdobywanych za każde kliknięcie.  
 - **System Progresji**:  
-  - Odblokowuj nowe **pomieszczenia** i **mechaniki**, rozszerzając możliwości rozgrywki.  
+  - Odblokowuj nowe **mechaniki**, rozszerzając możliwości rozgrywki.  
 - **Tworzenie Mikstur**:  
   - Łącz różne składniki, aby tworzyć mikstury.  
   - Mikstury zapewniają efekty takie jak mnożniki punktów lub inne pozytywne/negatywne skutki.  
   - Eksperymentuj, aby odkrywać unikalne kombinacje i efekty.  
-- **Zwierzęcy Towarzysze**:  
-  - Odblokowuj urocze zwierzaki, które zapewniają korzyści w grze, np. poprawione mnożniki kliknięć lub inne pasywne efekty.  
 
 
 ## Styl Wizualny i Atmosfera
