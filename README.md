@@ -1,25 +1,42 @@
 # HelloIT-ClickerGame
-Project #1 | Clicker Game | HelloIT
+Autorzy: 
+DOM KOTKÓW W KROPKI 
 
-Gatunek: (Idle) Clicker
+## Opis
+**Alchemy Clicker** to 2D gra typu idle clicker rozwijana w Unity, oferująca angażującą i relaksującą rozgrywkę. Gracze będą wchodzić w interakcję z mistyczną kulą, aby zbierać punkty, które można wydać na ulepszenia, odblokowywanie nowych funkcji oraz odkrywanie ukrytych mechanik.
 
-Gameplay: Gra 2D w Unity z podziałem na różne okienka (UI) z główną mechaniką 
-rozgrywki będącą klikaniem w obiekt, najprawdopodobniej magicznej kuli (wziętej 
-z archetypu wróżki przepowiadającej przyszłość); aby zdobywać punkty. Punkty 
-można wydać na rozwój kuli i zwiększanie ilości punktów otrzymywanych za klikanie 
-(mechanika clickera) lub na odblokowanie pomieszczeń i nowych mechanik w grze, które 
-jeszcze bardziej usprawniają zdobywanie punktów, w tym mikstury i ich przygotowywanie.
-Mikstury wpływają na mnożnik zdobywania punktów lub po prostu wywołują 
-pozytywne/negatywne efekty. To gracz odkrywa kombinacje mieszając ze sobą różne 
-składniki. Planowane jest również dodanie możliwości odblokowywania słodkich 
-zwierzaków, które także wywołują jakąś zmianę w klikaniu / mnożniku kliknięć.
 
-Klimat/ odczucia wizualne/ kolorystyka:
-Kolorystyka gry jest naturalna, bagniste ciepłe kolory - nic przesadzonego, 
-przyjemna dla oczu. Kreska, rysunki obiektów i tła są cozy - mają relaksować gracza.
+## Funkcje Rozgrywki
+- **Główna Mechanika**:  
+  - Klikaj **mistyczną kulę**, aby zdobywać punkty.  
+  - Wydawaj punkty na ulepszanie kuli, zwiększając ilość punktów zdobywanych za każde kliknięcie.  
+- **System Progresji**:  
+  - Odblokowuj nowe **pomieszczenia** i **mechaniki**, rozszerzając możliwości rozgrywki.  
+- **Tworzenie Mikstur**:  
+  - Łącz różne składniki, aby tworzyć mikstury.  
+  - Mikstury zapewniają efekty takie jak mnożniki punktów lub inne pozytywne/negatywne skutki.  
+  - Eksperymentuj, aby odkrywać unikalne kombinacje i efekty.  
+- **Zwierzęcy Towarzysze**:  
+  - Odblokowuj urocze zwierzaki, które zapewniają korzyści w grze, np. poprawione mnożniki kliknięć lub inne pasywne efekty.  
 
-Wykorzystywana Technologia:    
-Silnik do gier: Unity    
-Animacja, Modele: Blender    
-Prace Graficzne: later    
+
+## Styl Wizualny i Atmosfera
+- **Styl Graficzny**: Przytulne, ręcznie rysowane ilustracje tworzące relaksujące i przyjemne środowisko wizualne.  
+- **Paleta Kolorów**: Ciepłe, naturalne odcienie z nutą bagnistego klimatu, zaprojektowane tak, aby były przyjemne dla oczu.  
+- **Nastrój**: Połączenie magii i uspokajającej estetyki zapewnia przyjemne doświadczenie dla graczy.  
+
+
+## Wykorzystane Technologie
+- **Silnik Gry**: [Unity](https://unity.com/)  
+- **Modele 3D i Animacje**: [Blender](https://www.blender.org/)  
+- **Grafika**: (Wkrótce)  
+
+
+## Planowane Funkcje
+- **Ulepszana Mistyczna Kula**: Ulepszaj kulę, aby zdobywać więcej punktów za każde kliknięcie.  
+- **Odblokowywane Pomieszczenia**: Rozszerz swoje środowisko o nowe pokoje i mechaniki.  
+- **Efekty Mikstur**: Eksperymentuj z tworzeniem mikstur dla potężnych bonusów.  
+- **Zwierzęcy Towarzysze**: Zyskuj korzyści i ciesz się towarzystwem uroczych zwierzaków.  
+
+---
 
