@@ -27,7 +27,7 @@ DOM KOTKÓW W KROPKI
 ## Wykorzystane Technologie
 - **Silnik Gry**: [Unity](https://unity.com/)  
 - **Modele 3D i Animacje**: [Blender](https://www.blender.org/)  
-- **Grafika**: [Krita] (https://krita.org/en/) 
+- **Grafika**: [Krita]_(https://krita.org/en/) 
 
 
 ## Planowane Funkcje
