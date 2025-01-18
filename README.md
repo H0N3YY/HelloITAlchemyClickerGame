@@ -27,7 +27,7 @@ DOM KOTKÓW W KROPKI
 ## Wykorzystane Technologie
 - **Silnik Gry**: [Unity](https://unity.com/)  
 - **Modele 3D i Animacje**: [Blender](https://www.blender.org/)  
-- **Grafika**: (Wkrótce)  
+- **Grafika**: [Krita] (https://krita.org/en/) 
 
 
 ## Planowane Funkcje
@@ -37,4 +37,3 @@ DOM KOTKÓW W KROPKI
 - **Zwierzęcy Towarzysze**: Zyskuj korzyści i ciesz się towarzystwem uroczych zwierzaków.  
 
 ---
-
