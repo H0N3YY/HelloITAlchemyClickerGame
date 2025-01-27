@@ -34,6 +34,5 @@ DOM KOTKÓW W KROPKI
 - **Ulepszana Mistyczna Kula**: Ulepszaj kulę, aby zdobywać więcej punktów za każde kliknięcie.  
 - **Odblokowywane Pomieszczenia**: Rozszerz swoje środowisko o nowe pokoje i mechaniki.  
 - **Efekty Mikstur**: Eksperymentuj z tworzeniem mikstur dla potężnych bonusów.  
-- **Zwierzęcy Towarzysze**: Zyskuj korzyści i ciesz się towarzystwem uroczych zwierzaków.  
 
 ---
