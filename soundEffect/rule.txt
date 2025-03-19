@@ -1,6 +1,0 @@
-Tutaj proszę zamieszczać tylko pliki powiązane z efektem dźwiękowym :) 
-
-
-Proszę, aby plik dźwiękowy w nazwie jasno określał do czego jest przykładowo: 
-
-* dźwięk podnoszenia potki = podnoszeniePotki.mp4 lub podnoszenie_potki.mp3 (przykład) rozszerzenie pliku do ugadania z programistami.
