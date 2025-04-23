@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Back
+  - Pot
   layers:
   - Default
   - TransparentFX
