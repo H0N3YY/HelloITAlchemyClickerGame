@@ -164,6 +164,8 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
     private void TriggerAction()
     {
+        Tooltip.Instance.AttachToSlot(GetComponent<RectTransform>());
+        Tooltip.Instance.gameObject.SetActive(true);
         tooltip.gameObject.SetActive(true);
         Debug.Log($"{requiredHoldTime} sekund mineło");
     }
