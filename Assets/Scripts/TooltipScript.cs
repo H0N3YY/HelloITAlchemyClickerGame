@@ -24,11 +24,8 @@ public class Tooltip : MonoBehaviour
         textMeshPro.SetText(tooltipText);
         textMeshPro.ForceMeshUpdate();
 
-        Vector2 textSize = textMeshPro.GetRenderedValues(false);
-        Vector2 paddingSize = new Vector2(8, 8);
-
-        backgroundRectTransorm.sizeDelta = textSize + paddingSize;
     }
+
     private void Update()
     {
         Vector3 paddingSize = new Vector2(2, 2);
@@ -48,5 +45,26 @@ public class Tooltip : MonoBehaviour
         rectTransform.anchoredPosition = anchoredPosition;
     }
 
+    // public void AttachToSlot(RectTransform slotRectTransform)
+    // {
+    //     RectTransform tooltipRectTransform = GetComponent<RectTransform>();
+
+    //     Vector3[] slotCorners = new Vector3[4];
+    //     slotRectTransform.GetWorldCorners(slotCorners);
+
+    //     Vector3 topCenter = (slotCorners[1] + slotCorners[2]) / 2;
+    //     Vector2 anchoredPos;
+    // RectTransform canvasRect = tooltipRectTransform.root as RectTransform;
     
+    // if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+    //     canvasRect,
+    //     RectTransformUtility.WorldToScreenPoint(null, topCenter),
+    //     null,
+    //     out anchoredPos))
+    // {
+    //     tooltipRectTransform.anchoredPosition = anchoredPos + new Vector2(0, 10f);
+    // }
+    // }
+
+
 }

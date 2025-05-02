@@ -8,35 +8,47 @@ using System.Runtime.CompilerServices;
 public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Image image;
-    public Tooltip tooltip;
+    [HideInInspector] public Tooltip tooltip;
     [HideInInspector] public Transform parentAfterDrag;
     private Rigidbody2D rb2D;
+    private bool dragState;
     private Coroutine holdCoroutine;
     private float requiredHoldTime = 1f;
+    [SerializeField] public Sprite newSlotSprite;
+    [SerializeField] private Sprite previousSprite;
 
-private void Start()
-{
-    tooltip = tooltip = Object.FindFirstObjectByType<Tooltip>(FindObjectsInactive.Include);
-}
+    private void Start()
+    {
+        tooltip = tooltip = Object.FindFirstObjectByType<Tooltip>(FindObjectsInactive.Include);
+    }
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        holdCoroutine = StartCoroutine(HoldTimer());
-        Debug.Log("Kursor najechał na item");
+        if (dragState == false)
+        {
+            holdCoroutine = StartCoroutine(HoldTimer());
+            Debug.Log("Kursor najechał na item");
+        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        tooltip.gameObject.SetActive(false);
-        tooltip.transform.position = new Vector3(1200,1200,0);
+        ImageCleaner();
+        if (holdCoroutine != null)
+        {
+            StopCoroutine(holdCoroutine);
+            holdCoroutine = null;
+        }
         Debug.Log("Kursor opuścił item");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
 
     {
+        dragState = true;
+        ImageCleaner();
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
@@ -52,6 +64,12 @@ private void Start()
 
     public void OnDrag(PointerEventData eventData)
     {
+        dragState = true;
+        if (holdCoroutine != null)
+        {
+            StopCoroutine(holdCoroutine);
+            holdCoroutine = null;
+        }
         Vector3 globalMousePos;
         RectTransform rectTransform = GetComponent<RectTransform>();
 
@@ -65,12 +83,14 @@ private void Start()
     {
         if (eventData.pointerEnter != null && eventData.pointerEnter.name == "Drop")
         {
+
             image.raycastTarget = true;
             transform.SetParent(transform.root);
             if (rb2D != null)
             {
                 rb2D.bodyType = RigidbodyType2D.Dynamic;
                 rb2D.WakeUp();
+                ImageCleaner();
             }
             Debug.Log("Item zrzucony na 'Drop' i spada");
         }
@@ -82,6 +102,7 @@ private void Start()
 
     private void ReturnToInventory()
     {
+        dragState = false;
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
         if (rb2D != null)
@@ -139,11 +160,18 @@ private void Start()
     {
         yield return new WaitForSeconds(requiredHoldTime);
         TriggerAction();
+        transform.parent.GetComponent<Image>().sprite = newSlotSprite;
     }
     private void TriggerAction()
     {
         tooltip.gameObject.SetActive(true);
         Debug.Log($"{requiredHoldTime} sekund mineło");
+    }
+    private void ImageCleaner()
+    {
+        tooltip.gameObject.SetActive(false);
+        tooltip.transform.position = new Vector3(1200, 1200, 0);
+        transform.parent.GetComponent<Image>().sprite = previousSprite;
     }
 }
 
