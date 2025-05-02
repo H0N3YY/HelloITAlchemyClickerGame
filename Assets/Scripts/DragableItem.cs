@@ -5,14 +5,33 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Runtime.CompilerServices;
 
-public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Image image;
+    public Tooltip tooltip;
     [HideInInspector] public Transform parentAfterDrag;
     private Rigidbody2D rb2D;
+    private Coroutine holdCoroutine;
+    private float requiredHoldTime = 1f;
+
+private void Start()
+{
+    tooltip = tooltip = Object.FindFirstObjectByType<Tooltip>(FindObjectsInactive.Include);
+}
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        holdCoroutine = StartCoroutine(HoldTimer());
+        Debug.Log("Kursor najechał na item");
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.gameObject.SetActive(false);
+        tooltip.transform.position = new Vector3(1200,1200,0);
+        Debug.Log("Kursor opuścił item");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -103,9 +122,9 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             Transform potSlot2 = GameObject.Find("potSlot2").transform;
             if (potSlot != null && potSlot.childCount == 0)
             {
-                 MoveItemToSlot(potSlot);
+                MoveItemToSlot(potSlot);
             }
-            else if(potSlot2 != null && potSlot2.childCount == 0)
+            else if (potSlot2 != null && potSlot2.childCount == 0)
             {
                 MoveItemToSlot(potSlot2);
             }
@@ -115,6 +134,16 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 Debug.LogWarning("Nie znaleziono PotSlota w Pot!");
             }
         }
+    }
+    private IEnumerator HoldTimer()
+    {
+        yield return new WaitForSeconds(requiredHoldTime);
+        TriggerAction();
+    }
+    private void TriggerAction()
+    {
+        tooltip.gameObject.SetActive(true);
+        Debug.Log($"{requiredHoldTime} sekund mineło");
     }
 }
 

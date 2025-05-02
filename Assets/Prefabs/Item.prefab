@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1781879013112002067}
+  tooltip: {fileID: 0}
   parentAfterDrag: {fileID: 0}
 --- !u!50 &5984310797380836778
 Rigidbody2D:
