@@ -11,6 +11,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [HideInInspector] public Tooltip tooltip;
     [HideInInspector] public Transform parentAfterDrag;
     private Rigidbody2D rb2D;
+    private BoxCollider2D bc2d;
     private bool dragState;
     private Coroutine holdCoroutine;
     private float requiredHoldTime = 1f;
@@ -24,6 +25,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        bc2d = GetComponent<BoxCollider2D>();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -48,6 +50,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     {
         dragState = true;
+        bc2d.enabled = false;
         ImageCleaner();
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
@@ -83,7 +86,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         if (eventData.pointerEnter != null && eventData.pointerEnter.name == "Drop")
         {
-
+            bc2d.enabled = true;
             image.raycastTarget = true;
             transform.SetParent(transform.root);
             if (rb2D != null)
@@ -92,7 +95,6 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 rb2D.WakeUp();
                 ImageCleaner();
             }
-            Debug.Log("Item zrzucony na 'Drop' i spada");
         }
         else
         {
@@ -152,8 +154,33 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             else
             {
                 ReturnToInventory();
-                Debug.LogWarning("Nie znaleziono PotSlota w Pot!");
+                Debug.LogWarning("Nie znaleziono PotSlota w Pot");
             }
+        }
+        else if (collision.gameObject.CompareTag("Plant"))
+        {
+            Debug.Log("Item dotknął roślinki");
+
+
+            PlantGrowth plant = collision.gameObject.GetComponent<PlantGrowth>();
+            if (plant != null)
+            {
+
+                if (plant.plantVisualsRenderer != null)
+                {
+                    plant.plantVisualsRenderer.gameObject.SetActive(true);
+
+                }
+
+                plant.StartGrowth();
+            }
+            else
+            {
+                Debug.LogWarning("Nie znaleziono skryptu PlantGrowth na obiekcie z tagiem Plant");
+            }
+
+            Destroy(gameObject);
+
         }
     }
     private IEnumerator HoldTimer()

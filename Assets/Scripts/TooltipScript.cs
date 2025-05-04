@@ -6,7 +6,7 @@ public class Tooltip : MonoBehaviour
 {
     private static Tooltip instance;
     public static Tooltip Instance => instance;
-    [SerializeField] private Canvas canvas;  // przeciągniesz Canvas w Inspectorze
+    [SerializeField] private Canvas canvas; 
 
 
     [SerializeField] private RectTransform canvasRectTransform;
@@ -18,7 +18,7 @@ public class Tooltip : MonoBehaviour
         instance = this;
         rectTransform = transform.GetComponent<RectTransform>();
 
-        SetText("Hejka");
+        SetText("Item Name");
     }
 
     private void SetText(string tooltipText)
@@ -27,7 +27,7 @@ public class Tooltip : MonoBehaviour
         textMeshPro.ForceMeshUpdate();
 
     }
-
+    // Tooltip to mouse Script
     // private void Update()
     // {
     //     Vector3 paddingSize = new Vector2(2, 2);
@@ -47,12 +47,13 @@ public class Tooltip : MonoBehaviour
     //     rectTransform.anchoredPosition = anchoredPosition;
     // }
 
+
+    // Tooltip to slot Script
     public void AttachToSlot(RectTransform slotRectTransform)
     {
         Vector3[] slotCorners = new Vector3[4];
         slotRectTransform.GetWorldCorners(slotCorners);
 
-        // Obliczamy środek górnej krawędzi slota
         Vector3 topCenter = (slotCorners[1] + slotCorners[2]) / 2;
 
         Vector2 anchoredPos;

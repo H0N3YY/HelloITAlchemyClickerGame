@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bckMenu_0: -7621125330363755411
+      bckMenu_1: -4634420812660905250
+      bckMenu_2: 4231183143166361904
+      bckMenu_3: -980016812728202375
+      bckMenu_4: 4622495033871976796
+      bckMenu_5: -2092296561112025628
+      bckMenu_6: -4488519265556788302
+      bckMenu_7: -6874713285949630086
+      bckMenu_8: 8266598239495151297
+      bckMenu_9: 1427186191539291020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
