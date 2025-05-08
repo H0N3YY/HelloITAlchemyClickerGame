@@ -37,6 +37,21 @@ public class magicBallScript : MonoBehaviour
         }
         
     }
+    public double GetCurrentMana()
+{
+    return updatedValue;
+}
+
+    public bool SpendMana(double amount)
+{
+    if (updatedValue >= amount)
+    {
+        updatedValue -= amount;
+        return true;
+    }
+    return false;
+}
+
     public void BallClicked()
     {
         updatedValue += clickValue;
