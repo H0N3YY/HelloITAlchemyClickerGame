@@ -1,13 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Runtime.CompilerServices;
+using TMPro;
 
 public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Image image;
+    public TextMeshProUGUI countText;
+    public Image countBackground;
+    public ScriptableItem item;
+    [HideInInspector] public int count = 1;
     [HideInInspector] public Tooltip tooltip;
     [HideInInspector] public Transform parentAfterDrag;
     private Rigidbody2D rb2D;
@@ -21,11 +24,24 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private void Start()
     {
         tooltip = tooltip = Object.FindFirstObjectByType<Tooltip>(FindObjectsInactive.Include);
+        InitialiseItem(item);
     }
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
+    }
+    public void InitialiseItem(ScriptableItem newItem)
+    {
+        image.sprite = newItem.image;
+        RefreshCount();
+    }
+    public void RefreshCount()
+    {
+        countText.text = count.ToString();
+        bool textActive = count > 1;
+        countBackground.gameObject.SetActive(textActive);
+
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -84,6 +100,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        // Drop
         if (eventData.pointerEnter != null && eventData.pointerEnter.name == "Drop")
         {
             bc2d.enabled = true;
@@ -96,13 +113,36 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 ImageCleaner();
             }
         }
+        // Stack
+        else if (parentAfterDrag != null)
+        {
+             DragableItem existingItem = parentAfterDrag.GetComponentInChildren<DragableItem>();
+
+        if (existingItem != null && existingItem != this)
+        {
+            if (existingItem.item != this.item)
+            {
+                Debug.Log("Nie można połączyć z innym typem itemu");
+                ReturnToInventory();
+                return;
+            }
+
+            
+            existingItem.count += this.count;
+            existingItem.RefreshCount();
+            Destroy(gameObject);
+            return;
+            
+        }
+        
         else
         {
             ReturnToInventory();
         }
     }
+    }
 
-    private void ReturnToInventory()
+    public void ReturnToInventory()
     {
         dragState = false;
         transform.SetParent(parentAfterDrag);
@@ -114,7 +154,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             rb2D.angularVelocity = 0f;
             rb2D.Sleep();
         }
-        Debug.Log("Item wraca do slotu.");
+        Debug.Log("Item wraca do slotu");
     }
     private void MoveItemToSlot(Transform slot)
     {
@@ -158,30 +198,40 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             }
         }
         else if (collision.gameObject.CompareTag("Plant"))
+{
+    Debug.Log("Item dotknął roślinki");
+
+    PlantGrowth plant = collision.gameObject.GetComponent<PlantGrowth>();
+    if (plant != null)
+    {
+        plant.SetPlantedItem(this.item);
+
+        if (plant.plantVisualsRenderer != null)
         {
-            Debug.Log("Item dotknął roślinki");
-
-
-            PlantGrowth plant = collision.gameObject.GetComponent<PlantGrowth>();
-            if (plant != null)
-            {
-
-                if (plant.plantVisualsRenderer != null)
-                {
-                    plant.plantVisualsRenderer.gameObject.SetActive(true);
-
-                }
-
-                plant.StartGrowth();
-            }
-            else
-            {
-                Debug.LogWarning("Nie znaleziono skryptu PlantGrowth na obiekcie z tagiem Plant");
-            }
-
-            Destroy(gameObject);
-
+            plant.plantVisualsRenderer.gameObject.SetActive(true);
         }
+
+        plant.StartGrowth();
+
+        if (count > 1)
+        {
+            count--;
+            RefreshCount(); 
+
+            
+            ReturnToInventory();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    else
+    {
+        Debug.LogWarning("Nie znaleziono skryptu PlantGrowth na obiekcie z tagiem Plant");
+    }
+}
+
     }
     private IEnumerator HoldTimer()
     {

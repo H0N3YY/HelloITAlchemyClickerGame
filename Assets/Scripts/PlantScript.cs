@@ -16,13 +16,18 @@ public class PlantGrowth : MonoBehaviour
     public Transform spawnPoint;
 
     [Header("Growth Interval")]
+    [Header("Equipment")]
+    public Transform inventoryParent;
     public float growthInterval = 20f;
 
     private Image plantImage;
     private SpriteRenderer plantRenderer;
+    private ScriptableItem plantedItem;
+
 
     private int currentStage = 0;
     private bool isReadyToHarvest = false;
+    private Coroutine growthCoroutine;
 
     private void Awake()
     {
@@ -30,11 +35,30 @@ public class PlantGrowth : MonoBehaviour
         plantImage = GetComponent<Image>();
         plantRenderer = GetComponent<SpriteRenderer>();
     }
+    public void SetPlantedItem(ScriptableItem item)
+{
+    plantedItem = item;
+}
+
 
     public void StartGrowth()
+{
+   
+    if (growthCoroutine != null)
     {
-        StartCoroutine(GrowthCycle());
+        StopCoroutine(growthCoroutine);
     }
+
+    isReadyToHarvest = false;
+    currentStage = 0;
+
+    if (plantVisualsRenderer != null && !plantVisualsRenderer.gameObject.activeSelf)
+    {
+        plantVisualsRenderer.gameObject.SetActive(true);
+    }
+
+    growthCoroutine = StartCoroutine(GrowthCycle());
+}
 
     private IEnumerator GrowthCycle()
     {
@@ -114,19 +138,50 @@ public class PlantGrowth : MonoBehaviour
             return;
         }
 
-        Debug.Log("Zbieram roślinkę!");
+        Debug.Log("Zbieram roślinkę");
 
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        if (plantVisualsRenderer != null)
+            plantVisualsRenderer.gameObject.SetActive(false);
 
 
-        if (draggableItemPrefab != null && spawnPoint != null)
+        if (plantedItem != null && inventoryParent != null)
+{
+    foreach (Transform slot in inventoryParent)
+    {
+        if (slot.childCount == 0)
         {
-            Instantiate(draggableItemPrefab, spawnPoint.position, Quaternion.identity);
+            GameObject newItem = Instantiate(draggableItemPrefab, slot);
+            newItem.transform.localPosition = Vector3.zero;
+
+            // Ustaw item + count = 2
+            DragableItem di = newItem.GetComponent<DragableItem>();
+            if (di != null)
+            {
+                di.item = plantedItem;
+                di.count = 2;
+                di.InitialiseItem(plantedItem); 
+            }
+
+            Debug.Log("Zebrano roślinkę, dodano item z count = 2");
+            break;
         }
-        else
+    }
+}
+
+
+    }
+    private void OnMouseDown()
+    {
+        if (!isReadyToHarvest)
         {
-            Debug.LogWarning("Nie przypięto prefab'u lub punktu spawnu");
+            Debug.Log("Jeszcze nie można zebrać tej roślinki");
+            return;
         }
+
+        Debug.Log("Kliknięto roślinkę");
+
+        Harvest();
     }
 }
