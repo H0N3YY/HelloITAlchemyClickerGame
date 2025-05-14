@@ -19,7 +19,7 @@ public class PotionBrewer : MonoBehaviour
     public float fireDuration = 30f;
     private float fireTimer = 0f;
     public magicBallScript manaSource;
-public int fireManaCost = 50;
+    public int fireManaCost = 50;
 
 
 
@@ -39,25 +39,25 @@ public int fireManaCost = 50;
             }
         }
     }
-   public void StartFire()
-{
-    if (manaSource == null)
+    public void StartFire()
     {
-        Debug.LogError("Brak przypiętego magicBallScript!");
-        return;
-    }
+        if (manaSource == null)
+        {
+            Debug.LogError("Brak przypiętego magicBallScript!");
+            return;
+        }
 
-    if (manaSource.SpendMana(fireManaCost))
-    {
-        fireActive = true;
-        fireTimer = fireDuration;
-        Debug.Log("Ognisko rozpalone! Mana pobrana.");
+        if (manaSource.SpendMana(fireManaCost))
+        {
+            fireActive = true;
+            fireTimer = fireDuration;
+            Debug.Log("Ognisko rozpalone! Mana pobrana.");
+        }
+        else
+        {
+            Debug.Log($"Za mało many. Aktualnie: {manaSource.GetCurrentMana()} / {fireManaCost}");
+        }
     }
-    else
-    {
-        Debug.Log($"Za mało many. Aktualnie: {manaSource.GetCurrentMana()} / {fireManaCost}");
-    }
-}
 
 
 
