@@ -17,17 +17,11 @@ public class magicBallScript : MonoBehaviour
     private double costTwo = 150;
 
     private float timer = 0f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
      void Update()
     {
         timer += Time.deltaTime;
-        pointDisplay.text = Convert.ToInt32(updatedValue).ToString();
+        pointDisplay.text = FormatBigNumberEnglish(updatedValue);
         CPSDisplay.text = "CPS: " + Convert.ToInt32(idleClicks).ToString();
 
         if (timer >= 1f)
@@ -41,6 +35,18 @@ public class magicBallScript : MonoBehaviour
 {
     return updatedValue;
 }
+public string FormatBigNumberEnglish(double number)
+{
+    if (number >= 1_000_000_000)
+        return (number / 1_000_000_000d).ToString("0.#") + "B";
+    else if (number >= 1_000_000)
+        return (number / 1_000_000d).ToString("0.#") + "M";
+    else if (number >= 1_000)
+        return (number / 1_000d).ToString("0.#") + "K";
+    else
+        return number.ToString("0");
+}
+
 
     public bool SpendMana(double amount)
 {
@@ -57,43 +63,46 @@ public class magicBallScript : MonoBehaviour
         updatedValue += clickValue;
        
 ;    }
-    public void UpgradeOne()
+   public void UpgradeClickPower()
+{
+    ApplyUpgrade(UpgradeType.ClickPower, ref costOne, 1f, priceDisplay1);
+}
+
+public void UpgradeIdleGain()
+{
+    ApplyUpgrade(UpgradeType.IdleGain, ref costTwo, 10f, priceDisplay2);
+}
+
+    [Serializable]
+public enum UpgradeType
+{
+    ClickPower,
+    IdleGain
+}
+
+public void ApplyUpgrade(UpgradeType type, ref double cost, float effectAmount, Text priceDisplay)
+{
+    if (SpendMana(cost))
     {
-        if (updatedValue >= costOne)
+        switch (type)
         {
-            clickValue += 1;
-            updatedValue -= costOne;
-            costOne = costOne* 1.15;
-            priceDisplay1.text = Convert.ToInt32(costOne).ToString();
+            case UpgradeType.ClickPower:
+                clickValue += effectAmount;
+                break;
 
-
+            case UpgradeType.IdleGain:
+                idleClicks += effectAmount;
+                break;
         }
-        else
-        {
-            clickValue = clickValue;
-            
-        }
-      
 
+        cost *= 1.15;
+        priceDisplay.text = Convert.ToInt32(cost).ToString();
     }
-    public void UpgradeTwo()
+    else
     {
-        if (updatedValue >= costTwo)
-        {
-            idleClicks += 10;
-            updatedValue -= costTwo;
-            costTwo = costTwo * 1.15;
-            priceDisplay2.text = Convert.ToInt32(costTwo).ToString();
-
-
-        }
-        else
-        {
-            clickValue = clickValue;
-
-        }
-
-
+        Debug.Log("Za mało many na ulepszenie");
     }
+}
+
 
 }

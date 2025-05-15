@@ -244,7 +244,10 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         Tooltip.Instance.AttachToSlot(GetComponent<RectTransform>());
         Tooltip.Instance.gameObject.SetActive(true);
         tooltip.gameObject.SetActive(true);
+        Tooltip.Instance.SetText(item.itemName);
+        Tooltip.Instance.Setdescription(item.description);
         Debug.Log($"{requiredHoldTime} sekund mineło");
+        
     }
     private void ImageCleaner()
     {

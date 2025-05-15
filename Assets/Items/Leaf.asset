@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: Leaf
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
+  itemName: Leaf
+  description: Green
   image: {fileID: 2720535173406242035, guid: 90427158f579e614db9098e57a0fee94, type: 3}
   type: 0
   actionType: 1

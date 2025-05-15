@@ -6,11 +6,12 @@ public class Tooltip : MonoBehaviour
 {
     private static Tooltip instance;
     public static Tooltip Instance => instance;
-    [SerializeField] private Canvas canvas; 
+    [SerializeField] private Canvas canvas;
 
 
     [SerializeField] private RectTransform canvasRectTransform;
-    [SerializeField] private TextMeshProUGUI textMeshPro;
+    [SerializeField] private TextMeshProUGUI itemName;
+    [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private RectTransform backgroundRectTransform;
     private RectTransform rectTransform;
     private void Awake()
@@ -21,11 +22,15 @@ public class Tooltip : MonoBehaviour
         SetText("Item Name");
     }
 
-    private void SetText(string tooltipText)
+    public void SetText(string tooltipText)
     {
-        textMeshPro.SetText(tooltipText);
-        textMeshPro.ForceMeshUpdate();
-
+        itemName.SetText(tooltipText);
+        itemName.ForceMeshUpdate();
+    }
+    public void Setdescription(string tooltiplore)
+    {
+       description.SetText(tooltiplore);
+    description.ForceMeshUpdate();
     }
     // Tooltip to mouse Script
     // private void Update()

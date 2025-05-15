@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: Catshrom
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
+  itemName: Catshroom
+  description: High
   image: {fileID: -6946007662723423348, guid: 844c050452935d746808aa6739f9828d, type: 3}
   type: 0
   actionType: 1
