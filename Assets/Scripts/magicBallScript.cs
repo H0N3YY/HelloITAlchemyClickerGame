@@ -1,20 +1,18 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using JetBrains.Annotations;
+using System.Collections.Generic;
+
 
 public class magicBallScript : MonoBehaviour
 {
     public Text pointDisplay;
-    public Text priceDisplay1;
-    public Text priceDisplay2;
     public Text CPSDisplay;
+    public List<UpgradeEntry> upgrades = new List<UpgradeEntry>(); 
+    
     private double idleClicks = 0;
     private double clickValue = 1;
     private double updatedValue = 0;
-    private double costOne = 15;
-    private double costTwo = 150;
 
     private float timer = 0f;
     
@@ -63,44 +61,47 @@ public string FormatBigNumberEnglish(double number)
         updatedValue += clickValue;
        
 ;    }
-   public void UpgradeClickPower()
-{
-    ApplyUpgrade(UpgradeType.ClickPower, ref costOne, 1f, priceDisplay1);
-}
-
-public void UpgradeIdleGain()
-{
-    ApplyUpgrade(UpgradeType.IdleGain, ref costTwo, 10f, priceDisplay2);
-}
-
     [Serializable]
-public enum UpgradeType
-{
-    ClickPower,
-    IdleGain
-}
-
-public void ApplyUpgrade(UpgradeType type, ref double cost, float effectAmount, Text priceDisplay)
-{
-    if (SpendMana(cost))
+    public enum UpgradeType
     {
-        switch (type)
+        ClickPower,
+        IdleGain
+    }
+    [Serializable]
+    public class UpgradeEntry //data for upgrades in store
+    {
+        public UpgradeType type;
+        public double cost = 50;
+        public float effectAmount = 1f;
+        public Text priceText;
+    }
+
+
+public void ApplyUpgrade(int index)
+{
+    if (index < 0 || index >= upgrades.Count) return;
+
+    var u = upgrades[index];
+
+    if (SpendMana(u.cost))
+    {
+        switch (u.type)
         {
             case UpgradeType.ClickPower:
-                clickValue += effectAmount;
+                clickValue += u.effectAmount;
                 break;
-
             case UpgradeType.IdleGain:
-                idleClicks += effectAmount;
+                idleClicks += u.effectAmount;
                 break;
         }
 
-        cost *= 1.15;
-        priceDisplay.text = Convert.ToInt32(cost).ToString();
+        u.cost *= 1.15;
+        if (u.priceText != null)
+            u.priceText.text = Convert.ToInt32(u.cost).ToString();
     }
     else
     {
-        Debug.Log("Za mało many na ulepszenie");
+        Debug.Log("Za mało many.");
     }
 }
 
