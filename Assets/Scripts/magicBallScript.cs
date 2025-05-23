@@ -1,33 +1,25 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using JetBrains.Annotations;
+using System.Collections.Generic;
+
 
 public class magicBallScript : MonoBehaviour
 {
     public Text pointDisplay;
-    public Text priceDisplay1;
-    public Text priceDisplay2;
     public Text CPSDisplay;
+    public List<UpgradeEntry> upgrades = new List<UpgradeEntry>(); 
+    
     private double idleClicks = 0;
     private double clickValue = 1;
     private double updatedValue = 0;
-    private double costOne = 15;
-    private double costTwo = 150;
 
     private float timer = 0f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
      void Update()
     {
         timer += Time.deltaTime;
-        pointDisplay.text = Convert.ToInt32(updatedValue).ToString();
+        pointDisplay.text = FormatBigNumberEnglish(updatedValue);
         CPSDisplay.text = "CPS: " + Convert.ToInt32(idleClicks).ToString();
 
         if (timer >= 1f)
@@ -37,48 +29,81 @@ public class magicBallScript : MonoBehaviour
         }
         
     }
+    public double GetCurrentMana()
+{
+    return updatedValue;
+}
+public string FormatBigNumberEnglish(double number)
+{
+    if (number >= 1_000_000_000)
+        return (number / 1_000_000_000d).ToString("0.#") + "B";
+    else if (number >= 1_000_000)
+        return (number / 1_000_000d).ToString("0.#") + "M";
+    else if (number >= 1_000)
+        return (number / 1_000d).ToString("0.#") + "K";
+    else
+        return number.ToString("0");
+}
+
+
+    public bool SpendMana(double amount)
+{
+    if (updatedValue >= amount)
+    {
+        updatedValue -= amount;
+        return true;
+    }
+    return false;
+}
+
     public void BallClicked()
     {
         updatedValue += clickValue;
        
 ;    }
-    public void UpgradeOne()
+    [Serializable]
+    public enum UpgradeType
     {
-        if (updatedValue >= costOne)
-        {
-            clickValue += 1;
-            updatedValue -= costOne;
-            costOne = costOne* 1.15;
-            priceDisplay1.text = Convert.ToInt32(costOne).ToString();
-
-
-        }
-        else
-        {
-            clickValue = clickValue;
-            
-        }
-      
-
+        ClickPower,
+        IdleGain
     }
-    public void UpgradeTwo()
+    [Serializable]
+    public class UpgradeEntry //data for upgrades in store
     {
-        if (updatedValue >= costTwo)
-        {
-            idleClicks += 10;
-            updatedValue -= costTwo;
-            costTwo = costTwo * 1.15;
-            priceDisplay2.text = Convert.ToInt32(costTwo).ToString();
-
-
-        }
-        else
-        {
-            clickValue = clickValue;
-
-        }
-
-
+        public UpgradeType type;
+        public double cost = 50;
+        public float effectAmount = 1f;
+        public Text priceText;
     }
+
+
+public void ApplyUpgrade(int index)
+{
+    if (index < 0 || index >= upgrades.Count) return;
+
+    var u = upgrades[index];
+
+    if (SpendMana(u.cost))
+    {
+        switch (u.type)
+        {
+            case UpgradeType.ClickPower:
+                clickValue += u.effectAmount;
+                break;
+            case UpgradeType.IdleGain:
+                idleClicks += u.effectAmount;
+                break;
+        }
+
+        u.cost *= 1.15;
+        if (u.priceText != null)
+            u.priceText.text = Convert.ToInt32(u.cost).ToString();
+    }
+    else
+    {
+        Debug.Log("Za mało many.");
+    }
+}
+
 
 }
