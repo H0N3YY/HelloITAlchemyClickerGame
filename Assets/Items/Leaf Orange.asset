@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: Mushrom
+  m_Name: Leaf Orange
   m_EditorClassIdentifier: 
-  itemName: Flyshroom
-  description: snif snif
-  image: {fileID: 21300000, guid: 9a44dc3643d13d74d98c562ebfa0a7eb, type: 3}
+  itemName: OrangeLeaf
+  description: 
+  image: {fileID: 21300000, guid: 3372846e3a341db42889ae13d0e1f7aa, type: 3}
   type: 0
   actionType: 1
   stackable: 1

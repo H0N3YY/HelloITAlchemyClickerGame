@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 844c050452935d746808aa6739f9828d
+guid: e196b12d3e1754d4eb050447fa3b2d54
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6946007662723423348
-    second: 45_0
+      213: -385723331766607156
+    second: purple_shroom_0
+  - first:
+      213: -2847578434626928910
+    second: purple_shroom_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 45_0
+      name: purple_shroom_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 83
-        width: 561
-        height: 721
+        x: 39
+        y: 26
+        width: 540
+        height: 635
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c83aa3015d2da9f90800000000000000
-      internalID: -6946007662723423348
+      spriteID: cc2a8746ca2a5aaf0800000000000000
+      internalID: -385723331766607156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_shroom_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 56
+        width: 74
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2febff5308e5b78d0800000000000000
+      internalID: -2847578434626928910
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      45_0: -6946007662723423348
+      purple_shroom_0: -385723331766607156
+      purple_shroom_1: -2847578434626928910
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

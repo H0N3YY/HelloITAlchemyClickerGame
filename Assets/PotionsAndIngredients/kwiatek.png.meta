@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 844c050452935d746808aa6739f9828d
+guid: 85d020af340d02044abdc8aa3d223112
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6946007662723423348
-    second: 45_0
+      213: 6848614754156330179
+    second: kwiatek_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 45_0
+      name: kwiatek_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 83
-        width: 561
-        height: 721
+        x: 38
+        y: 20
+        width: 722
+        height: 763
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c83aa3015d2da9f90800000000000000
-      internalID: -6946007662723423348
+      spriteID: 3ccbcf855da2b0f50800000000000000
+      internalID: 6848614754156330179
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      45_0: -6946007662723423348
+      kwiatek_0: 6848614754156330179
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
