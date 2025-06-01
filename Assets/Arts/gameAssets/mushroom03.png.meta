@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: dc96732a870bda04b8c929d351ee524f
+guid: 687e59fbcb520e048be23ed74536e557
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1049565823437819117
-    second: robak_0
+      213: -2010851659323355076
+    second: mushroom03_0
+  - first:
+      213: -6188892964616456073
+    second: mushroom03_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robak_0
+      name: mushroom03_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 263
-        height: 156
+        x: 99
+        y: 36
+        width: 540
+        height: 635
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: decc66a3e8ec09e00800000000000000
-      internalID: 1049565823437819117
+      spriteID: c30d60ed1150814e0800000000000000
+      internalID: -2010851659323355076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom03_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 66
+        width: 74
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7783f1b83a2ac1aa0800000000000000
+      internalID: -6188892964616456073
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      robak_0: 1049565823437819117
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

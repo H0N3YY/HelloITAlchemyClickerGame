@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc96732a870bda04b8c929d351ee524f
+guid: 6ab26b66eeac6834ea0b44bb65273e08
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1049565823437819117
-    second: robak_0
+      213: 8853076835635648757
+    second: magicPot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robak_0
+      name: magicPot_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 263
-        height: 156
+        x: 78
+        y: 49
+        width: 1266
+        height: 1053
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: decc66a3e8ec09e00800000000000000
-      internalID: 1049565823437819117
+      spriteID: 5f85d45f9727cda70800000000000000
+      internalID: 8853076835635648757
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      robak_0: 1049565823437819117
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: dc96732a870bda04b8c929d351ee524f
+guid: 25b43ca75c6964540886f381f865c602
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1049565823437819117
-    second: robak_0
+      213: 708047401971002934
+    second: leaf01_0
+  - first:
+      213: 2626487322666088173
+    second: leaf01_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robak_0
+      name: leaf01_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 263
-        height: 156
+        x: 276
+        y: 123
+        width: 377
+        height: 864
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: decc66a3e8ec09e00800000000000000
-      internalID: 1049565823437819117
+      spriteID: 63eae965c5d73d900800000000000000
+      internalID: 708047401971002934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf01_1
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 303
+        width: 12
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de63492ed48237420800000000000000
+      internalID: 2626487322666088173
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      robak_0: 1049565823437819117
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
