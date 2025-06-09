@@ -116,30 +116,30 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         // Stack
         else if (parentAfterDrag != null)
         {
-             DragableItem existingItem = parentAfterDrag.GetComponentInChildren<DragableItem>();
+            DragableItem existingItem = parentAfterDrag.GetComponentInChildren<DragableItem>();
 
-        if (existingItem != null && existingItem != this)
-        {
-            if (existingItem.item != this.item)
+            if (existingItem != null && existingItem != this)
             {
-                Debug.Log("Nie można połączyć z innym typem itemu");
-                ReturnToInventory();
+                if (existingItem.item != this.item)
+                {
+                    Debug.Log("Nie można połączyć z innym typem itemu");
+                    ReturnToInventory();
+                    return;
+                }
+
+
+                existingItem.count += this.count;
+                existingItem.RefreshCount();
+                Destroy(gameObject);
                 return;
+
             }
 
-            
-            existingItem.count += this.count;
-            existingItem.RefreshCount();
-            Destroy(gameObject);
-            return;
-            
+            else
+            {
+                ReturnToInventory();
+            }
         }
-        
-        else
-        {
-            ReturnToInventory();
-        }
-    }
     }
 
     public void ReturnToInventory()
@@ -183,54 +183,95 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             Debug.Log("Item wpadł do kotła");
             Transform potSlot = GameObject.Find("potSlot").transform;
             Transform potSlot2 = GameObject.Find("potSlot2").transform;
+
+
             if (potSlot != null && potSlot.childCount == 0)
             {
-                MoveItemToSlot(potSlot);
+                if (count > 1)
+                {
+                    count--;
+                    RefreshCount();
+                    GameObject itemCopy = Instantiate(gameObject, transform.position, Quaternion.identity);
+                    DragableItem copy = itemCopy.GetComponent<DragableItem>();
+                    copy.count = count;
+                    copy.RefreshCount();
+                    copy.ReturnToInventory();
+
+                    MoveItemToSlot(potSlot);
+                    rb2D.bodyType = RigidbodyType2D.Static;
+                }
+                else if (count == 1)
+                {
+                    MoveItemToSlot(potSlot);
+                    rb2D.bodyType = RigidbodyType2D.Static;
+                }
+                else
+                {
+                    ReturnToInventory();
+                }
+
             }
             else if (potSlot2 != null && potSlot2.childCount == 0)
             {
-                MoveItemToSlot(potSlot2);
+                if (count > 1)
+                {
+                    count--;
+                    RefreshCount();
+                    GameObject itemCopy = Instantiate(gameObject, transform.position, Quaternion.identity);
+                    DragableItem copy = itemCopy.GetComponent<DragableItem>();
+                    copy.count = count;
+                    copy.RefreshCount();
+                    copy.ReturnToInventory();
+
+                    MoveItemToSlot(potSlot2);
+                    rb2D.bodyType = RigidbodyType2D.Static;
+                }
+                else if (count == 1)
+                {
+                    MoveItemToSlot(potSlot2);
+                    rb2D.bodyType = RigidbodyType2D.Static;
+                }
+                else
+                    ReturnToInventory();
+            }
+            else
+                ReturnToInventory();
+        }
+
+        else if (collision.gameObject.CompareTag("Plant"))
+        {
+            Debug.Log("Item dotknął roślinki");
+
+            PlantGrowth plant = collision.gameObject.GetComponent<PlantGrowth>();
+            if (plant != null)
+            {
+                plant.SetPlantedItem(this.item);
+
+                if (plant.plantVisualsRenderer != null)
+                {
+                    plant.plantVisualsRenderer.gameObject.SetActive(true);
+                }
+
+                plant.StartGrowth();
+
+                if (count > 1)
+                {
+                    count--;
+                    RefreshCount();
+
+
+                    ReturnToInventory();
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
             else
             {
-                ReturnToInventory();
-                Debug.LogWarning("Nie znaleziono PotSlota w Pot");
+                Debug.LogWarning("Nie znaleziono skryptu PlantGrowth na obiekcie z tagiem Plant");
             }
         }
-        else if (collision.gameObject.CompareTag("Plant"))
-{
-    Debug.Log("Item dotknął roślinki");
-
-    PlantGrowth plant = collision.gameObject.GetComponent<PlantGrowth>();
-    if (plant != null)
-    {
-        plant.SetPlantedItem(this.item);
-
-        if (plant.plantVisualsRenderer != null)
-        {
-            plant.plantVisualsRenderer.gameObject.SetActive(true);
-        }
-
-        plant.StartGrowth();
-
-        if (count > 1)
-        {
-            count--;
-            RefreshCount(); 
-
-            
-            ReturnToInventory();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    else
-    {
-        Debug.LogWarning("Nie znaleziono skryptu PlantGrowth na obiekcie z tagiem Plant");
-    }
-}
 
     }
     private IEnumerator HoldTimer()
@@ -247,7 +288,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         Tooltip.Instance.SetText(item.itemName);
         Tooltip.Instance.Setdescription(item.description);
         Debug.Log($"{requiredHoldTime} sekund mineło");
-        
+
     }
     private void ImageCleaner()
     {
