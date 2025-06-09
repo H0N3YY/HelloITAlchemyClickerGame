@@ -193,17 +193,17 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                     RefreshCount();
                     GameObject itemCopy = Instantiate(gameObject, transform.position, Quaternion.identity);
                     DragableItem copy = itemCopy.GetComponent<DragableItem>();
-                    copy.count = count;
-                    copy.RefreshCount();
-                    copy.ReturnToInventory();
+                    copy.count = 1;
+                    RefreshCount();
+                    ReturnToInventory();
 
-                    MoveItemToSlot(potSlot);
-                    rb2D.bodyType = RigidbodyType2D.Static;
+                    copy.MoveItemToSlot(potSlot);
+                    copy.bc2d.enabled = false;
                 }
                 else if (count == 1)
                 {
                     MoveItemToSlot(potSlot);
-                    rb2D.bodyType = RigidbodyType2D.Static;
+                    bc2d.enabled = false;
                 }
                 else
                 {
@@ -219,17 +219,17 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                     RefreshCount();
                     GameObject itemCopy = Instantiate(gameObject, transform.position, Quaternion.identity);
                     DragableItem copy = itemCopy.GetComponent<DragableItem>();
-                    copy.count = count;
-                    copy.RefreshCount();
-                    copy.ReturnToInventory();
+                    copy.count = 1;
+                    RefreshCount();
+                    ReturnToInventory();
 
-                    MoveItemToSlot(potSlot2);
-                    rb2D.bodyType = RigidbodyType2D.Static;
+                    copy.MoveItemToSlot(potSlot2);
+                    copy.bc2d.enabled = false;
                 }
                 else if (count == 1)
                 {
                     MoveItemToSlot(potSlot2);
-                    rb2D.bodyType = RigidbodyType2D.Static;
+                    bc2d.enabled = false;
                 }
                 else
                     ReturnToInventory();
