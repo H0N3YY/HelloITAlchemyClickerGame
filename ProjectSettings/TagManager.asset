@@ -15,7 +15,7 @@ TagManager:
   - Collision Ignore
   - Water
   - UI
-  - 
+  - First
   - 
   - 
   - 
@@ -44,6 +44,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 0
+    uniqueID: 531726117
+    locked: 0
+  - name: 1
+    uniqueID: 2724523833
+    locked: 0
+  - name: 3
+    uniqueID: 3977182671
     locked: 0
   m_RenderingLayers:
   - Default
