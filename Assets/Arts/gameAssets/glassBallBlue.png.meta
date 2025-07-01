@@ -103,12 +103,12 @@ TextureImporter:
       name: glassBallBlue_0
       rect:
         serializedVersion: 2
-        x: 222
+        x: 181
         y: 0
-        width: 1816
-        height: 2226
+        width: 1864
+        height: 2240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 53b2650b00ea98a4388fdfa0324a6ec3
     internalID: 0
     vertices: []
     indices: 
