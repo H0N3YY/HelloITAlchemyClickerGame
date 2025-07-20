@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 844c050452935d746808aa6739f9828d
+guid: 38dc06103196133489fdf37a022e2600
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6946007662723423348
-    second: 45_0
+      213: -4393306095586034029
+    second: homeless_color_0
+  - first:
+      213: 6416489617370089306
+    second: homeless_color_1
+  - first:
+      213: -5299265013173008792
+    second: homeless_color_2
+  - first:
+      213: -5457886276216324729
+    second: homeless_color_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 45_0
+      name: homeless_color_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 83
-        width: 561
-        height: 721
+        x: 1411
+        y: 470
+        width: 1057
+        height: 1330
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c83aa3015d2da9f90800000000000000
-      internalID: -6946007662723423348
+      spriteID: 39e390ff167d703c0800000000000000
+      internalID: -4393306095586034029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: homeless_color_1
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 1796
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57835c9f43fb0950800000000000000
+      internalID: 6416489617370089306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: homeless_color_2
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 1795
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866ca271c8a3576b0800000000000000
+      internalID: -5299265013173008792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: homeless_color_3
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 124
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d75a15951b144b0800000000000000
+      internalID: -5457886276216324729
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      45_0: -6946007662723423348
+      homeless_color_0: -4393306095586034029
+      homeless_color_1: 6416489617370089306
+      homeless_color_2: -5299265013173008792
+      homeless_color_3: -5457886276216324729
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

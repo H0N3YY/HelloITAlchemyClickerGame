@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: Mushrom
+  m_Name: Furry Potion
   m_EditorClassIdentifier: 
-  itemName: Flyshroom
-  description: snif snif
-  image: {fileID: 21300000, guid: 9a44dc3643d13d74d98c562ebfa0a7eb, type: 3}
-  type: 0
-  actionType: 1
+  itemName: Furry Potion
+  description: 
+  image: {fileID: 21300000, guid: d61229c72ba964e4b966797c3b611c92, type: 3}
+  type: 1
+  actionType: 0
   stackable: 1
   manaCost: 0
   sellValue: 0
