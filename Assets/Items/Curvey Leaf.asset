@@ -19,4 +19,4 @@ MonoBehaviour:
   actionType: 1
   stackable: 1
   manaCost: 0
-  sellValue: 0
+  sellValue: 5

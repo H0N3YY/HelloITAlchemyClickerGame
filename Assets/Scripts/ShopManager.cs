@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ShopItemSpawner : MonoBehaviour
+public class ShopManager : MonoBehaviour
 {
     [Header("Itemy do losowania")]
     public List<ScriptableItem> possibleItems;
@@ -15,6 +15,9 @@ public class ShopItemSpawner : MonoBehaviour
 
     [Header("Sloty w sklepie")]
     public List<Transform> shopSlots;
+
+    public magicBallScript manaManager;
+    public Transform inventoryParent;
 
     public void SpawnRandomItem()
     {
@@ -40,7 +43,10 @@ public class ShopItemSpawner : MonoBehaviour
         if (dragable != null)
         {
             dragable.InitialiseItem(randomItem);
+            dragable.inShop = true;
         }
+        BuyFunction clickHandler = newItem.AddComponent<BuyFunction>();
+        clickHandler.Initialise(randomItem, manaManager, inventoryParent, itemPrefab);
     }
 
     private Transform FindEmptySlot()

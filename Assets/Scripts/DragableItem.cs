@@ -17,6 +17,8 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private Rigidbody2D rb2D;
     private BoxCollider2D bc2d;
     private bool dragState;
+    [HideInInspector] public bool inShop = false;
+
     private Coroutine holdCoroutine;
     private float requiredHoldTime = 1f;
     [SerializeField] public Sprite newSlotSprite;
@@ -41,13 +43,16 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
     public void RefreshCount()
     {
-        countText.text = count.ToString();
+        if (countText != null)
+            countText.text = count.ToString();
         bool textActive = count > 1;
-        countBackground.gameObject.SetActive(textActive);
+        if (countBackground != null)
+            countBackground.gameObject.SetActive(textActive);
 
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (inShop) return;
         if (dragState == false)
         {
             holdCoroutine = StartCoroutine(HoldTimer());
@@ -56,6 +61,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (inShop) return;
         ImageCleaner();
         if (holdCoroutine != null)
         {
@@ -68,6 +74,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnBeginDrag(PointerEventData eventData)
 
     {
+        if (inShop) return;
         dragState = true;
         bc2d.enabled = false;
         ImageCleaner();
@@ -86,6 +93,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (inShop) return;
         dragState = true;
         if (holdCoroutine != null)
         {
@@ -103,6 +111,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (inShop) return;
         // Drop
         if (eventData.pointerEnter != null && eventData.pointerEnter.name == "Drop")
         {
