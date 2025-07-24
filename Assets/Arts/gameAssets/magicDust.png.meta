@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      magicDust_0: -6361655072792085913
+      magicDust_1: 1861541092068348737
+      magicDust_2: 541312092071227208
+      magicDust_3: -7956901520126298587
+      magicDust_4: -6532170330341946029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

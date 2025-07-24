@@ -8,6 +8,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 {
     public Image image;
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI valueText;
     public Image countBackground;
     public ScriptableItem item;
     [HideInInspector] public int count = 1;
@@ -34,6 +35,8 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void InitialiseItem(ScriptableItem newItem)
     {
         image.sprite = newItem.image;
+        if (valueText != null)
+        valueText.text = newItem.sellValue.ToString();
         RefreshCount();
     }
     public void RefreshCount()

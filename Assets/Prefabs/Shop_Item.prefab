@@ -153,9 +153,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4735437560203351588, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735437560203351588, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
       propertyPath: countText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4735437560203351588, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
+      propertyPath: priceText
+      value: 
+      objectReference: {fileID: 8815273821874545590}
+    - target: {fileID: 4735437560203351588, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
+      propertyPath: valueText
+      value: 
+      objectReference: {fileID: 8815273821874545590}
     - target: {fileID: 4735437560203351588, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
       propertyPath: countBackground
       value: 
