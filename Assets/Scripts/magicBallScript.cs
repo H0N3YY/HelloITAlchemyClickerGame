@@ -13,6 +13,8 @@ public class magicBallScript : MonoBehaviour
     private double idleClicks = 0;
     private double clickValue = 1;
     private double updatedValue = 0;
+    public float priceMultiplier = 1f;
+
 
     private float timer = 0f;
     
@@ -33,17 +35,22 @@ public class magicBallScript : MonoBehaviour
 {
     return updatedValue;
 }
-public string FormatBigNumberEnglish(double number)
+    public string FormatBigNumberEnglish(double number)
+    {
+        if (number >= 1_000_000_000)
+            return (number / 1_000_000_000d).ToString("0.#") + "B";
+        else if (number >= 1_000_000)
+            return (number / 1_000_000d).ToString("0.#") + "M";
+        else if (number >= 1_000)
+            return (number / 1_000d).ToString("0.#") + "K";
+        else
+            return number.ToString("0");
+    }
+public float GetPriceMultiplier()
 {
-    if (number >= 1_000_000_000)
-        return (number / 1_000_000_000d).ToString("0.#") + "B";
-    else if (number >= 1_000_000)
-        return (number / 1_000_000d).ToString("0.#") + "M";
-    else if (number >= 1_000)
-        return (number / 1_000d).ToString("0.#") + "K";
-    else
-        return number.ToString("0");
+    return Mathf.Log10((float)idleClicks + 10); 
 }
+
 
 
     public bool SpendMana(double amount)

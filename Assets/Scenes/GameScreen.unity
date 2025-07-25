@@ -2295,6 +2295,7 @@ MonoBehaviour:
   pointDisplay: {fileID: 1322516609}
   CPSDisplay: {fileID: 1008610684}
   upgrades: []
+  priceMultiplier: 1
 --- !u!114 &316836351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3697,6 +3698,7 @@ MonoBehaviour:
     cost: 5100000000
     effectAmount: 100000000
     priceText: {fileID: 1808642278}
+  priceMultiplier: 1
 --- !u!82 &519420035
 AudioSource:
   m_ObjectHideFlags: 0

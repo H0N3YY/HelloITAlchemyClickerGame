@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class BuyFunction : MonoBehaviour, IPointerClickHandler
 {
@@ -7,6 +8,7 @@ public class BuyFunction : MonoBehaviour, IPointerClickHandler
     private magicBallScript manaManager;
     private Transform inventoryParent;
     private GameObject draggableItemPrefab;
+    private TextMeshProUGUI priceText;
 
     public void Initialise(ScriptableItem newItem, magicBallScript manaSource, Transform inventoryParentTarget, GameObject itemPrefab)
     {
@@ -14,7 +16,20 @@ public class BuyFunction : MonoBehaviour, IPointerClickHandler
         manaManager = manaSource;
         inventoryParent = inventoryParentTarget;
         draggableItemPrefab = itemPrefab;
+        Transform price = transform.Find("Price");
+        if (price != null)
+        {
+            priceText = price.GetComponent<TextMeshProUGUI>();
+        }
 
+    }
+    private void Update()
+    {
+        if (item != null && manaManager != null && priceText != null)
+        {
+            int dynamicPrice = Mathf.CeilToInt(item.sellValue * manaManager.GetPriceMultiplier());
+            priceText.text = dynamicPrice.ToString();
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
