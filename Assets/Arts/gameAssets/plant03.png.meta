@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 10ee5c05dc032c14fb31d18c3aa1647a
+guid: 714c982dc642e464a8b268798487b984
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8394861919846184830
-    second: glassBallBlue_0
+      213: 983360976010408802
+    second: plant03_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glassBallBlue_0
+      name: plant03_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 0
-        width: 1864
-        height: 2240
+        x: 104
+        y: 23
+        width: 571
+        height: 800
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2884d11df857f7b80800000000000000
-      internalID: -8394861919846184830
+      spriteID: 263f41df89995ad00800000000000000
+      internalID: 983360976010408802
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 53b2650b00ea98a4388fdfa0324a6ec3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      glassBallBlue_0: -8394861919846184830
+      plant03_0: 983360976010408802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 10ee5c05dc032c14fb31d18c3aa1647a
+guid: 629293aa4e34a1944a1f72d1b11fd4b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8394861919846184830
-    second: glassBallBlue_0
+      213: 8426220473969870077
+    second: worm04_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glassBallBlue_0
+      name: worm04_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 0
-        width: 1864
-        height: 2240
+        x: 17
+        y: 16
+        width: 240
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2884d11df857f7b80800000000000000
-      internalID: -8394861919846184830
+      spriteID: df4091680e2ffe470800000000000000
+      internalID: 8426220473969870077
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 53b2650b00ea98a4388fdfa0324a6ec3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      glassBallBlue_0: -8394861919846184830
+      worm04_0: 8426220473969870077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

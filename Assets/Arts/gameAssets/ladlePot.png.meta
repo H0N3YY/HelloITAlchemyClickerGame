@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 10ee5c05dc032c14fb31d18c3aa1647a
+guid: d529bb3d852dc3e4db6c2841861ddc7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8394861919846184830
-    second: glassBallBlue_0
+      213: -6955002086145552305
+    second: ladlePot_0
+  - first:
+      213: -5133179364955556937
+    second: ladlePot_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glassBallBlue_0
+      name: ladlePot_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 0
-        width: 1864
-        height: 2240
+        x: 905
+        y: 1376
+        width: 12
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2884d11df857f7b80800000000000000
-      internalID: -8394861919846184830
+      spriteID: f40913ba37eda7f90800000000000000
+      internalID: -6955002086145552305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladlePot_1
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 370
+        width: 1721
+        height: 1619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b37577709843c8b0800000000000000
+      internalID: -5133179364955556937
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 53b2650b00ea98a4388fdfa0324a6ec3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      glassBallBlue_0: -8394861919846184830
+      ladlePot_0: -6955002086145552305
+      ladlePot_1: -5133179364955556937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

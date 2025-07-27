@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 10ee5c05dc032c14fb31d18c3aa1647a
+guid: 687e59fbcb520e048be23ed74536e557
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8394861919846184830
-    second: glassBallBlue_0
+      213: -2010851659323355076
+    second: mushroom03_0
+  - first:
+      213: -6188892964616456073
+    second: mushroom03_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glassBallBlue_0
+      name: mushroom03_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 0
-        width: 1864
-        height: 2240
+        x: 99
+        y: 36
+        width: 540
+        height: 635
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2884d11df857f7b80800000000000000
-      internalID: -8394861919846184830
+      spriteID: c30d60ed1150814e0800000000000000
+      internalID: -2010851659323355076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom03_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 66
+        width: 74
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7783f1b83a2ac1aa0800000000000000
+      internalID: -6188892964616456073
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 53b2650b00ea98a4388fdfa0324a6ec3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      glassBallBlue_0: -8394861919846184830
+      mushroom03_0: -2010851659323355076
+      mushroom03_1: -6188892964616456073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

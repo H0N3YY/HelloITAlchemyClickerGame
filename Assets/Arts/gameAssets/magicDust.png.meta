@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 10ee5c05dc032c14fb31d18c3aa1647a
+guid: ec3d1daa8efc25b4e9371f7e2c3e2a7d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8394861919846184830
-    second: glassBallBlue_0
+      213: -6361655072792085913
+    second: magicDust_0
+  - first:
+      213: 1861541092068348737
+    second: magicDust_1
+  - first:
+      213: 541312092071227208
+    second: magicDust_2
+  - first:
+      213: -7956901520126298587
+    second: magicDust_3
+  - first:
+      213: -6532170330341946029
+    second: magicDust_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glassBallBlue_0
+      name: magicDust_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 0
-        width: 1864
-        height: 2240
+        x: 332
+        y: 726
+        width: 48
+        height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2884d11df857f7b80800000000000000
-      internalID: -8394861919846184830
+      spriteID: 76a7aa2ba6cd6b7a0800000000000000
+      internalID: -6361655072792085913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magicDust_1
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 761
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143d687a2c585d910800000000000000
+      internalID: 1861541092068348737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magicDust_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 47
+        width: 643
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f6780da70238700800000000000000
+      internalID: 541312092071227208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magicDust_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 662
+        width: 34
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5263b149938639190800000000000000
+      internalID: -7956901520126298587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magicDust_4
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 633
+        width: 38
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d4f9781b11955a0800000000000000
+      internalID: -6532170330341946029
       vertices: []
       indices: 
       edges: []
@@ -125,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 53b2650b00ea98a4388fdfa0324a6ec3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      glassBallBlue_0: -8394861919846184830
+      magicDust_0: -6361655072792085913
+      magicDust_1: 1861541092068348737
+      magicDust_2: 541312092071227208
+      magicDust_3: -7956901520126298587
+      magicDust_4: -6532170330341946029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

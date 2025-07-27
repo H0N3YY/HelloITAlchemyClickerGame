@@ -283,7 +283,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -2947526863502713391, guid: 9a44dc3643d13d74d98c562ebfa0a7eb, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -311,7 +311,7 @@ MonoBehaviour:
   tooltip: {fileID: 0}
   parentAfterDrag: {fileID: 0}
   newSlotSprite: {fileID: 4254837732648078913, guid: 0fc2f0d52f03c4447a7551759122c903, type: 3}
-  previousSprite: {fileID: 5735543336457254910, guid: 3008cbe0909887645b69f31a010123cd, type: 3}
+  previousSprite: {fileID: 21300000, guid: 3008cbe0909887645b69f31a010123cd, type: 3}
 --- !u!50 &5984310797380836778
 Rigidbody2D:
   serializedVersion: 5
