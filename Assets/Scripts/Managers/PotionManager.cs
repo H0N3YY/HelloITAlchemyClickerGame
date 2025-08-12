@@ -1,6 +1,5 @@
 using UnityEngine;
-using
-UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Rendering;
 public class PotionManager : MonoBehaviour
@@ -12,6 +11,7 @@ public class PotionManager : MonoBehaviour
     public VolumeProfile photofobiaProfile; 
 
     private Coroutine revertCoroutine;
+    private Coroutine sceneCoroutine;
 
     public void metalPotion()
     {
@@ -36,7 +36,34 @@ public class PotionManager : MonoBehaviour
             revertCoroutine = StartCoroutine(Revert(15f));
         }
     }
-        private IEnumerator Revert(float seconds)
+    public void HomlessPotion()
+    {
+        StartCoroutine(HomlessRoutine());
+    }
+
+    private IEnumerator HomlessRoutine()
+    {
+        // Załaduj scenę 2 addytywnie
+        yield return SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+
+        // Przełącz aktywną scenę na 2
+        Scene tempScene = SceneManager.GetSceneByBuildIndex(2);
+        SceneManager.SetActiveScene(tempScene);
+
+        // Odczekaj 15 sekund
+        yield return new WaitForSeconds(15f);
+
+        // Załaduj scenę 1 (jeśli jeszcze jej nie ma)
+        if (!SceneManager.GetSceneByBuildIndex(1).isLoaded)
+            yield return SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+
+        // Ustaw scenę 1 jako aktywną
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
+
+        // Wyładuj scenę 2
+        yield return SceneManager.UnloadSceneAsync(tempScene);
+    }
+            private IEnumerator Revert(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         if (volume != null && defaultProfile != null)

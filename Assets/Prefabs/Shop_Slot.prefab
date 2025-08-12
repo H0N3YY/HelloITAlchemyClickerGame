@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090550812841259227, guid: 23a4158dedc7a4b43bf593554d89b1cb, type: 3}
       propertyPath: m_Name
-      value: Slot Variant
+      value: Shop_Slot
       objectReference: {fileID: 0}
     - target: {fileID: 7165949520082503629, guid: 23a4158dedc7a4b43bf593554d89b1cb, type: 3}
       propertyPath: m_Pivot.x
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7165949520082503629, guid: 23a4158dedc7a4b43bf593554d89b1cb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7165949520082503629, guid: 23a4158dedc7a4b43bf593554d89b1cb, type: 3}
       propertyPath: m_SizeDelta.y
