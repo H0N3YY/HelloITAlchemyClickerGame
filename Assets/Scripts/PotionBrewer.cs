@@ -20,6 +20,7 @@ public class PotionBrewer : MonoBehaviour
     private float fireTimer = 0f;
     public magicBallScript manaSource;
     public int fireManaCost = 50;
+    public AudioSource boil;
 
 
 
@@ -34,6 +35,7 @@ public class PotionBrewer : MonoBehaviour
             fireTimer -= Time.deltaTime;
             if (fireTimer <= 0f)
             {
+                boil.Stop();
                 fireActive = false;
                 Debug.Log("Ognisko zgasło");
             }
@@ -51,6 +53,7 @@ public class PotionBrewer : MonoBehaviour
         if (manaSource.SpendMana(adjustedCost))
         {
             fireActive = true;
+            boil.Play();
             fireTimer = fireDuration;
             Debug.Log("Ognisko rozpalone! Mana pobrana");
         }
