@@ -38,50 +38,32 @@ public class PotionManager : MonoBehaviour
     }
     public void HomlessPotion()
     {
-        if (sceneCoroutine != null) StopCoroutine(sceneCoroutine);
-        sceneCoroutine = StartCoroutine(ShowSceneTemporarily(sceneIndex: 2, duration: 15f, returnToIndex: 1));
+        StartCoroutine(HomlessRoutine());
     }
 
-    private IEnumerator ShowSceneTemporarily(int sceneIndex, float duration, int returnToIndex)
+    private IEnumerator HomlessRoutine()
     {
-        // zapamiętaj aktywną scenę i jej rooty, żeby je schować
-        Scene prevScene = SceneManager.GetActiveScene();
-        var prevRoots = prevScene.GetRootGameObjects();
-        foreach (var go in prevRoots) go.SetActive(false);
+        // Załaduj scenę 2 addytywnie
+        yield return SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
 
-        // 1) Załaduj scenę docelową addytywnie
-        var loadOp = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
-        yield return new WaitUntil(() => loadOp.isDone);
-
-        Scene tempScene = SceneManager.GetSceneByBuildIndex(sceneIndex);
+        // Przełącz aktywną scenę na 2
+        Scene tempScene = SceneManager.GetSceneByBuildIndex(2);
         SceneManager.SetActiveScene(tempScene);
 
-        // 2) Odczekaj wymagany czas
-        yield return new WaitForSeconds(duration);
+        // Odczekaj 15 sekund
+        yield return new WaitForSeconds(15f);
 
-        // 3) Wróć do sceny docelowej (np. 1)
-        //    Jeśli nie jest załadowana (np. uruchomiłeś grę od innej sceny), doładuj ją.
-        Scene target = SceneManager.GetSceneByBuildIndex(returnToIndex);
-        if (!target.isLoaded)
-        {
-            var backLoad = SceneManager.LoadSceneAsync(returnToIndex, LoadSceneMode.Additive);
-            yield return new WaitUntil(() => backLoad.isDone);
-            target = SceneManager.GetSceneByBuildIndex(returnToIndex);
-        }
+        // Załaduj scenę 1 (jeśli jeszcze jej nie ma)
+        if (!SceneManager.GetSceneByBuildIndex(1).isLoaded)
+            yield return SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
 
-        SceneManager.SetActiveScene(target);
+        // Ustaw scenę 1 jako aktywną
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
 
-        // Włącz ponownie obiekty poprzedniej sceny (jeśli wracasz do niej)
-        if (target == prevScene)
-        {
-            foreach (var go in prevRoots) go.SetActive(true);
-        }
-
-        // 4) Wyładuj tymczasową scenę
+        // Wyładuj scenę 2
         yield return SceneManager.UnloadSceneAsync(tempScene);
-
-        sceneCoroutine = null;
-    }        private IEnumerator Revert(float seconds)
+    }
+            private IEnumerator Revert(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         if (volume != null && defaultProfile != null)
