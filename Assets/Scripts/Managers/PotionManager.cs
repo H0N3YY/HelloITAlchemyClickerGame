@@ -1,6 +1,5 @@
 using UnityEngine;
-using
-UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Rendering;
 public class PotionManager : MonoBehaviour
@@ -35,6 +34,10 @@ public class PotionManager : MonoBehaviour
 
             revertCoroutine = StartCoroutine(Revert(15f));
         }
+    }
+     public void StartSetup()
+    {
+        SceneManager.LoadSceneAsync(2);
     }
         private IEnumerator Revert(float seconds)
     {
