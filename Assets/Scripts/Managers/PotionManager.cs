@@ -87,11 +87,11 @@ public class PotionManager : MonoBehaviour
         GameManager.Instance.idleMultiplier = 0.5;
         GameManager.Instance.clickMultiplier = 0.5;
 
-        Debug.Log("Potka osłabienia aktywna! (60s)");
+        
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(60f);
 
-        // przywróć mnożniki
+        
         GameManager.Instance.idleMultiplier = 1.0;
         GameManager.Instance.clickMultiplier = 1.0;
 
