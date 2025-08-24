@@ -12,7 +12,8 @@ public class PotionManager : MonoBehaviour
 
     private Coroutine revertCoroutine;
     private Coroutine manaWeakenCoroutine;
-    private Coroutine boostCoroutine;
+    private Coroutine boostIdleCoroutine;
+    private Coroutine clickBoostCoroutine;
 
 
     public void metalPotion()
@@ -63,24 +64,46 @@ public class PotionManager : MonoBehaviour
 
         manaWeakenCoroutine = StartCoroutine(ManaWeakenRoutine(tier));
     }
-    public void BoostPotionTier1()
+    public void BoostIdlePotionTier1()
     {
-        BoostPotion(1);
+        BoostIdlePotion(1);
     }
-    public void BoostPotionTier2()
+    public void BoostIdlePotionTier2()
     {
-        BoostPotion(2);
+        BoostIdlePotion(2);
     }
-    public void BoostPotionTier3()
+    public void BoostIdlePotionTier3()
     {
-        BoostPotion(3);
+        BoostIdlePotion(3);
     }
-    void BoostPotion(int tier)
+    void BoostIdlePotion(int tier)
     {
-        if (boostCoroutine != null)
-            StopCoroutine(boostCoroutine);
+        if (boostIdleCoroutine != null)
+            StopCoroutine(boostIdleCoroutine);
 
-        boostCoroutine = StartCoroutine(BoostRoutine(tier));
+        boostIdleCoroutine = StartCoroutine(BoostIdleRoutine(tier));
+    }
+    public void ClickBoostPotionTier1()
+    {
+        ClickBoostPotion(1);
+    }
+
+    public void ClickBoostPotionTier2()
+    {
+        ClickBoostPotion(2);
+    }
+
+    public void ClickBoostPotionTier3()
+    {
+        ClickBoostPotion(3);
+    }
+
+    private void ClickBoostPotion(int tier)
+    {
+        if (clickBoostCoroutine != null)
+            StopCoroutine(clickBoostCoroutine);
+
+        clickBoostCoroutine = StartCoroutine(ClickBoostRoutine(tier));
     }
 
     private IEnumerator HomlessRoutine()
@@ -141,7 +164,32 @@ public class PotionManager : MonoBehaviour
         Debug.Log("Potka osłabienia skończyła się.");
         manaWeakenCoroutine = null;
     }
-    private IEnumerator BoostRoutine(int tier)
+    private IEnumerator BoostIdleRoutine(int tier)
+    {
+        double boostIdleMultiplier = 1.0;
+        float duration = 30f;
+
+
+        switch (tier)
+        {
+            case 1: boostIdleMultiplier = 1.5; break; // +50% CPS
+            case 2: boostIdleMultiplier = 2.0; break; // +100% CPS
+            case 3: boostIdleMultiplier = 3.0; break; // +200% CPS
+            default: boostIdleMultiplier = 1.0; break; // brak efektu
+        }
+
+
+        GameManager.Instance.idleMultiplier *= boostIdleMultiplier;
+
+        yield return new WaitForSeconds(duration);
+
+
+        GameManager.Instance.idleMultiplier /= boostIdleMultiplier;
+
+        Debug.Log("Boost potka skończyła się.");
+        boostIdleCoroutine = null;
+    }
+    private IEnumerator ClickBoostRoutine(int tier)
     {
         double boostMultiplier = 1.0;
         float duration = 30f;
@@ -149,22 +197,22 @@ public class PotionManager : MonoBehaviour
 
         switch (tier)
         {
-            case 1: boostMultiplier = 1.5; break; // +50% CPS
-            case 2: boostMultiplier = 2.0; break; // +100% CPS
-            case 3: boostMultiplier = 3.0; break; // +200% CPS
-            default: boostMultiplier = 1.0; break; // brak efektu
+            case 1: boostMultiplier = 1.5; break; // +50% do klikania
+            case 2: boostMultiplier = 2.0; break; // +100% do klikania
+            case 3: boostMultiplier = 3.0; break; // +200% do klikania
+            default: boostMultiplier = 1.0; break;
         }
 
 
-        GameManager.Instance.idleMultiplier *= boostMultiplier;
+        GameManager.Instance.clickMultiplier *= boostMultiplier;
 
         yield return new WaitForSeconds(duration);
 
 
-        GameManager.Instance.idleMultiplier /= boostMultiplier;
+        GameManager.Instance.clickMultiplier /= boostMultiplier;
 
-        Debug.Log("Boost potka skończyła się.");
-        boostCoroutine = null;
+        Debug.Log("Click Boost potka skończyła się.");
+        clickBoostCoroutine = null;
     }
 }
 
