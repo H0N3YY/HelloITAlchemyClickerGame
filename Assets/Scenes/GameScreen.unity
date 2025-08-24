@@ -11208,7 +11208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 585529465}
         m_TargetAssemblyTypeName: PotionManager, Assembly-CSharp
-        m_MethodName: ManaWeakenPotion
+        m_MethodName: BoostPotionTier2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

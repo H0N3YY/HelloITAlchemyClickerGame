@@ -12,6 +12,7 @@ public class PotionManager : MonoBehaviour
 
     private Coroutine revertCoroutine;
     private Coroutine manaWeakenCoroutine;
+    private Coroutine boostCoroutine;
 
 
     public void metalPotion()
@@ -41,12 +42,45 @@ public class PotionManager : MonoBehaviour
     {
         StartCoroutine(HomlessRoutine());
     }
-    public void ManaWeakenPotion()
+    public void WeakenPotionTier1()
+    {
+        WeakenPotion(1);
+    }
+
+    public void WeakenPotionTier2()
+    {
+        WeakenPotion(2);
+    }
+
+    public void WeakenPotionTier3()
+    {
+        WeakenPotion(3);
+    }
+    void WeakenPotion(int tier)
     {
         if (manaWeakenCoroutine != null)
             StopCoroutine(manaWeakenCoroutine);
 
-        manaWeakenCoroutine = StartCoroutine(ManaWeakenRoutine());
+        manaWeakenCoroutine = StartCoroutine(ManaWeakenRoutine(tier));
+    }
+    public void BoostPotionTier1()
+    {
+        BoostPotion(1);
+    }
+    public void BoostPotionTier2()
+    {
+        BoostPotion(2);
+    }
+    public void BoostPotionTier3()
+    {
+        BoostPotion(3);
+    }
+    void BoostPotion(int tier)
+    {
+        if (boostCoroutine != null)
+            StopCoroutine(boostCoroutine);
+
+        boostCoroutine = StartCoroutine(BoostRoutine(tier));
     }
 
     private IEnumerator HomlessRoutine()
@@ -81,22 +115,56 @@ public class PotionManager : MonoBehaviour
         }
         revertCoroutine = null;
     }
-    private IEnumerator ManaWeakenRoutine()
+    private IEnumerator ManaWeakenRoutine(int tier)
     {
+        float duration = 60f;
+        double weakenMultiplier = 1.0;
 
-        GameManager.Instance.idleMultiplier = 0.5;
-        GameManager.Instance.clickMultiplier = 0.5;
+        switch (tier)
+        {
+            case 1: weakenMultiplier = 0.75; break; // 75% mocy
+            case 2: weakenMultiplier = 0.5; break;  // 50% mocy
+            case 3: weakenMultiplier = 0.25; break; // 25% mocy
+            default: weakenMultiplier = 1.0; break;
+        }
 
-        
+        // ustaw mnożniki
+        GameManager.Instance.idleMultiplier *= weakenMultiplier;
+        GameManager.Instance.clickMultiplier *= weakenMultiplier;
 
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(duration);
 
-        
-        GameManager.Instance.idleMultiplier = 1.0;
-        GameManager.Instance.clickMultiplier = 1.0;
+        // przywróć stan
+        GameManager.Instance.idleMultiplier /= weakenMultiplier;
+        GameManager.Instance.clickMultiplier /= weakenMultiplier;
 
         Debug.Log("Potka osłabienia skończyła się.");
         manaWeakenCoroutine = null;
+    }
+    private IEnumerator BoostRoutine(int tier)
+    {
+        double boostMultiplier = 1.0;
+        float duration = 30f;
+
+
+        switch (tier)
+        {
+            case 1: boostMultiplier = 1.5; break; // +50% CPS
+            case 2: boostMultiplier = 2.0; break; // +100% CPS
+            case 3: boostMultiplier = 3.0; break; // +200% CPS
+            default: boostMultiplier = 1.0; break; // brak efektu
+        }
+
+
+        GameManager.Instance.idleMultiplier *= boostMultiplier;
+
+        yield return new WaitForSeconds(duration);
+
+
+        GameManager.Instance.idleMultiplier /= boostMultiplier;
+
+        Debug.Log("Boost potka skończyła się.");
+        boostCoroutine = null;
     }
 }
 
