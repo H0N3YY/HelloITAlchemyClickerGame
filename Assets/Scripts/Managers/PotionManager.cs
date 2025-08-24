@@ -11,7 +11,7 @@ public class PotionManager : MonoBehaviour
     public VolumeProfile photofobiaProfile; 
 
     private Coroutine revertCoroutine;
-    private Coroutine sceneCoroutine;
+   
 
     public void metalPotion()
     {
@@ -43,24 +43,25 @@ public class PotionManager : MonoBehaviour
 
     private IEnumerator HomlessRoutine()
     {
-        // Załaduj scenę 2 addytywnie
-        yield return SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+        Scene originalScene = SceneManager.GetActiveScene();
 
-        // Przełącz aktywną scenę na 2
+        var rootObjects = originalScene.GetRootGameObjects();
+        foreach (var go in rootObjects)
+            if (!go.name.Contains("Managers"))
+                go.SetActive(false);
+
+        yield return SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
         Scene tempScene = SceneManager.GetSceneByBuildIndex(2);
         SceneManager.SetActiveScene(tempScene);
 
-        // Odczekaj 15 sekund
         yield return new WaitForSeconds(15f);
+        Debug.Log("Mineło 15 sec");
 
-        // Załaduj scenę 1 (jeśli jeszcze jej nie ma)
-        if (!SceneManager.GetSceneByBuildIndex(1).isLoaded)
-            yield return SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(originalScene);
+        
+        foreach (var go in rootObjects)
+            go.SetActive(true);
 
-        // Ustaw scenę 1 jako aktywną
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
-
-        // Wyładuj scenę 2
         yield return SceneManager.UnloadSceneAsync(tempScene);
     }
             private IEnumerator Revert(float seconds)
