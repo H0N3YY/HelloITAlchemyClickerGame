@@ -5,13 +5,14 @@ using UnityEngine.Rendering;
 public class PotionManager : MonoBehaviour
 {
 
-    public Volume volume;                   
-    public VolumeProfile defaultProfile; 
-    public VolumeProfile metalProfile;    
-    public VolumeProfile photofobiaProfile; 
+    public Volume volume;
+    public VolumeProfile defaultProfile;
+    public VolumeProfile metalProfile;
+    public VolumeProfile photofobiaProfile;
 
     private Coroutine revertCoroutine;
-   
+    private Coroutine manaWeakenCoroutine;
+
 
     public void metalPotion()
     {
@@ -40,6 +41,13 @@ public class PotionManager : MonoBehaviour
     {
         StartCoroutine(HomlessRoutine());
     }
+    public void ManaWeakenPotion()
+    {
+        if (manaWeakenCoroutine != null)
+            StopCoroutine(manaWeakenCoroutine);
+
+        manaWeakenCoroutine = StartCoroutine(ManaWeakenRoutine());
+    }
 
     private IEnumerator HomlessRoutine()
     {
@@ -58,13 +66,13 @@ public class PotionManager : MonoBehaviour
         Debug.Log("Mineło 15 sec");
 
         SceneManager.SetActiveScene(originalScene);
-        
+
         foreach (var go in rootObjects)
             go.SetActive(true);
 
         yield return SceneManager.UnloadSceneAsync(tempScene);
     }
-            private IEnumerator Revert(float seconds)
+    private IEnumerator Revert(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         if (volume != null && defaultProfile != null)
@@ -73,5 +81,22 @@ public class PotionManager : MonoBehaviour
         }
         revertCoroutine = null;
     }
+    private IEnumerator ManaWeakenRoutine()
+    {
+
+        GameManager.Instance.idleMultiplier = 0.5;
+        GameManager.Instance.clickMultiplier = 0.5;
+
+        Debug.Log("Potka osłabienia aktywna! (60s)");
+
+        yield return new WaitForSeconds(10f);
+
+        // przywróć mnożniki
+        GameManager.Instance.idleMultiplier = 1.0;
+        GameManager.Instance.clickMultiplier = 1.0;
+
+        Debug.Log("Potka osłabienia skończyła się.");
+        manaWeakenCoroutine = null;
     }
+}
 

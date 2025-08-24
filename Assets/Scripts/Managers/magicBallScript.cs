@@ -10,8 +10,6 @@ public class magicBallScript : MonoBehaviour
     public Text CPSDisplay;
     public List<UpgradeEntry> upgrades = new List<UpgradeEntry>(); 
     
-    public float priceMultiplier = 1f;
-
 
     private float timer = 0f;
     
@@ -19,11 +17,11 @@ public class magicBallScript : MonoBehaviour
     {
         timer += Time.deltaTime;
         pointDisplay.text = FormatBigNumberEnglish(GameManager.Instance.manaPoints);
-        CPSDisplay.text = "CPS: " + Convert.ToInt32(GameManager.Instance.idleClicks).ToString();
+        CPSDisplay.text = "CPS: " + Convert.ToInt32(GameManager.Instance.GetEffectiveIdle());
 
         if (timer >= 1f)
         {
-            GameManager.Instance.manaPoints += GameManager.Instance.idleClicks;
+           GameManager.Instance.manaPoints += GameManager.Instance.GetEffectiveIdle();
             timer -= 1f;
         }
         
@@ -62,7 +60,7 @@ public float GetPriceMultiplier()
 
     public void BallClicked()
     {
-        GameManager.Instance.manaPoints += GameManager.Instance.clickValue;
+        GameManager.Instance.manaPoints += GameManager.Instance.GetEffectiveClick();
        
 ;    }
     [Serializable]

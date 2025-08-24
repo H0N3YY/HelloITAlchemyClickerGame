@@ -839,6 +839,8 @@ MonoBehaviour:
   manaPoints: 0
   idleClicks: 0
   clickValue: 1
+  idleMultiplier: 1
+  clickMultiplier: 1
 --- !u!1001 &75084698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2342,7 +2344,6 @@ MonoBehaviour:
   pointDisplay: {fileID: 1322516609}
   CPSDisplay: {fileID: 1008610684}
   upgrades: []
-  priceMultiplier: 1
 --- !u!114 &316836351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3734,7 +3735,6 @@ MonoBehaviour:
     cost: 5100000000
     effectAmount: 100000000
     priceText: {fileID: 1808642278}
-  priceMultiplier: 1
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11208,7 +11208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 585529465}
         m_TargetAssemblyTypeName: PotionManager, Assembly-CSharp
-        m_MethodName: HomlessPotion
+        m_MethodName: ManaWeakenPotion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
