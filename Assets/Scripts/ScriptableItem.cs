@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class ScriptableItem : ScriptableObject
 {
     [Header("Podstawowe dane")]
+    public string id;
     public string itemName;
     [TextArea(2, 5)] public string description;
 
