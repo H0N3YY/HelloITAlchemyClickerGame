@@ -76,6 +76,8 @@ public float GetPriceMultiplier()
         public double cost = 50;
         public float effectAmount = 1f;
         public Text priceText;
+
+        public GameObject upgardeimage; 
     }
 
 
@@ -98,8 +100,9 @@ public void ApplyUpgrade(int index)
         }
 
         u.cost *= 1.15;
+            u.upgardeimage.SetActive(true);
         if (u.priceText != null)
-            u.priceText.text = Convert.ToInt32(u.cost).ToString();
+                u.priceText.text = Convert.ToInt32(u.cost).ToString();
     }
     else
     {
