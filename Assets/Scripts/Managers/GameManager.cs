@@ -30,7 +30,7 @@ public ItemDatabase itemDatabase;
             DontDestroyOnLoad(gameObject);
 
 
-            ApplySaveData(SaveSystem.LoadGame());
+           // ApplySaveData(SaveSystem.LoadGame()); // usuń komentarz jak chcesz loading save
         }
         else
         {
