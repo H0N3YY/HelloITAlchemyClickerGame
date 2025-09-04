@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: Purpshroom
   m_EditorClassIdentifier: 
+  id: Purpshroom
   itemName: Purpshroom
   description: 
   image: {fileID: 21300000, guid: e196b12d3e1754d4eb050447fa3b2d54, type: 3}

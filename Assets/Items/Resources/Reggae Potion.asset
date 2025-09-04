@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: Reggae Potion
   m_EditorClassIdentifier: 
+  id: Reggae
   itemName: Reggae Potion
   description: 
   image: {fileID: 21300000, guid: be83f0059d7b7144b92c811f3cf862e6, type: 3}

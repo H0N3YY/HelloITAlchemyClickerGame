@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: IdleBoost3
   m_EditorClassIdentifier: 
+  id: IdleBoost3
   itemName: IdleBoost3
   description: 
   image: {fileID: 21300000, guid: 116edb73a195c3047b4ff7e48da87128, type: 3}

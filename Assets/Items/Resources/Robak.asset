@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: Robak
   m_EditorClassIdentifier: 
+  id: Robak
   itemName: Robak
   description: 
   image: {fileID: 1049565823437819117, guid: dc96732a870bda04b8c929d351ee524f, type: 3}

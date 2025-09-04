@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: ChickenFoot
   m_EditorClassIdentifier: 
-  itemName: Chicken_Foot
+  id: ChickenFoot
+  itemName: ChickenFoot
   description: 
   image: {fileID: 21300000, guid: f82dc3c6a32b27e478ce048a1fb248d4, type: 3}
   type: 0

@@ -12,4 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9deaefbcc144da4ca91e95aa6c12997, type: 3}
   m_Name: ItemSaveDB
   m_EditorClassIdentifier: 
-  allItems: []
+  allItems:
+  - {fileID: 11400000, guid: 793f4ba683a9a2b42888b0d8bd97eb26, type: 2}
+  - {fileID: 11400000, guid: 46484083d66c1794fb10923b385de285, type: 2}
+  - {fileID: 11400000, guid: 4c405ff7a294d5b4096ad5fae205181b, type: 2}
+  - {fileID: 11400000, guid: 39e8c16569d867f44acb28b709b2b6fa, type: 2}
+  - {fileID: 11400000, guid: 42558fb2b62e9b641ad2a29bbf2c1dc2, type: 2}
+  - {fileID: 11400000, guid: f10ca2c0388af6143b062b2269125d0b, type: 2}
+  - {fileID: 11400000, guid: b2909ca9718f02947b94902d15799b66, type: 2}
+  - {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - {fileID: 11400000, guid: 9ce7da883a106eb4e9924c7a55ee5b20, type: 2}
+  - {fileID: 11400000, guid: d17722e87694d4b4ead31ccdda008424, type: 2}
+  - {fileID: 11400000, guid: e0f16ec101ac4164b8be5dffe3e36efc, type: 2}
+  - {fileID: 11400000, guid: e03610dfc1b60a142840b3efd76ec92f, type: 2}
+  - {fileID: 11400000, guid: 6926ff9fdb1b1504298f6a00ddbbf44e, type: 2}
+  - {fileID: 11400000, guid: f61a34863326b8e4eb44124adf43dd5e, type: 2}
+  - {fileID: 11400000, guid: ec78002f9c73ec349899848ca4ea30a9, type: 2}
+  - {fileID: 11400000, guid: 977ee0dd92ae46a4c83f442d92cd52d2, type: 2}
+  - {fileID: 11400000, guid: 77709be3753dc43448441ff273fea949, type: 2}
+  - {fileID: 11400000, guid: 0942a695f8079a94792fb379807cbf4d, type: 2}
+  - {fileID: 11400000, guid: bb79ef5de49e27a4388ab9cff12ad2c9, type: 2}
+  - {fileID: 11400000, guid: 07da266fa1bbcf54386a1ee76e207422, type: 2}
+  - {fileID: 11400000, guid: 2a635b32ded717e4c9b733a1a95b03bf, type: 2}
+  - {fileID: 11400000, guid: d6f3c885ac6c4d94bac9f90fcc962092, type: 2}
+  - {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+  - {fileID: 11400000, guid: 288e8683cbe2bb44fa24db61ae976b12, type: 2}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: HomelessPotion
   m_EditorClassIdentifier: 
+  id: Homeless
   itemName: Homeless Potion
   description: 
   image: {fileID: 21300000, guid: 38dc06103196133489fdf37a022e2600, type: 3}

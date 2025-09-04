@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
   m_Name: BlindnessPotion
   m_EditorClassIdentifier: 
+  id: Blindness
   itemName: Blindness Potion
   description: 
   image: {fileID: 21300000, guid: 32eb165e377a91245ac5fb53aedd7e3d, type: 3}
