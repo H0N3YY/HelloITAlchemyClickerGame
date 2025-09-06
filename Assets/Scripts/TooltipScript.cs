@@ -1,19 +1,23 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class Tooltip : MonoBehaviour
+public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private static Tooltip instance;
     public static Tooltip Instance => instance;
+
+
     [SerializeField] private Canvas canvas;
-
-
     [SerializeField] private RectTransform canvasRectTransform;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private RectTransform backgroundRectTransform;
+    private DragableItem currentItem;
+
     private RectTransform rectTransform;
+    private bool isPointerOver = false;
     private void Awake()
     {
         instance = this;
@@ -54,6 +58,33 @@ public class Tooltip : MonoBehaviour
 
 
     // Tooltip to slot Script
+     public void OnPointerEnter(PointerEventData eventData)
+    {
+        isPointerOver = true;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isPointerOver = false;
+        HideIfNeeded();
+    }
+    public void HideIfNeeded()
+    {
+        if (!isPointerOver)
+        {
+            gameObject.SetActive(false);
+
+            if (currentItem != null)
+            {
+                currentItem.ImageCleaner();
+                currentItem = null;
+            }
+        }
+    }
+public void ShowForItem(DragableItem item)
+{
+    currentItem = item;
+    gameObject.SetActive(true);
+}
     public void AttachToSlot(RectTransform slotRectTransform)
     {
         Vector3[] slotCorners = new Vector3[4];
