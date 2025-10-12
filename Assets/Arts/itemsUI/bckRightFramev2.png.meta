@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bckRightFramev2_0: -4939687215681352109
+      bckRightFramev2_1: -349342971568950111
+      bckRightFramev2_2: -3889412579784214352
+      bckRightFramev2_3: 2395620789513759145
+      bckRightFramev2_4: -6508180504990491598
+      bckRightFramev2_5: -1316378111174619131
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

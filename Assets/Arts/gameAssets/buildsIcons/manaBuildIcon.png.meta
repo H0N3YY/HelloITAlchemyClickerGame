@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      manaBuildIcon_0: -8743886421349434009
+      manaBuildIcon_1: -4978878087016803723
+      manaBuildIcon_2: -4005286873309924531
+      manaBuildIcon_3: -2005544835410381271
+      manaBuildIcon_4: 1909783152580623769
+      manaBuildIcon_5: -1688497211490396013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      weakeningManaPotionTier1_0: 4377374201285388753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

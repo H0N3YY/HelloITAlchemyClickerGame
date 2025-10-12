@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      magicBookBuildIcon_0: -8025198475086074361
+      magicBookBuildIcon_1: -7746230728895887916
+      magicBookBuildIcon_2: -2775284709749410570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      smartRockBuildIcon_0: 1541955391796019312
+      smartRockBuildIcon_1: -431428694685636185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

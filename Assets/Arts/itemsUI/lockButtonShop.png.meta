@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lockButtonShop_0: 5139100407016759292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

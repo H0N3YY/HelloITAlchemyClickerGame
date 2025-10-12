@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blanketBuildIcon_0: -5427145070766063683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
