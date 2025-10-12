@@ -10,30 +10,25 @@ public class magicBallScript : MonoBehaviour
     public Text CPSDisplay;
     public List<UpgradeEntry> upgrades = new List<UpgradeEntry>(); 
     
-    private double idleClicks = 0;
-    private double clickValue = 1;
-    private double updatedValue = 0;
-    public float priceMultiplier = 1f;
-
 
     private float timer = 0f;
     
      void Update()
     {
         timer += Time.deltaTime;
-        pointDisplay.text = FormatBigNumberEnglish(updatedValue);
-        CPSDisplay.text = "CPS: " + Convert.ToInt32(idleClicks).ToString();
+        pointDisplay.text = FormatBigNumberEnglish(GameManager.Instance.manaPoints);
+        CPSDisplay.text = "CPS: " + Convert.ToInt32(GameManager.Instance.GetEffectiveIdle());
 
         if (timer >= 1f)
         {
-            updatedValue += idleClicks;
+           GameManager.Instance.manaPoints += GameManager.Instance.GetEffectiveIdle();
             timer -= 1f;
         }
         
     }
     public double GetCurrentMana()
 {
-    return updatedValue;
+    return GameManager.Instance.manaPoints;
 }
     public string FormatBigNumberEnglish(double number)
     {
@@ -48,16 +43,16 @@ public class magicBallScript : MonoBehaviour
     }
 public float GetPriceMultiplier()
 {
-    return Mathf.Log10((float)idleClicks + 10); 
+    return Mathf.Log10((float)GameManager.Instance.idleClicks + 10); 
 }
 
 
 
     public bool SpendMana(double amount)
 {
-    if (updatedValue >= amount)
+    if (GameManager.Instance.manaPoints >= amount)
     {
-        updatedValue -= amount;
+        GameManager.Instance.manaPoints -= amount;
         return true;
     }
     return false;
@@ -65,7 +60,7 @@ public float GetPriceMultiplier()
 
     public void BallClicked()
     {
-        updatedValue += clickValue;
+        GameManager.Instance.manaPoints += GameManager.Instance.GetEffectiveClick();
        
 ;    }
     [Serializable]
@@ -81,6 +76,8 @@ public float GetPriceMultiplier()
         public double cost = 50;
         public float effectAmount = 1f;
         public Text priceText;
+
+        public GameObject upgardeimage; 
     }
 
 
@@ -95,16 +92,17 @@ public void ApplyUpgrade(int index)
         switch (u.type)
         {
             case UpgradeType.ClickPower:
-                clickValue += u.effectAmount;
+                GameManager.Instance.clickValue += u.effectAmount;
                 break;
             case UpgradeType.IdleGain:
-                idleClicks += u.effectAmount;
+                GameManager.Instance.idleClicks += u.effectAmount;
                 break;
         }
 
         u.cost *= 1.15;
+            u.upgardeimage.SetActive(true);
         if (u.priceText != null)
-            u.priceText.text = Convert.ToInt32(u.cost).ToString();
+                u.priceText.text = Convert.ToInt32(u.cost).ToString();
     }
     else
     {

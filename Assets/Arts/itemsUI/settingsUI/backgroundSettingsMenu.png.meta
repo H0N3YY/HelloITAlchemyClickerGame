@@ -127,59 +127,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: backgroundSettingsMenu_0
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 2089
-        width: 8
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fcc495c759d031620800000000000000
-      internalID: 2743551533686279375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_1
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 2103
-        width: 8
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e1d2db9d3d8134e0800000000000000
-      internalID: -2003665063456353816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: backgroundSettingsMenu_2
       rect:
         serializedVersion: 2
-        x: 150
-        y: 210
-        width: 1801
-        height: 1950
+        x: 191
+        y: 216
+        width: 1760
+        height: 1944
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -192,165 +148,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_3
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 2062
-        width: 9
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 507bab7a58318c900800000000000000
-      internalID: 704834806449092357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_4
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 2079
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6b250e5cc10e16dc0800000000000000
-      internalID: -3647387809009872202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_5
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 1918
-        width: 19
-        height: 131
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 75c735415f9a78690800000000000000
-      internalID: -7599918976091325353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_6
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 2048
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ead53e8afe7b4de0800000000000000
-      internalID: -1347844048874513687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_7
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 1490
-        width: 29
-        height: 429
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ada217ad40e1d800800000000000000
-      internalID: 635535646556073379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_8
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 1479
-        width: 8
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2bb0ecddd3b75980800000000000000
-      internalID: -8550167602064737491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundSettingsMenu_9
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 1473
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: efb594635388d0d40800000000000000
-      internalID: 5552243677743111166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -359,7 +161,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      backgroundSettingsMenu_0: 2743551533686279375
+      backgroundSettingsMenu_1: -2003665063456353816
+      backgroundSettingsMenu_2: 1149907107643312259
+      backgroundSettingsMenu_3: 704834806449092357
+      backgroundSettingsMenu_4: -3647387809009872202
+      backgroundSettingsMenu_5: -7599918976091325353
+      backgroundSettingsMenu_6: -1347844048874513687
+      backgroundSettingsMenu_7: 635535646556073379
+      backgroundSettingsMenu_8: -8550167602064737491
+      backgroundSettingsMenu_9: 5552243677743111166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

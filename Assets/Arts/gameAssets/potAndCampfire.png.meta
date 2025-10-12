@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      potAndCampfire_0: 857178220596881420
+      potAndCampfire_1: -4592436400360321943
+      potAndCampfire_2: 5801022494109494607
+      potAndCampfire_3: 7624428544496675890
+      potAndCampfire_4: 7585902000202139186
+      potAndCampfire_5: -5377384496276767825
+      potAndCampfire_6: 7842195007716131104
+      potAndCampfire_7: 5613844795248007172
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

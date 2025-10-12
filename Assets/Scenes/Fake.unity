@@ -1943,7 +1943,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -3237,7 +3237,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -3508,9 +3508,9 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420036}
   - component: {fileID: 519420037}
+  - component: {fileID: 519420038}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3636,58 +3636,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a67f791a53a9ecc4eb2ed4e462dfedb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointDisplay: {fileID: 1322516609}
-  CPSDisplay: {fileID: 1008610684}
-  upgrades:
-  - type: 0
-    cost: 15
-    effectAmount: 1
-    priceText: {fileID: 2013202766}
-  - type: 1
-    cost: 100
-    effectAmount: 10
-    priceText: {fileID: 595878211}
-  - type: 1
-    cost: 1100
-    effectAmount: 100
-    priceText: {fileID: 1553118901}
-  - type: 1
-    cost: 12000
-    effectAmount: 1000
-    priceText: {fileID: 1691052324}
-  - type: 1
-    cost: 130000
-    effectAmount: 10000
-    priceText: {fileID: 1313816112}
-  - type: 1
-    cost: 1400000
-    effectAmount: 100000
-    priceText: {fileID: 1313816112}
-  - type: 1
-    cost: 20000000
-    effectAmount: 1500000
-    priceText: {fileID: 148193283}
-  - type: 1
-    cost: 330000000
-    effectAmount: 7000000
-    priceText: {fileID: 1808642278}
-  - type: 1
-    cost: 5100000000
-    effectAmount: 100000000
-    priceText: {fileID: 1808642278}
-  priceMultiplier: 1
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3713,6 +3661,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5d34e22ece6cc4faafc6c485da1b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c7bd6db3f12364eb83789f83770783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointDisplay: {fileID: 1322516609}
+  CPSDisplay: {fileID: 1008610684}
+  upgrades: []
+  priceMultiplier: 1
 --- !u!1 &519578569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,7 +4637,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -4856,7 +4820,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -6083,7 +6047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -8619,7 +8583,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -9609,7 +9573,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -12288,7 +12252,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -12428,7 +12392,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -13393,7 +13357,7 @@ MonoBehaviour:
   - {fileID: 1444044363}
   - {fileID: 239241896}
   - {fileID: 1043528858}
-  manaManager: {fileID: 519420034}
+  manaManager: {fileID: 0}
   inventoryParent: {fileID: 583257504}
 --- !u!1 &1361276687
 GameObject:
@@ -13725,7 +13689,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -14149,7 +14113,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -15536,7 +15500,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -16277,7 +16241,7 @@ MonoBehaviour:
   inventoryParent: {fileID: 583257504}
   fireActive: 0
   fireDuration: 30
-  manaSource: {fileID: 519420034}
+  manaSource: {fileID: 0}
   fireManaCost: 50
   boil: {fileID: 1236618648}
   recipes:
@@ -17553,8 +17517,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
-        m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
+      - m_Target: {fileID: 519420038}
+        m_TargetAssemblyTypeName: fakemagicBallScript, Assembly-CSharp
         m_MethodName: BallClicked
         m_Mode: 1
         m_Arguments:
@@ -17700,7 +17664,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3
@@ -18950,7 +18914,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: magicBallScript, Assembly-CSharp
         m_MethodName: ApplyUpgrade
         m_Mode: 3

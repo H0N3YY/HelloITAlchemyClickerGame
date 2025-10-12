@@ -59,17 +59,30 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             Debug.Log("Kursor najechał na item");
         }
     }
-    public void OnPointerExit(PointerEventData eventData)
+public void OnPointerExit(PointerEventData eventData)
+{
+    if (inShop) return;
+
+    if (holdCoroutine != null)
     {
-        if (inShop) return;
-        ImageCleaner();
-        if (holdCoroutine != null)
-        {
-            StopCoroutine(holdCoroutine);
-            holdCoroutine = null;
-        }
-        Debug.Log("Kursor opuścił item");
+        StopCoroutine(holdCoroutine);
+        holdCoroutine = null;
     }
+
+    // jeśli kursor nad tooltipem, nie chowaj
+    if (eventData.pointerCurrentRaycast.gameObject != null &&
+        eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Tooltip>() != null)
+    {
+        Debug.Log("Kursor opuścił item, ale wszedł na tooltip");
+        return;
+    }
+
+    Tooltip.Instance.HideIfNeeded();
+    ImageCleaner();
+    Debug.Log("Kursor opuścił item");
+}
+
+
 
     public void OnBeginDrag(PointerEventData eventData)
 
@@ -295,14 +308,14 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private void TriggerAction()
     {
         Tooltip.Instance.AttachToSlot(GetComponent<RectTransform>());
-        Tooltip.Instance.gameObject.SetActive(true);
+        Tooltip.Instance.ShowForItem(this);
         tooltip.gameObject.SetActive(true);
         Tooltip.Instance.SetText(item.itemName);
         Tooltip.Instance.Setdescription(item.description);
         Debug.Log($"{requiredHoldTime} sekund mineło");
 
     }
-    private void ImageCleaner()
+    public void ImageCleaner()
     {
         tooltip.gameObject.SetActive(false);
         tooltip.transform.position = new Vector3(1200, 1200, 0);

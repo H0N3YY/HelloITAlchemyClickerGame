@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      windowsInwentory_0: 5255471956604215480
+      windowsInwentory_1: -3734171241081456775
+      windowsInwentory_2: 1091722698411086314
+      windowsInwentory_3: -8964000930654285068
+      windowsInwentory_4: 7996292839924108738
+      windowsInwentory_5: 9042012314369334558
+      windowsInwentory_6: -1644365011686194410
+      windowsInwentory_7: 3455533585879011014
+      windowsInwentory_8: 5172093061309870633
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

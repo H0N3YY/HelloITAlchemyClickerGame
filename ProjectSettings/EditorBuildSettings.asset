@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScreen.unity
     guid: 47aeca58c7f4e864eb9eb0b691e04675
+  - enabled: 1
+    path: Assets/Scenes/Fake.unity
+    guid: 2ffdcb7c3140b0a4c89eee369e55843a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
