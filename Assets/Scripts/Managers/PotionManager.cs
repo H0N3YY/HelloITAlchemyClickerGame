@@ -2,19 +2,58 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 public class PotionManager : MonoBehaviour
 {
 
     public Volume volume;
     public VolumeProfile defaultProfile;
+    [Header("Post Processing Profiles")]
+    public VolumeProfile reggaeProfile;
     public VolumeProfile metalProfile;
+    public VolumeProfile blindProfile;
     public VolumeProfile photofobiaProfile;
-
     private Coroutine revertCoroutine;
+    private Coroutine reggaeCoroutine;
     private Coroutine manaWeakenCoroutine;
     private Coroutine boostIdleCoroutine;
     private Coroutine clickBoostCoroutine;
+    [Header("Reggae / Background swap")]
+    public Image[] backgroundImages = new Image[3];
+    public Sprite[] replacementSprites = new Sprite[3]; // Ensure this array has the same length as backgroundImages
 
+    [Header("Reggae / Music")]
+    public AudioSource musicSource;
+    public AudioClip reggaeClip;
+    [Range(0f, 1f)] public float targetMusicVolume = 0.8f;
+    public float musicFadeTime = 0.35f;
+
+
+    [Header("Unstable Potion")]
+    public Transform cameraPivot;
+    private Coroutine unstableCoroutine;
+
+
+public void UnstablePotion()
+    {
+        if (unstableCoroutine != null)
+            StopCoroutine(unstableCoroutine);
+
+        unstableCoroutine = StartCoroutine(UnstableRoutine(20f)); 
+    }
+
+
+    public void blindPotion()
+    {
+        if (volume != null && blindProfile != null)
+        {
+            volume.profile = blindProfile;
+            if (revertCoroutine != null)
+                StopCoroutine(revertCoroutine);
+
+            revertCoroutine = StartCoroutine(Revert(15f));
+        }
+    }
 
     public void metalPotion()
     {
@@ -25,6 +64,21 @@ public class PotionManager : MonoBehaviour
                 StopCoroutine(revertCoroutine);
 
             revertCoroutine = StartCoroutine(Revert(30f));
+        }
+    }
+    public void reggaePotion()
+    {
+        if (volume != null && reggaeProfile != null)
+        {
+            volume.profile = reggaeProfile;
+            if (revertCoroutine != null)
+                StopCoroutine(revertCoroutine);
+
+            revertCoroutine = StartCoroutine(Revert(21f));
+            if (reggaeCoroutine != null)
+                StopCoroutine(reggaeCoroutine);
+
+            reggaeCoroutine = StartCoroutine(Reggae(20f));
         }
     }
 
@@ -175,7 +229,7 @@ public class PotionManager : MonoBehaviour
             case 1: boostIdleMultiplier = 1.5; break; // +50% CPS
             case 2: boostIdleMultiplier = 2.0; break; // +100% CPS
             case 3: boostIdleMultiplier = 3.0; break; // +200% CPS
-            default: boostIdleMultiplier = 1.0; break; // brak efektu
+            default: boostIdleMultiplier = 1.0; break;
         }
 
 
@@ -213,6 +267,117 @@ public class PotionManager : MonoBehaviour
 
         Debug.Log("Click Boost potka skończyła się.");
         clickBoostCoroutine = null;
+    }
+    private IEnumerator Reggae(float duration)
+    {
+        // --- Background Swap ---
+        Sprite[] originals = new Sprite[backgroundImages.Length];
+        for (int i = 0; i < backgroundImages.Length && i < replacementSprites.Length; i++)
+        {
+            if (!backgroundImages[i]) continue;
+            originals[i] = backgroundImages[i].sprite;
+            if (replacementSprites[i])
+                backgroundImages[i].sprite = replacementSprites[i];
+        }
+
+        
+        AudioClip prevClip = null;
+        float prevVol = 1f;
+        bool prevWasPlaying = false;
+
+        if (musicSource)
+        {
+            prevClip = musicSource.clip;
+            prevVol = musicSource.volume;
+            prevWasPlaying = musicSource.isPlaying;
+
+            // fade out 
+            if (prevWasPlaying && prevClip != reggaeClip)
+                yield return StartCoroutine(FadeAudio(musicSource, 0f, musicFadeTime));
+
+            
+            musicSource.clip = reggaeClip;
+            musicSource.loop = true;
+            musicSource.Play();
+            yield return StartCoroutine(FadeAudio(musicSource, targetMusicVolume, musicFadeTime));
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        
+        if (musicSource)
+        {
+            yield return StartCoroutine(FadeAudio(musicSource, 0f, musicFadeTime));
+            musicSource.Stop();
+            musicSource.clip = prevClip;
+            musicSource.volume = prevVol;
+            if (prevClip && prevWasPlaying) musicSource.Play();
+        }
+
+        // --- Revert Backgrounds ---
+        for (int i = 0; i < backgroundImages.Length; i++)
+        {
+            if (backgroundImages[i])
+                backgroundImages[i].sprite = originals[i];
+        }
+
+        reggaeCoroutine = null;
+    }
+    private IEnumerator UnstableRoutine(float duration)
+    {
+        if (!cameraPivot)
+        {
+            Debug.LogWarning("Niestabilna: Brak przypisanego cameraPivot.");
+            yield break;
+        }
+
+        const float rotateTime = 0.35f; 
+        Quaternion startRot = cameraPivot.rotation;
+        Quaternion targetRot = startRot * Quaternion.Euler(0f, 0f, 180f);
+
+        
+        float t = 0f;
+        while (t < rotateTime)
+        {
+            t += Time.deltaTime;
+            cameraPivot.rotation = Quaternion.Slerp(startRot, targetRot, t / rotateTime);
+            yield return null;
+        }
+        cameraPivot.rotation = targetRot;
+
+       
+        yield return new WaitForSeconds(duration);
+
+        
+        t = 0f;
+        while (t < rotateTime)
+        {
+            t += Time.deltaTime;
+            cameraPivot.rotation = Quaternion.Slerp(targetRot, startRot, t / rotateTime);
+            yield return null;
+        }
+        cameraPivot.rotation = startRot;
+
+        unstableCoroutine = null;
+        Debug.Log("Niestabilna potka skończyła się.");
+    }
+    private IEnumerator FadeAudio(AudioSource src, float target, float time)
+    {
+        if (!src || time <= 0f)
+        {
+            if (src) src.volume = target;
+            yield break;
+        }
+
+        float start = src.volume;
+        float t = 0f;
+        while (t < time)
+        {
+            t += Time.deltaTime;
+            src.volume = Mathf.Lerp(start, target, t / time);
+            yield return null;
+        }
+        src.volume = target;
     }
 }
 
