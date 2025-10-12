@@ -22,9 +22,10 @@ public class PotionManager : MonoBehaviour
     public Image[] backgroundImages = new Image[3];
     public Sprite[] replacementSprites = new Sprite[3]; // Ensure this array has the same length as backgroundImages
 
-    [Header("Reggae / Music")]
+    [Header("Music")]
     public AudioSource musicSource;
     public AudioClip reggaeClip;
+    public AudioClip metalMusicClip;
     [Range(0f, 1f)] public float targetMusicVolume = 0.8f;
     public float musicFadeTime = 0.35f;
 
@@ -93,6 +94,36 @@ public void UnstablePotion()
             revertCoroutine = StartCoroutine(Revert(15f));
         }
     }
+
+    public void AntidotePotion()
+{
+    if (unstableCoroutine != null)
+    {
+        StopCoroutine(unstableCoroutine);
+        unstableCoroutine = null;
+
+        if (cameraPivot)
+            cameraPivot.rotation = Quaternion.identity;
+
+        Debug.Log("Antidotum: worked");
+    }
+
+   
+    if (manaWeakenCoroutine != null)
+    {
+        StopCoroutine(manaWeakenCoroutine);
+        manaWeakenCoroutine = null;
+
+        
+        GameManager.Instance.idleMultiplier = 1.0;
+        GameManager.Instance.clickMultiplier = 1.0;
+
+        Debug.Log("Antidotum: worked");
+    }
+
+ 
+}
+
     public void HomlessPotion()
     {
         StartCoroutine(HomlessRoutine());
