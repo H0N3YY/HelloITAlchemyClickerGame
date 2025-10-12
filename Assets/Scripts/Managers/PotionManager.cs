@@ -39,6 +39,33 @@ public class PotionManager : MonoBehaviour
     private Coroutine furryCoroutine;
 
 
+    public void ChaosPotion()
+{
+    System.Action[] possibleEffects = new System.Action[]
+    {
+        UnstablePotion,
+        blindPotion,
+        reggaePotion,
+        metalPotion,
+        photofobiaPotion,
+        HomlessPotion,
+        WeakenPotionTier1,
+        WeakenPotionTier2,
+        WeakenPotionTier3,
+        BoostIdlePotionTier1,
+        BoostIdlePotionTier2,
+        BoostIdlePotionTier3,
+        ClickBoostPotionTier1,
+        ClickBoostPotionTier2,
+        ClickBoostPotionTier3,
+        FurryPotion
+    };
+
+    int index = Random.Range(0, possibleEffects.Length);
+    Debug.Log($"Chaos Potion: #{index}: {possibleEffects[index].Method.Name}");
+    possibleEffects[index]?.Invoke();
+}
+
 
     public void UnstablePotion()
     {
