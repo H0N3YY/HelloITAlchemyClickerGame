@@ -34,14 +34,29 @@ public class PotionManager : MonoBehaviour
     public Transform cameraPivot;
     private Coroutine unstableCoroutine;
 
+    [Header("Furry Potion")]
+    public float furryDuration = 20f;
+    private Coroutine furryCoroutine;
 
-public void UnstablePotion()
+
+
+    public void UnstablePotion()
     {
         if (unstableCoroutine != null)
             StopCoroutine(unstableCoroutine);
 
-        unstableCoroutine = StartCoroutine(UnstableRoutine(20f)); 
+        unstableCoroutine = StartCoroutine(UnstableRoutine(20f));
     }
+
+   public void FurryPotion()
+{
+    if (furryCoroutine != null)
+        StopCoroutine(furryCoroutine);
+
+    furryCoroutine = StartCoroutine(FurryRoutine(20f));
+}
+
+
 
 
     public void blindPotion()
@@ -96,33 +111,33 @@ public void UnstablePotion()
     }
 
     public void AntidotePotion()
-{
-    if (unstableCoroutine != null)
     {
-        StopCoroutine(unstableCoroutine);
-        unstableCoroutine = null;
+        if (unstableCoroutine != null)
+        {
+            StopCoroutine(unstableCoroutine);
+            unstableCoroutine = null;
 
-        if (cameraPivot)
-            cameraPivot.rotation = Quaternion.identity;
+            if (cameraPivot)
+                cameraPivot.rotation = Quaternion.identity;
 
-        Debug.Log("Antidotum: worked");
+            Debug.Log("Antidotum: worked");
+        }
+
+
+        if (manaWeakenCoroutine != null)
+        {
+            StopCoroutine(manaWeakenCoroutine);
+            manaWeakenCoroutine = null;
+
+
+            GameManager.Instance.idleMultiplier = 1.0;
+            GameManager.Instance.clickMultiplier = 1.0;
+
+            Debug.Log("Antidotum: worked");
+        }
+
+
     }
-
-   
-    if (manaWeakenCoroutine != null)
-    {
-        StopCoroutine(manaWeakenCoroutine);
-        manaWeakenCoroutine = null;
-
-        
-        GameManager.Instance.idleMultiplier = 1.0;
-        GameManager.Instance.clickMultiplier = 1.0;
-
-        Debug.Log("Antidotum: worked");
-    }
-
- 
-}
 
     public void HomlessPotion()
     {
@@ -311,7 +326,7 @@ public void UnstablePotion()
                 backgroundImages[i].sprite = replacementSprites[i];
         }
 
-        
+
         AudioClip prevClip = null;
         float prevVol = 1f;
         bool prevWasPlaying = false;
@@ -326,7 +341,7 @@ public void UnstablePotion()
             if (prevWasPlaying && prevClip != reggaeClip)
                 yield return StartCoroutine(FadeAudio(musicSource, 0f, musicFadeTime));
 
-            
+
             musicSource.clip = reggaeClip;
             musicSource.loop = true;
             musicSource.Play();
@@ -335,7 +350,7 @@ public void UnstablePotion()
 
         yield return new WaitForSeconds(duration);
 
-        
+
         if (musicSource)
         {
             yield return StartCoroutine(FadeAudio(musicSource, 0f, musicFadeTime));
@@ -362,11 +377,11 @@ public void UnstablePotion()
             yield break;
         }
 
-        const float rotateTime = 0.35f; 
+        const float rotateTime = 0.35f;
         Quaternion startRot = cameraPivot.rotation;
         Quaternion targetRot = startRot * Quaternion.Euler(0f, 0f, 180f);
 
-        
+
         float t = 0f;
         while (t < rotateTime)
         {
@@ -376,10 +391,10 @@ public void UnstablePotion()
         }
         cameraPivot.rotation = targetRot;
 
-       
+
         yield return new WaitForSeconds(duration);
 
-        
+
         t = 0f;
         while (t < rotateTime)
         {
@@ -410,5 +425,22 @@ public void UnstablePotion()
         }
         src.volume = target;
     }
+    private IEnumerator FurryRoutine(float duration)
+{
+    if (CursorManager.Instance == null)
+    {
+        Debug.LogWarning("FurryPotion: Brak CursorManager.Instance");
+        yield break;
+    }
+
+    CursorManager.Instance.SetFurryCursor();
+
+    yield return new WaitForSeconds(duration);
+
+    CursorManager.Instance.SetDefaultCursor();
+    furryCoroutine = null;
+}
+
+
 }
 
