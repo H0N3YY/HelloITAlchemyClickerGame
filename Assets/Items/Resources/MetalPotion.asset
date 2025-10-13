@@ -21,3 +21,4 @@ MonoBehaviour:
   stackable: 1
   manaCost: 0
   sellValue: 0
+  effectToTrigger: 3

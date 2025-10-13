@@ -40,9 +40,9 @@ public class PotionManager : MonoBehaviour
 
 
     public void ChaosPotion()
-{
-    System.Action[] possibleEffects = new System.Action[]
     {
+        System.Action[] possibleEffects = new System.Action[]
+        {
         UnstablePotion,
         blindPotion,
         reggaePotion,
@@ -59,12 +59,12 @@ public class PotionManager : MonoBehaviour
         ClickBoostPotionTier2,
         ClickBoostPotionTier3,
         FurryPotion
-    };
+        };
 
-    int index = Random.Range(0, possibleEffects.Length);
-    Debug.Log($"Chaos Potion: #{index}: {possibleEffects[index].Method.Name}");
-    possibleEffects[index]?.Invoke();
-}
+        int index = Random.Range(0, possibleEffects.Length);
+        Debug.Log($"Chaos Potion: #{index}: {possibleEffects[index].Method.Name}");
+        possibleEffects[index]?.Invoke();
+    }
 
 
     public void UnstablePotion()
@@ -75,13 +75,13 @@ public class PotionManager : MonoBehaviour
         unstableCoroutine = StartCoroutine(UnstableRoutine(20f));
     }
 
-   public void FurryPotion()
-{
-    if (furryCoroutine != null)
-        StopCoroutine(furryCoroutine);
+    public void FurryPotion()
+    {
+        if (furryCoroutine != null)
+            StopCoroutine(furryCoroutine);
 
-    furryCoroutine = StartCoroutine(FurryRoutine(20f));
-}
+        furryCoroutine = StartCoroutine(FurryRoutine(20f));
+    }
 
 
 
@@ -453,19 +453,54 @@ public class PotionManager : MonoBehaviour
         src.volume = target;
     }
     private IEnumerator FurryRoutine(float duration)
-{
-    if (CursorManager.Instance == null)
     {
-        Debug.LogWarning("FurryPotion: Brak CursorManager.Instance");
-        yield break;
+        if (CursorManager.Instance == null)
+        {
+            Debug.LogWarning("FurryPotion: Brak CursorManager.Instance");
+            yield break;
+        }
+
+        CursorManager.Instance.SetFurryCursor();
+
+        yield return new WaitForSeconds(duration);
+
+        CursorManager.Instance.SetDefaultCursor();
+        furryCoroutine = null;
     }
 
-    CursorManager.Instance.SetFurryCursor();
+    public void ExecuteEffect(PotionEffect effect)
+{
+    // Central router: maps enum to concrete methods.
+    switch (effect)
+    {
+        case PotionEffect.Blind:        blindPotion(); break;
+        case PotionEffect.Reggae:       reggaePotion(); break;
+        case PotionEffect.Metal:        metalPotion(); break;
+        case PotionEffect.Photophobia:  photofobiaPotion(); break;
+        case PotionEffect.Unstable:     UnstablePotion(); break;
+        case PotionEffect.Homeless:     HomlessPotion(); break;
+        case PotionEffect.Antidote:     AntidotePotion(); break;
 
-    yield return new WaitForSeconds(duration);
+        case PotionEffect.Weaken1:      WeakenPotionTier1(); break;
+        case PotionEffect.Weaken2:      WeakenPotionTier2(); break;
+        case PotionEffect.Weaken3:      WeakenPotionTier3(); break;
 
-    CursorManager.Instance.SetDefaultCursor();
-    furryCoroutine = null;
+        case PotionEffect.BoostIdle1:   BoostIdlePotionTier1(); break;
+        case PotionEffect.BoostIdle2:   BoostIdlePotionTier2(); break;
+        case PotionEffect.BoostIdle3:   BoostIdlePotionTier3(); break;
+
+        case PotionEffect.ClickBoost1:  ClickBoostPotionTier1(); break;
+        case PotionEffect.ClickBoost2:  ClickBoostPotionTier2(); break;
+        case PotionEffect.ClickBoost3:  ClickBoostPotionTier3(); break;
+
+        case PotionEffect.Chaos:        ChaosPotion(); break;
+        case PotionEffect.Furry:        FurryPotion(); break;
+
+        case PotionEffect.None:
+        default:
+            Debug.Log("ExecuteEffect: no effect or not mapped.");
+            break;
+    }
 }
 
 

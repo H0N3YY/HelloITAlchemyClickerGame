@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private static Tooltip instance;
@@ -14,6 +14,10 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private RectTransform backgroundRectTransform;
+
+
+    [SerializeField] private PotionManager potionManager;
+     [SerializeField] private Button useButton;
     private DragableItem currentItem;
 
     private RectTransform rectTransform;
@@ -24,6 +28,9 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         rectTransform = transform.GetComponent<RectTransform>();
 
         SetText("Item Name");
+
+        if (useButton) useButton.onClick.RemoveAllListeners();
+
     }
 
     public void SetText(string tooltipText)
@@ -80,11 +87,59 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
         }
     }
-public void ShowForItem(DragableItem item)
+    public void ShowForItem(DragableItem drag)
 {
-    currentItem = item;
+    currentItem = drag;
     gameObject.SetActive(true);
+
+    var si = GetScriptable(drag);
+
+    if (useButton != null)
+    {
+        useButton.onClick.RemoveAllListeners();
+
+        // przycisk tylko gdy jest efekt
+        bool canUse = (si != null && si.effectToTrigger != PotionEffect.None);
+        useButton.gameObject.SetActive(canUse);
+        useButton.interactable = canUse;
+
+        if (canUse)
+{
+    useButton.onClick.AddListener(() =>
+    {
+        if (potionManager == null)
+        {
+            Debug.LogWarning("Tooltip: PotionManager is not assigned.");
+            return;
+        }
+
+        // 1) Uruchom efekt
+        potionManager.ExecuteEffect(si.effectToTrigger);
+
+        // 2) Zapamiętaj referencję do obiektu itemu (bo HideIfNeeded wyczyści currentItem)
+        var toDestroy = currentItem;
+        
+        // 3) Schowaj tooltip / wyczyść UI slota
+        isPointerOver = false;
+        HideIfNeeded(); // (wywoła ImageCleaner i ustawi currentItem = null)
+
+        // 4) Usuń obiekt potki z ekwipunku
+        if (toDestroy != null)
+            Destroy(toDestroy.gameObject);
+    });
 }
+    }
+    else
+    {
+        Debug.LogWarning("Tooltip: Use Button reference is missing in Inspector.");
+    }
+}
+
+private ScriptableItem GetScriptable(DragableItem drag)
+{
+    return drag != null ? drag.item : null;
+}
+
     public void AttachToSlot(RectTransform slotRectTransform)
     {
         Vector3[] slotCorners = new Vector3[4];
@@ -137,4 +192,8 @@ public void ShowForItem(DragableItem item)
 
 
 
+}
+public class DragableItemData : MonoBehaviour
+{
+    public ScriptableItem scriptableItem;
 }
