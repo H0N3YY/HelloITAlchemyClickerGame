@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: b7a8f41bf683779478e4db6aaaa62703
+guid: 1c952328c39101c4e9c2abcb69434336
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4939687215681352109
-    second: bckRightFramev2_0
+      213: 3118078262260585848
+    second: gardenGhostAnimationTester_0
   - first:
-      213: -349342971568950111
-    second: bckRightFramev2_1
-  - first:
-      213: -3889412579784214352
-    second: bckRightFramev2_2
-  - first:
-      213: 2395620789513759145
-    second: bckRightFramev2_3
-  - first:
-      213: -6508180504990491598
-    second: bckRightFramev2_4
-  - first:
-      213: -1316378111174619131
-    second: bckRightFramev2_5
+      213: 8726235526969494153
+    second: gardenGhostAnimationTester_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bckRightFramev2_0
+      name: gardenGhostAnimationTester_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 1694
-        width: 14
-        height: 17
+        x: 23
+        y: 16
+        width: 506
+        height: 889
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35e46cf16a4b27bb0800000000000000
-      internalID: -4939687215681352109
+      spriteID: 875d8e3c8a3a54b20800000000000000
+      internalID: 3118078262260585848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bckRightFramev2_1
+      name: gardenGhostAnimationTester_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 1700
-        width: 12
-        height: 8
+        x: 530
+        y: 194
+        width: 24
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,96 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a47ad21b62e62bf0800000000000000
-      internalID: -349342971568950111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bckRightFramev2_2
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 114
-        width: 778
-        height: 1606
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b8b60d9dd7060ac0800000000000000
-      internalID: -3889412579784214352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bckRightFramev2_3
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 1682
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a9228f5a64fe3120800000000000000
-      internalID: 2395620789513759145
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bckRightFramev2_4
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 1676
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23c5be1005c4ea5a0800000000000000
-      internalID: -6508180504990491598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bckRightFramev2_5
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 1648
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 500565515194bbde0800000000000000
-      internalID: -1316378111174619131
+      spriteID: 98a096b6af0d91970800000000000000
+      internalID: 8726235526969494153
       vertices: []
       indices: 
       edges: []
@@ -250,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bckRightFramev2_0: -4939687215681352109
-      bckRightFramev2_1: -349342971568950111
-      bckRightFramev2_2: -3889412579784214352
-      bckRightFramev2_3: 2395620789513759145
-      bckRightFramev2_4: -6508180504990491598
-      bckRightFramev2_5: -1316378111174619131
+      gardenGhostAnimationTester_0: 3118078262260585848
+      gardenGhostAnimationTester_1: 8726235526969494153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
