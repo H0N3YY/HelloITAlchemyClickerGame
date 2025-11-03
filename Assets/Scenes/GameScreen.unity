@@ -7448,7 +7448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &793959043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7456,7 +7456,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793959042}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7465,8 +7465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -763.92, y: 428}
-  m_SizeDelta: {x: 1032.1621, y: 544.7108}
+  m_AnchoredPosition: {x: -763.92, y: 417.13}
+  m_SizeDelta: {x: 1032.1621, y: 605.7413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793959044
 MonoBehaviour:
@@ -12049,7 +12049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 179.03955, y: 135.62683}
+  m_AnchoredPosition: {x: 177, y: 133}
   m_SizeDelta: {x: 9364.439, y: 3078.473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138454877
@@ -17455,8 +17455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -700.3479, y: 121.81741}
-  m_SizeDelta: {x: 692.3469, y: 1115.1536}
+  m_AnchoredPosition: {x: -700.3479, y: 213.49179}
+  m_SizeDelta: {x: 692.3469, y: 870.6886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556267457
 MonoBehaviour:
@@ -17480,7 +17480,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -2434665637842772914, guid: cbb345fa6c717dc499bf9665af794dad, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -21031,7 +21031,7 @@ GameObject:
   - component: {fileID: 1861023907}
   - component: {fileID: 1861023909}
   - component: {fileID: 1861023908}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Stir
   m_TagString: Untagged
   m_Icon: {fileID: 0}

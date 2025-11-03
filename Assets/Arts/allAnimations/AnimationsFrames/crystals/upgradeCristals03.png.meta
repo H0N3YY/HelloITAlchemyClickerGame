@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 588b3b3895204314e8bd3ec749bf2c51
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5513621858173899825
+    second: upgradeCristals03_0
+  - first:
+      213: 5427321068217910022
+    second: upgradeCristals03_1
+  - first:
+      213: -5318749873094462190
+    second: upgradeCristals03_2
+  - first:
+      213: 7774768266786492634
+    second: upgradeCristals03_3
+  - first:
+      213: 6305852511074159959
+    second: upgradeCristals03_4
+  - first:
+      213: -4211889617820957711
+    second: upgradeCristals03_5
+  - first:
+      213: -3072736334670148566
+    second: upgradeCristals03_6
+  - first:
+      213: 2355521666174258917
+    second: upgradeCristals03_7
+  - first:
+      213: -5483979058794374860
+    second: upgradeCristals03_8
+  - first:
+      213: 4193322858642845418
+    second: upgradeCristals03_9
+  - first:
+      213: 8539373997657239795
+    second: upgradeCristals03_10
+  - first:
+      213: 9035088796389862141
+    second: upgradeCristals03_11
+  - first:
+      213: 8225829626675100065
+    second: upgradeCristals03_12
+  - first:
+      213: -627476456303846973
+    second: upgradeCristals03_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upgradeCristals03_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 982
+        width: 77
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb27b5e12eab73b0800000000000000
+      internalID: -5513621858173899825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1025
+        width: 103
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6034f11a1c7b15b40800000000000000
+      internalID: 5427321068217910022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 883
+        width: 117
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215fc0d9b210036b0800000000000000
+      internalID: -5318749873094462190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_3
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 935
+        width: 128
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad0d9c0db8685eb60800000000000000
+      internalID: 7774768266786492634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_4
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 901
+        width: 60
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d8490f273e28750800000000000000
+      internalID: 6305852511074159959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_5
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1001
+        width: 109
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f340a845bc5c85c0800000000000000
+      internalID: -4211889617820957711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_6
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 827
+        width: 144
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ccc8b65927b55d0800000000000000
+      internalID: -3072736334670148566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_7
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 992
+        width: 102
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee8d0da97e70b020800000000000000
+      internalID: 2355521666174258917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_8
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 1063
+        width: 61
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43951e4f91ef4e3b0800000000000000
+      internalID: -5483979058794374860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_9
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 828
+        width: 185
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeeaee93ceca13a30800000000000000
+      internalID: 4193322858642845418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_10
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1043
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f031964863f18670800000000000000
+      internalID: 8539373997657239795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_11
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 840
+        width: 78
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfaedeee365136d70800000000000000
+      internalID: 9035088796389862141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_12
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 710
+        width: 129
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a97ad09674082270800000000000000
+      internalID: 8225829626675100065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgradeCristals03_13
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 684
+        width: 88
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9961dcc71ca47f0800000000000000
+      internalID: -627476456303846973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      upgradeCristals03_0: -5513621858173899825
+      upgradeCristals03_1: 5427321068217910022
+      upgradeCristals03_10: 8539373997657239795
+      upgradeCristals03_11: 9035088796389862141
+      upgradeCristals03_12: 8225829626675100065
+      upgradeCristals03_13: -627476456303846973
+      upgradeCristals03_2: -5318749873094462190
+      upgradeCristals03_3: 7774768266786492634
+      upgradeCristals03_4: 6305852511074159959
+      upgradeCristals03_5: -4211889617820957711
+      upgradeCristals03_6: -3072736334670148566
+      upgradeCristals03_7: 2355521666174258917
+      upgradeCristals03_8: -5483979058794374860
+      upgradeCristals03_9: 4193322858642845418
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
