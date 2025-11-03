@@ -77,6 +77,8 @@ public float GetPriceMultiplier()
         public float effectAmount = 1f;
         public Text priceText;
 
+        public Text descText;
+
         public GameObject upgardeimage; 
     }
 
