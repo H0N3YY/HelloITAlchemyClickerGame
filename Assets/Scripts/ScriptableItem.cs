@@ -23,6 +23,7 @@ public class ScriptableItem : ScriptableObject
     public bool stackable = true;
     public int manaCost;
     public int sellValue;
+    public ScriptableCard associatedCard;
 
 
     [Header("Effect to trigger on use")]

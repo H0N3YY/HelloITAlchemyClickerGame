@@ -5,7 +5,6 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 public class PotionManager : MonoBehaviour
 {
-
     public Volume volume;
     public VolumeProfile defaultProfile;
     [Header("Post Processing Profiles")]
@@ -21,6 +20,8 @@ public class PotionManager : MonoBehaviour
     [Header("Reggae / Background swap")]
     public Image[] backgroundImages = new Image[3];
     public Sprite[] replacementSprites = new Sprite[3]; // Ensure this array has the same length as backgroundImages
+    [Header("Card display")]
+    [SerializeField] private Display_Card cardDisplay;
 
     [Header("Music")]
     public AudioSource musicSource;
