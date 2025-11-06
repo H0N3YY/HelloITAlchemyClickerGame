@@ -22,12 +22,12 @@ public class PotionBrewer : MonoBehaviour
     public int fireManaCost = 50;
     public AudioSource boil;
 
-
+    [SerializeField] private AnimatorToggler fireAnimatorToggler;
 
     [Header("Lista przepisów")]
     public List<Recipe> recipes;
 
-
+    
     private void Update()
     {
         if (fireActive)
@@ -37,6 +37,7 @@ public class PotionBrewer : MonoBehaviour
             {
                 boil.Stop();
                 fireActive = false;
+                fireAnimatorToggler.DisableAnimator();
                 Debug.Log("Ognisko zgasło");
             }
         }
@@ -53,6 +54,7 @@ public class PotionBrewer : MonoBehaviour
         if (manaSource.SpendMana(adjustedCost))
         {
             fireActive = true;
+            fireAnimatorToggler.EnableAnimator();
             boil.Play();
             fireTimer = fireDuration;
             Debug.Log("Ognisko rozpalone! Mana pobrana");
