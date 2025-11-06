@@ -32,6 +32,7 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (useButton) useButton.onClick.RemoveAllListeners();
 
     }
+    
 
     public void SetText(string tooltipText)
     {
@@ -94,46 +95,53 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     var si = GetScriptable(drag);
 
+    // Ustaw UI z danych itemu
+    if (si != null)
+    {
+        SetText(si.itemName);
+        Setdescription(si.description);
+    }
+
     if (useButton != null)
     {
         useButton.onClick.RemoveAllListeners();
 
-        // przycisk tylko gdy jest efekt
         bool canUse = (si != null && si.effectToTrigger != PotionEffect.None);
         useButton.gameObject.SetActive(canUse);
         useButton.interactable = canUse;
 
         if (canUse)
-{
-    useButton.onClick.AddListener(() =>
-    {
-        if (potionManager == null)
         {
-            Debug.LogWarning("Tooltip: PotionManager is not assigned.");
-            return;
+            useButton.onClick.AddListener(() =>
+            {
+                if (potionManager == null)
+                {
+                    Debug.LogWarning("Tooltip: PotionManager is not assigned.");
+                    return;
+                }
+
+                // 1) Użyj itemu (efekt + karta on-first-use)
+                potionManager.UseItem(si);
+
+                // 2) Zapamiętaj obiekt slota do usunięcia
+                var toDestroy = currentItem;
+
+                // 3) Schowaj tooltip i wyczyść slot (wywoła ImageCleaner)
+                isPointerOver = false;
+                HideIfNeeded();
+
+                // 4) Usuń obiekt z ekwipunku (jeśli nie obsługujesz stacków)
+                if (toDestroy != null)
+                    Destroy(toDestroy.gameObject);
+            });
         }
-
-        // 1) Uruchom efekt
-        potionManager.ExecuteEffect(si.effectToTrigger);
-
-        // 2) Zapamiętaj referencję do obiektu itemu (bo HideIfNeeded wyczyści currentItem)
-        var toDestroy = currentItem;
-        
-        // 3) Schowaj tooltip / wyczyść UI slota
-        isPointerOver = false;
-        HideIfNeeded(); // (wywoła ImageCleaner i ustawi currentItem = null)
-
-        // 4) Usuń obiekt potki z ekwipunku
-        if (toDestroy != null)
-            Destroy(toDestroy.gameObject);
-    });
-}
     }
     else
     {
         Debug.LogWarning("Tooltip: Use Button reference is missing in Inspector.");
     }
 }
+
 
 private ScriptableItem GetScriptable(DragableItem drag)
 {

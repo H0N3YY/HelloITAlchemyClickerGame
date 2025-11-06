@@ -7,7 +7,7 @@ public class Display_Card : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject cardPopup;
     [SerializeField] private Image artworkImage;
-    [SerializeField] private float showDuration = 5f;
+    [SerializeField] private float showDuration = 15f;
 
     private Coroutine co;
 

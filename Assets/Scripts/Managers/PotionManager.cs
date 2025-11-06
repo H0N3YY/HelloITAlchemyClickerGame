@@ -39,6 +39,36 @@ public class PotionManager : MonoBehaviour
     public float furryDuration = 20f;
     private Coroutine furryCoroutine;
 
+    public void UseItem(ScriptableItem item)
+{
+    if (!item) return;
+
+    // 1) Efekt potki
+    ExecuteEffect(item.effectToTrigger);
+
+    // 2) Obsługa karty powiązanej z tym itemem (pierwsze odblokowanie -> pokaż)
+    var card = item.associatedCard;
+    if (!card) return;
+
+    if (!card.isUnlocked)
+    {
+        card.isUnlocked = true;
+        card.firstTimeObtained = true;
+        #if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(card);
+        #endif
+    }
+
+    if (card.firstTimeObtained)
+    {
+        if (cardDisplay) cardDisplay.ShowOnce(card); // popup na X sekund
+        card.firstTimeObtained = false;
+        #if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(card);
+        #endif
+    }
+}
+
 
     public void ChaosPotion()
     {

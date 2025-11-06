@@ -809,6 +809,7 @@ GameObject:
   - component: {fileID: 67484457}
   - component: {fileID: 67484459}
   - component: {fileID: 67484458}
+  - component: {fileID: 67484460}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -856,7 +857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2370518697390452586, guid: 599cfbccd2f48724e8c87813473af381, type: 3}
+  m_Sprite: {fileID: 8819536845001103301, guid: da3db0697f12c844c8479186dbc4d0ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -874,6 +875,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67484456}
   m_CullTransparentMesh: 1
+--- !u!114 &67484460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67484456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295b55cbd0de17c4b88935e4146b9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPopup: {fileID: 841994167}
+  artworkImage: {fileID: 67484458}
+  showDuration: 5
 --- !u!1 &69955896
 GameObject:
   m_ObjectHideFlags: 0
@@ -6206,6 +6222,7 @@ MonoBehaviour:
   - {fileID: 4692981279985059916, guid: fb81dbd320af04c4596e83050c466464, type: 3}
   - {fileID: -6031184311471840413, guid: 532c620c548316346afd37b69427f477, type: 3}
   - {fileID: 8752944745669271896, guid: 314eecc59ea8e4e428acb33da017d3f2, type: 3}
+  cardDisplay: {fileID: 67484460}
   musicSource: {fileID: 1117118756}
   reggaeClip: {fileID: 0}
   metalMusicClip: {fileID: 0}
@@ -14596,7 +14613,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 585529465}
         m_TargetAssemblyTypeName: PotionManager, Assembly-CSharp
-        m_MethodName: ChaosPotion
+        m_MethodName: reggaePotion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19274,7 +19291,7 @@ PrefabInstance:
     - target: {fileID: 4735437560203351588, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 11400000, guid: 46484083d66c1794fb10923b385de285, type: 2}
+      objectReference: {fileID: 11400000, guid: d6f3c885ac6c4d94bac9f90fcc962092, type: 2}
     - target: {fileID: 7757955413094081613, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
