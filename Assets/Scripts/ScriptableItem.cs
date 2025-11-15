@@ -12,12 +12,18 @@ public class ScriptableItem : ScriptableObject
     [Header("Visuals")]
     public Sprite image;
 
+    public Sprite plantStage1;
+
+    public Sprite PlantStage2;
+
+    public Sprite PlantStage3;
     [Header("Logic properties")]
     public ItemType type;
     public ActionType actionType;
     public bool stackable = true;
     public int manaCost;
     public int sellValue;
+    public ScriptableCard associatedCard;
 
 
     [Header("Effect to trigger on use")]
@@ -27,12 +33,14 @@ public class ScriptableItem : ScriptableObject
 public enum ItemType
 {
     Ingridient,
-    Potion
+    Potion,
+    Seed,
 }
 public enum ActionType
 {
     Drink,
-    Craft
+    Craft,
+    Plant
 
 }
 

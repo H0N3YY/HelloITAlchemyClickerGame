@@ -41,6 +41,17 @@ public class magicBallScript : MonoBehaviour
         else
             return number.ToString("0");
     }
+    public string FormatBigNumberEnglish2(double number)
+    {
+        if (number >= 1_000_000_000)
+            return (number / 1_000_000_000d).ToString("0.#") + "B";
+        else if (number >= 1_000_000)
+            return (number / 1_000_000d).ToString("0.#") + "M";
+        else if (number >= 100_000)
+            return (number / 1_000d).ToString("0.#") + "K";
+        else
+            return number.ToString("0");
+    }
 public float GetPriceMultiplier()
 {
     return Mathf.Log10((float)GameManager.Instance.idleClicks + 10); 
@@ -77,7 +88,11 @@ public float GetPriceMultiplier()
         public float effectAmount = 1f;
         public Text priceText;
 
-        public GameObject upgardeimage; 
+        public Text descText;
+
+        public GameObject upgradeImage;
+
+        public GameObject blockedImage;
     }
 
 
@@ -98,11 +113,12 @@ public void ApplyUpgrade(int index)
                 GameManager.Instance.idleClicks += u.effectAmount;
                 break;
         }
-
+        u.blockedImage.SetActive(false);
         u.cost *= 1.15;
-            u.upgardeimage.SetActive(true);
-        if (u.priceText != null)
+            u.upgradeImage.SetActive(true);
+            if (u.priceText != null)
                 u.priceText.text = Convert.ToInt32(u.cost).ToString();
+                u.priceText.text = FormatBigNumberEnglish2(u.cost);
     }
     else
     {

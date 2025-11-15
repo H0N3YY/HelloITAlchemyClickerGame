@@ -5,7 +5,6 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 public class PotionManager : MonoBehaviour
 {
-
     public Volume volume;
     public VolumeProfile defaultProfile;
     [Header("Post Processing Profiles")]
@@ -21,6 +20,8 @@ public class PotionManager : MonoBehaviour
     [Header("Reggae / Background swap")]
     public Image[] backgroundImages = new Image[3];
     public Sprite[] replacementSprites = new Sprite[3]; // Ensure this array has the same length as backgroundImages
+    [Header("Card display")]
+    [SerializeField] private Display_Card cardDisplay;
 
     [Header("Music")]
     public AudioSource musicSource;
@@ -37,6 +38,36 @@ public class PotionManager : MonoBehaviour
     [Header("Furry Potion")]
     public float furryDuration = 20f;
     private Coroutine furryCoroutine;
+
+    public void UseItem(ScriptableItem item)
+{
+    if (!item) return;
+
+    // 1) Efekt potki
+    ExecuteEffect(item.effectToTrigger);
+
+    // 2) Obsługa karty powiązanej z tym itemem (pierwsze odblokowanie -> pokaż)
+    var card = item.associatedCard;
+    if (!card) return;
+
+    if (!card.isUnlocked)
+    {
+        card.isUnlocked = true;
+        card.firstTimeObtained = true;
+        #if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(card);
+        #endif
+    }
+
+    if (card.firstTimeObtained)
+    {
+        if (cardDisplay) cardDisplay.ShowOnce(card); // popup na X sekund
+        card.firstTimeObtained = false;
+        #if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(card);
+        #endif
+    }
+}
 
 
     public void ChaosPotion()

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: d529bb3d852dc3e4db6c2841861ddc7a
+guid: 719f03148269c914f8d08c46bbb3b21d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6955002086145552305
-    second: ladlePot_0
+      213: -2169263384944866927
+    second: upgradeCardBtn_0
   - first:
-      213: -5133179364955556937
-    second: ladlePot_1
+      213: -1178984654866086143
+    second: upgradeCardBtn_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,13 +43,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,67 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ladlePot_0
+      name: upgradeCardBtn_0
       rect:
         serializedVersion: 2
-        x: 905
-        y: 1376
-        width: 12
-        height: 13
+        x: 0
+        y: 0
+        width: 195
+        height: 195
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f40913ba37eda7f90800000000000000
-      internalID: -6955002086145552305
+      spriteID: 1998914d17a35e1e0800000000000000
+      internalID: -2169263384944866927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladlePot_1
+      name: upgradeCardBtn_1
       rect:
         serializedVersion: 2
-        x: 1354
-        y: 370
-        width: 1721
-        height: 1619
+        x: 194
+        y: 159
+        width: 1
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 860.5, y: 662.5}
-        - {x: 860.5, y: 793.75}
-        - {x: 820.5625, y: 809.5}
-        - {x: 715.5625, y: 809.5}
-        - {x: 558.0625, y: 709.375}
-        - {x: -860.5, y: -348.12497}
-        - {x: -860.5, y: -801.87494}
-        - {x: -827.5624, y: -809.37494}
-        - {x: -73.81244, y: -809.37494}
-      - - {x: -103.81244, y: -351.87497}
-        - {x: -103.34369, y: -351.40622}
-        - {x: -103.81244, y: -353.74997}
-      physicsShape:
-      - - {x: -129.5, y: -566.5}
-        - {x: 74.5, y: -86.5}
-        - {x: 847.5, y: 682.5}
-        - {x: 854.3125, y: 809.5}
-        - {x: 676.5, y: 796.5}
-        - {x: -43.5, y: -44.5}
-        - {x: -850.5, y: -410.5}
-        - {x: -840.6874, y: -766.24994}
-        - {x: -739.4374, y: -807.49994}
-        - {x: -260.5, y: -807.5}
-      tessellationDetail: 0
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: 7b37577709843c8b0800000000000000
-      internalID: -5133179364955556937
+      spriteID: 1070213f3b763afe0800000000000000
+      internalID: -1178984654866086143
       vertices: []
       indices: 
       edges: []
@@ -172,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e69b3b287d74bc444a8a6eeb38599b18
+    spriteID: 3d789508619824244930aaa240f337a9
     internalID: 0
     vertices: []
     indices: 
@@ -182,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ladlePot_0: -6955002086145552305
-      ladlePot_1: -5133179364955556937
+      upgradeCardBtn_0: -2169263384944866927
+      upgradeCardBtn_1: -1178984654866086143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
