@@ -14,10 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Root
   itemName: Root
-  description: 
+  description: Commonly regarded as a parasite. To grow, it rapidly absorbs surrounding
+    magic, sometimes cultivated intentionally.
   image: {fileID: 21300000, guid: 7e33bf16b31577048ae614fd0d85c891, type: 3}
+  plantStage1: {fileID: 0}
+  PlantStage2: {fileID: 0}
+  PlantStage3: {fileID: 0}
   type: 0
   actionType: 1
   stackable: 1
   manaCost: 0
   sellValue: 0
+  associatedCard: {fileID: 0}
+  effectToTrigger: 0

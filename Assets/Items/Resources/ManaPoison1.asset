@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
+  m_Name: ManaPoison1
+  m_EditorClassIdentifier: 
+  id: ManaPoison1
+  itemName: ManaPoison1
+  description: Once served in confessionals, so that truth might flow more clearly.
+  image: {fileID: 4377374201285388753, guid: ba5e16f6ca40d6b4a82a2cbe3fe01b42, type: 3}
+  plantStage1: {fileID: 0}
+  PlantStage2: {fileID: 0}
+  PlantStage3: {fileID: 0}
+  type: 1
+  actionType: 0
+  stackable: 1
+  manaCost: 0
+  sellValue: 0
+  associatedCard: {fileID: 0}
+  effectToTrigger: 8

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
+  m_Name: ManaPoison2
+  m_EditorClassIdentifier: 
+  id: ManaPoison2
+  itemName: ManaPoison2
+  description: "Known as the \u201Cpotion of humility,\u201D reminding one that not
+    every power is truly theirs."
+  image: {fileID: -4398439922739899535, guid: d34b3ad71191ae447993cedac7b3ddb6, type: 3}
+  plantStage1: {fileID: 0}
+  PlantStage2: {fileID: 0}
+  PlantStage3: {fileID: 0}
+  type: 1
+  actionType: 0
+  stackable: 1
+  manaCost: 0
+  sellValue: 0
+  associatedCard: {fileID: 0}
+  effectToTrigger: 9

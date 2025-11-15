@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: Reggae Potion
+  m_Name: KwiatSeed
   m_EditorClassIdentifier: 
-  id: Reggae
-  itemName: Reggae Potion
-  description: 
-  image: {fileID: 21300000, guid: be83f0059d7b7144b92c811f3cf862e6, type: 3}
+  id: Flower Seed
+  itemName: Flower Seed
+  description: Grows near events that deeply move living beings. Its seeds resemble
+    eyes watching their surroundings.
+  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
-  type: 1
-  actionType: 0
+  type: 2
+  actionType: 2
   stackable: 1
   manaCost: 0
   sellValue: 0
-  associatedCard: {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  effectToTrigger: 2
+  associatedCard: {fileID: 0}
+  effectToTrigger: 0

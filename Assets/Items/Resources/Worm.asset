@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
+  m_Name: Worm
+  m_EditorClassIdentifier: 
+  id: Worm
+  itemName: Worm
+  description: "It doesn\u2019t follow a classic life cycle. When it dies, it leaves
+    behind hollow stems with dried slime."
+  image: {fileID: 1049565823437819117, guid: dc96732a870bda04b8c929d351ee524f, type: 3}
+  plantStage1: {fileID: 0}
+  PlantStage2: {fileID: 0}
+  PlantStage3: {fileID: 0}
+  type: 0
+  actionType: 1
+  stackable: 1
+  manaCost: 0
+  sellValue: 0
+  associatedCard: {fileID: 0}
+  effectToTrigger: 0

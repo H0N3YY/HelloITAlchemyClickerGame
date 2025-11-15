@@ -14,10 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Dust
   itemName: Dust
-  description: Trea
+  description: Forms in places saturated with life energy. Used in crafting magical
+    tools. Once dust - now a precious mineral.
   image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
+  plantStage1: {fileID: 0}
+  PlantStage2: {fileID: 0}
+  PlantStage3: {fileID: 0}
   type: 0
   actionType: 1
   stackable: 1
   manaCost: 0
   sellValue: 0
+  associatedCard: {fileID: 0}
+  effectToTrigger: 0

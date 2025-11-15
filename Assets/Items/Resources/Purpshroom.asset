@@ -14,10 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Purpshroom
   itemName: Purpshroom
-  description: 
+  description: Appears where emotions were intense and sincere. Considered a harbinger
+    of change - proof to some that the living world is not the only one watching.
   image: {fileID: 21300000, guid: e196b12d3e1754d4eb050447fa3b2d54, type: 3}
+  plantStage1: {fileID: 0}
+  PlantStage2: {fileID: 0}
+  PlantStage3: {fileID: 0}
   type: 0
   actionType: 1
   stackable: 1
   manaCost: 0
   sellValue: 0
+  associatedCard: {fileID: 0}
+  effectToTrigger: 0
