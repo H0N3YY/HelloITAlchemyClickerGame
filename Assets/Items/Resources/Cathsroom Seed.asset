@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: SampleSeed
+  m_Name: Cathsroom Seed
   m_EditorClassIdentifier: 
-  id: SampleSeed
-  itemName: SampleSeed
-  description: 
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
+  id: Cathsroom Seed
+  itemName: Cathsroom Seed
+  description: Though a plant, it reacts to the presence of living beings. It is
+    said to grow faster near children and wild animals.
+  image: {fileID: 0}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
