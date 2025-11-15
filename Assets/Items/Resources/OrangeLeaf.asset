@@ -14,10 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: OrangeLeaf
   itemName: OrangeLeaf
-  description: 
+  description: This plant often grows where magic has left an unnatural trace. Its
+    tissues are as brittle as ash.
   image: {fileID: 21300000, guid: 3372846e3a341db42889ae13d0e1f7aa, type: 3}
+  plantStage1: {fileID: 0}
+  PlantStage2: {fileID: 0}
+  PlantStage3: {fileID: 0}
   type: 0
   actionType: 1
   stackable: 1
   manaCost: 0
   sellValue: 0
+  associatedCard: {fileID: 0}
+  effectToTrigger: 0

@@ -2564,7 +2564,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A material born from coal, altered by specific conditions to gain magical
+    properties.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -3131,7 +3132,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A popular village decoration. During the Festivals of the God of Magic,
+    it illuminates squares, rooftops, and altars.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -3267,7 +3269,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: Infused with spiritual energy, it is a replica of an artifact from the
+    Great Temple. Traps nightmares and lets visions pass through.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -4720,7 +4723,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sdsdsadsajdsauidsakdjhdjksahdksahdjksahdkjhsakjdhsakjdhsakjhdsakjhdksahdksahdsajkdskjhadjkhsajkdhsakjhdjksahdjksahdjksahkjdhsadjksahdsa
+  m_text: Though humble, it proves a high level of science - its makers must possess
+    advanced chemical knowledge and a developed hygiene system.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -11093,7 +11097,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A carrier of memories and data. Used to record recollections; some believe
+    it can also steal or erase them.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -14236,7 +14241,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A multifunctional artifact aiding chemical, mechanical, and magical processes.
+    Accelerates reactions, purifies essences, and some claim it reveals the very
+    structure of reality.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -17603,7 +17610,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sdsdsadsajdsauidsakdjhdjksahdksahdjksahdkjhsakjdhsakjdhsakjhdsakjhdksahdksahdsajkdskjhadjkhsajkdhsakjhdjksahdjksahdjksahkjdhsadjksahdsa
+  m_text: Standard gear for mages and alchemists; the necklace protects against harmful
+    mana emissions from magical tools.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -18977,7 +18985,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: Regulates energy flow and prevents overloads. A vital part of any serious
+    magical installation - especially when working with enchanted cores.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -20677,7 +20686,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A symbol of daily death and a reminder that life often ends before healing
+    begins.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -21119,9 +21129,39 @@ MonoBehaviour:
   - ingredient1: {fileID: 11400000, guid: 46484083d66c1794fb10923b385de285, type: 2}
     ingredient2: {fileID: 11400000, guid: 977ee0dd92ae46a4c83f442d92cd52d2, type: 2}
     result: {fileID: 11400000, guid: e03610dfc1b60a142840b3efd76ec92f, type: 2}
-  - ingredient1: {fileID: 11400000, guid: 46484083d66c1794fb10923b385de285, type: 2}
-    ingredient2: {fileID: 11400000, guid: 977ee0dd92ae46a4c83f442d92cd52d2, type: 2}
-    result: {fileID: 11400000, guid: e03610dfc1b60a142840b3efd76ec92f, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
+    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
+    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
 --- !u!1001 &1599919484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21709,7 +21749,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: An inseparable part of moving out. With so many around, they always find
+    a use - for example, when a table leg is uneven.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -24187,7 +24228,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A versatile defense ward that repels intruders and blocks external magic.
+    Commonly placed around homes and bedrooms.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -24764,7 +24806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A traditional present passed by the elders to families of newly adult descendants.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -26758,7 +26800,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: A magical book storing vast amounts of knowledge, spells, and memories.
+    The essential tool of every scholar.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -26969,7 +27012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsakjdjlksajdwqojdsaoxlkjcljcxzlcjzljckxlzjclxzjcklxz
+  m_text: Modest yet indispensable; the most widespread means of illumination.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}

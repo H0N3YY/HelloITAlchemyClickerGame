@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: MetalPotion
+  m_Name: ManaBoost3
   m_EditorClassIdentifier: 
-  id: 'Metal '
-  itemName: Metal Potion
-  description: Often drunk before duels and street fights to boost courage. Protects
-    the voice from strain.
-  image: {fileID: 21300000, guid: 00c14178fa9411642a25c538e27caa8c, type: 3}
+  id: ManaBoost3
+  itemName: ManaBoost3
+  description: Old songs tell that it could bring mortals to a state where they understood
+    the nature of mana.
+  image: {fileID: 21300000, guid: 116edb73a195c3047b4ff7e48da87128, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -26,4 +26,4 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
-  effectToTrigger: 3
+  effectToTrigger: 16

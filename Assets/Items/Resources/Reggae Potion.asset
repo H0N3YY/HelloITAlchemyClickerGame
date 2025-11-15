@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Reggae
   itemName: Reggae Potion
-  description: 
+  description: A symbol of love and tranquility; its scent has intoxicating, relaxing
+    qualities.
   image: {fileID: 21300000, guid: be83f0059d7b7144b92c811f3cf862e6, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
