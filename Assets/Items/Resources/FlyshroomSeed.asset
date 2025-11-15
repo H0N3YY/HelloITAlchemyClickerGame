@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: Dust Seed
+  m_Name: FlyshroomSeed
   m_EditorClassIdentifier: 
-  id: SampleSeed
-  itemName: SampleSeed
-  description: Forms in places saturated with life energy. Used in crafting magical
-    tools. Once dust - now a precious mineral.
+  id: Flyshroom Seed
+  itemName: Flyshroom Seed
+  description: "Grows near sounds and vibrations. Some believe its spores \u201Cdance\u201D
+    to the rhythm of music."
   image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}

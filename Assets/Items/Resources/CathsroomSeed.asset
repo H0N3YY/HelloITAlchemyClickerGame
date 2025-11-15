@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: Unstable Potion
+  m_Name: CathsroomSeed
   m_EditorClassIdentifier: 
-  id: Unstable
-  itemName: Unstable Potion
-  description: The ingredients combine unpredictably, and depending on the time of
-    day, may produce wildly different effects.
+  id: Cathsroom Seed
+  itemName: Cathsroom Seed
+  description: Though a plant, it reacts to the presence of living beings. It is
+    said to grow faster near children and wild animals.
   image: {fileID: 0}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
-  type: 0
-  actionType: 0
+  type: 2
+  actionType: 2
   stackable: 1
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
-  effectToTrigger: 5
+  effectToTrigger: 0

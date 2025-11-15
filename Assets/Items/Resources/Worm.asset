@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8187d9ef8f16c2408fd7d7b180c5b09, type: 3}
-  m_Name: Root Seed
+  m_Name: Worm
   m_EditorClassIdentifier: 
-  id: Root Seed
-  itemName: Root Seed
-  description: Commonly regarded as a parasite. To grow, it rapidly absorbs surrounding
-    magic, sometimes cultivated intentionally.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
+  id: Worm
+  itemName: Worm
+  description: "It doesn\u2019t follow a classic life cycle. When it dies, it leaves
+    behind hollow stems with dried slime."
+  image: {fileID: 1049565823437819117, guid: dc96732a870bda04b8c929d351ee524f, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
-  type: 2
-  actionType: 2
+  type: 0
+  actionType: 1
   stackable: 1
   manaCost: 0
   sellValue: 0
