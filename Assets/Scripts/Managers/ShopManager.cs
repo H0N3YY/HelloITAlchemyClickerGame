@@ -18,7 +18,11 @@ public class ShopManager : MonoBehaviour
 
     public magicBallScript manaManager;
     public Transform inventoryParent;
-
+    void Start()
+    {
+        while (FindEmptySlot() != null)
+            SpawnRandomItem();
+    }
     public void SpawnRandomItem()
     {
         if (possibleItems == null || possibleItems.Count == 0)
@@ -49,7 +53,7 @@ public class ShopManager : MonoBehaviour
         clickHandler.Initialise(randomItem, manaManager, inventoryParent, itemPrefab);
     }
 
-    private Transform FindEmptySlot()
+    public Transform FindEmptySlot()
     {
         foreach (Transform slot in shopSlots)
         {
