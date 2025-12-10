@@ -15,5 +15,5 @@ MonoBehaviour:
   id: C1
   itemName: Cardnr1
   artwork: {fileID: 5798819423225328614, guid: 0e60dbe42c34af546a9099c62430c229, type: 3}
-  isUnlocked: 0
-  firstTimeObtained: 1
+  isUnlocked: 1
+  firstTimeObtained: 0
