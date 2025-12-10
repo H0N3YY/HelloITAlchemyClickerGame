@@ -5,9 +5,15 @@ using UnityEngine.UI;
 
 public class PlantGrowth : MonoBehaviour
 {
-    [Header("Gwowth Stages Sprites")]
+    [Header("Growth Stages Sprites")]
     public List<Sprite> growthStages;
-    [Header("Plant Visuals (SpriteRenderer)")]
+
+    [Header("Plant Visuals (UI Image)")]
+    [Tooltip("UI Image used to display plant stages (enable Preserve Aspect on this).")]
+    public Image plantVisualsImage;
+
+    [Header("Plant Visuals (SpriteRenderer) - optional")]
+    [Tooltip("Optional SpriteRenderer for world-space plants.")]
     public SpriteRenderer plantVisualsRenderer;
 
     public GameObject draggableItemPrefab;
@@ -16,14 +22,16 @@ public class PlantGrowth : MonoBehaviour
     public Transform spawnPoint;
 
     [Header("Growth Interval")]
-    [Header("Equipment")]
-    public Transform inventoryParent;
     public float growthInterval = 20f;
 
+    [Header("Equipment")]
+    public Transform inventoryParent;
+
+    // Optional components on the same GameObject (fallbacks)
     private Image plantImage;
     private SpriteRenderer plantRenderer;
-    private ScriptableItem plantedItem;
 
+    private ScriptableItem plantedItem;
 
     private int currentStage = 0;
     private bool isReadyToHarvest = false;
@@ -31,34 +39,67 @@ public class PlantGrowth : MonoBehaviour
 
     private void Awake()
     {
-
+        // Fallback components on the same GameObject
         plantImage = GetComponent<Image>();
         plantRenderer = GetComponent<SpriteRenderer>();
     }
-    public void SetPlantedItem(ScriptableItem item)
-{
-    plantedItem = item;
-}
 
+    public void SetPlantedItem(ScriptableItem item)
+    {
+        // Remember which seed was planted
+        plantedItem = item;
+
+        // Make sure the list exists
+        if (growthStages == null)
+            growthStages = new List<Sprite>();
+        else
+            growthStages.Clear();
+
+        // Fill growth stages from ScriptableItem
+        if (item.plantStage1 != null)
+            growthStages.Add(item.plantStage1);
+
+        if (item.PlantStage2 != null)
+            growthStages.Add(item.PlantStage2);
+
+        if (item.PlantStage3 != null)
+            growthStages.Add(item.PlantStage3);
+
+        if (growthStages.Count == 0)
+        {
+            Debug.LogWarning($"Seed {item.itemName} has no plant stage sprites assigned!");
+        }
+    }
 
     public void StartGrowth()
-{
-   
-    if (growthCoroutine != null)
     {
-        StopCoroutine(growthCoroutine);
+        if (growthCoroutine != null)
+        {
+            StopCoroutine(growthCoroutine);
+        }
+
+        isReadyToHarvest = false;
+        currentStage = 0;
+
+        // Make sure visuals are visible
+        if (plantVisualsImage != null && !plantVisualsImage.gameObject.activeSelf)
+        {
+            plantVisualsImage.gameObject.SetActive(true);
+        }
+        else if (plantVisualsRenderer != null && !plantVisualsRenderer.gameObject.activeSelf)
+        {
+            plantVisualsRenderer.gameObject.SetActive(true);
+        }
+
+        // Safety check: make sure we actually have some growth stages
+        if (growthStages == null || growthStages.Count == 0)
+        {
+            Debug.LogWarning("Growth started, but growthStages list is empty. Did you call SetPlantedItem?");
+            return;
+        }
+
+        growthCoroutine = StartCoroutine(GrowthCycle());
     }
-
-    isReadyToHarvest = false;
-    currentStage = 0;
-
-    if (plantVisualsRenderer != null && !plantVisualsRenderer.gameObject.activeSelf)
-    {
-        plantVisualsRenderer.gameObject.SetActive(true);
-    }
-
-    growthCoroutine = StartCoroutine(GrowthCycle());
-}
 
     private IEnumerator GrowthCycle()
     {
@@ -75,60 +116,43 @@ public class PlantGrowth : MonoBehaviour
             yield return new WaitForSeconds(growthInterval);
         }
 
-
         isReadyToHarvest = true;
         Debug.Log("Roślinka jest gotowa do zebrania!");
     }
 
-    // private void SetSprite(Sprite newSprite)
-    // {
-    //     if (plantImage != null)
-    //     {
-    //         plantImage.sprite = newSprite;
-    //     }
-    //     else if (plantRenderer != null)
-    //     {
-    //         plantRenderer.sprite = newSprite;
-    //     }
-    //     else
-    //     {
-    //         Debug.LogWarning("Nie znaleziono Image ani SpriteRenderer!");
-    //     }
-    // }
-
     private void SetSprite(Sprite newSprite)
     {
-
-        if (plantVisualsRenderer != null)
+        // Preferred: dedicated UI Image
+        if (plantVisualsImage != null)
         {
-
-            Color stageColor = Color.white;
-
-            if (currentStage == 0)
-                stageColor = Color.green;
-            else if (currentStage == 1)
-                stageColor = Color.yellow;
-            else if (currentStage == 2)
-                stageColor = Color.red;
-
-
-            plantVisualsRenderer.color = stageColor;
-            Debug.Log($"Zmiana koloru na {stageColor} dla etapu {currentStage + 1}");
+            plantVisualsImage.sprite = newSprite;
+            plantVisualsImage.preserveAspect = true; // make sure aspect is preserved
         }
+        // Fallback: dedicated SpriteRenderer
+        else if (plantVisualsRenderer != null)
+        {
+            plantVisualsRenderer.sprite = newSprite;
+        }
+        // Fallback: Image on the same GameObject
         else if (plantImage != null)
         {
             plantImage.sprite = newSprite;
         }
+        // Fallback: SpriteRenderer on the same GameObject
         else if (plantRenderer != null)
         {
             plantRenderer.sprite = newSprite;
         }
         else
         {
-            Debug.LogWarning("Nie znaleziono komponentu");
+            Debug.LogWarning("No visual component found to set sprite on the plant.");
+        }
+
+        if (newSprite != null)
+        {
+            Debug.Log($"Set plant sprite to: {newSprite.name} (stage {currentStage + 1})");
         }
     }
-
 
     public void Harvest()
     {
@@ -140,38 +164,37 @@ public class PlantGrowth : MonoBehaviour
 
         Debug.Log("Zbieram roślinkę");
 
-
-        //gameObject.SetActive(false);
-        if (plantVisualsRenderer != null)
+        // Hide plant visuals
+        if (plantVisualsImage != null)
+            plantVisualsImage.gameObject.SetActive(false);
+        else if (plantVisualsRenderer != null)
             plantVisualsRenderer.gameObject.SetActive(false);
 
-
         if (plantedItem != null && inventoryParent != null)
-{
-    foreach (Transform slot in inventoryParent)
-    {
-        if (slot.childCount == 0)
         {
-            GameObject newItem = Instantiate(draggableItemPrefab, slot);
-            newItem.transform.localPosition = Vector3.zero;
-
-            // Ustaw item + count = 2
-            DragableItem di = newItem.GetComponent<DragableItem>();
-            if (di != null)
+            foreach (Transform slot in inventoryParent)
             {
-                di.item = plantedItem;
-                di.count = 2;
-                di.InitialiseItem(plantedItem); 
-            }
+                if (slot.childCount == 0)
+                {
+                    GameObject newItem = Instantiate(draggableItemPrefab, slot);
+                    newItem.transform.localPosition = Vector3.zero;
 
-            Debug.Log("Zebrano roślinkę, dodano item z count = 2");
-            break;
+                    // Ustaw item + count = 2
+                    DragableItem di = newItem.GetComponent<DragableItem>();
+                    if (di != null)
+                    {
+                        di.item = plantedItem;
+                        di.count = 2;
+                        di.InitialiseItem(plantedItem);
+                    }
+
+                    Debug.Log("Zebrano roślinkę, dodano item z count = 2");
+                    break;
+                }
+            }
         }
     }
-}
 
-
-    }
     private void OnMouseDown()
     {
         if (!isReadyToHarvest)
