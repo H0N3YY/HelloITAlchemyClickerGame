@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Flyshroom Seed
   description: "Grows near sounds and vibrations. Some believe its spores \u201Cdance\u201D
     to the rhythm of music."
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: a64673cae5eaec34a97c232948a19c60, type: 3}
+  plantStage1: {fileID: 5733877020267098252, guid: 429809b3516a39c4cabf639f1a74a542, type: 3}
+  PlantStage2: {fileID: 6527641963291575741, guid: 429809b3516a39c4cabf639f1a74a542, type: 3}
+  PlantStage3: {fileID: 1656795064685830110, guid: 429809b3516a39c4cabf639f1a74a542, type: 3}
   type: 2
   actionType: 2
   stackable: 1

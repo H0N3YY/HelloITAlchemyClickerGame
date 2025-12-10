@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: CurveyLeaf Seed
   description: Often planted in places of focus and human temples. Said to respond
     to unspoken prayers.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: 4a159b102fec35b43a7ed06d7c6dafa4, type: 3}
+  plantStage1: {fileID: 5085539840573747726, guid: e2529920be3af5448a85aa0309e112f9, type: 3}
+  PlantStage2: {fileID: 6835389158626419787, guid: e2529920be3af5448a85aa0309e112f9, type: 3}
+  PlantStage3: {fileID: -1570375417823206343, guid: e2529920be3af5448a85aa0309e112f9, type: 3}
   type: 2
   actionType: 2
   stackable: 1

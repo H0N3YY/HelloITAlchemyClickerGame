@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: OrangeLeaf Seed
   description: This plant often grows where magic has left an unnatural trace. Its
     tissues are as brittle as ash.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: 16d6f06b1caa45549bced7a16495fcd8, type: 3}
+  plantStage1: {fileID: -6946550277775851152, guid: 564eb4069ca70544ab0bc7f947243b5b, type: 3}
+  PlantStage2: {fileID: 2875662159716928016, guid: 564eb4069ca70544ab0bc7f947243b5b, type: 3}
+  PlantStage3: {fileID: 7603733501139793368, guid: 564eb4069ca70544ab0bc7f947243b5b, type: 3}
   type: 2
   actionType: 2
   stackable: 1

@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Ponk Seed
   description: A flower that rarely blooms, yet highly resilient. Commonly used in
     daily elixirs and herbal teas.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: d6866343d57352744b10245ce91fb313, type: 3}
+  plantStage1: {fileID: 1002312713051860156, guid: 7d77607a633ba21419e0e64eb521e423, type: 3}
+  PlantStage2: {fileID: -8162102569741700117, guid: 7d77607a633ba21419e0e64eb521e423, type: 3}
+  PlantStage3: {fileID: -9109020789535952554, guid: 7d77607a633ba21419e0e64eb521e423, type: 3}
   type: 2
   actionType: 2
   stackable: 1

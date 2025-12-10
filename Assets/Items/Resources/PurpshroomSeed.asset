@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Purpshroom Seed
   description: Appears where emotions were intense and sincere. Considered a harbinger
     of change - proof to some that the living world is not the only one watching.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: a7de0054251b8204ea0dce30af1142e0, type: 3}
+  plantStage1: {fileID: -3686236692232062762, guid: 62206e18bdcf8f044b99495688203d30, type: 3}
+  PlantStage2: {fileID: -4943824493736706768, guid: 62206e18bdcf8f044b99495688203d30, type: 3}
+  PlantStage3: {fileID: 6391422124130103074, guid: 62206e18bdcf8f044b99495688203d30, type: 3}
   type: 2
   actionType: 2
   stackable: 1

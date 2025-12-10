@@ -120,7 +120,7 @@ TextureImporter:
         width: 175
         height: 231
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -142,7 +142,7 @@ TextureImporter:
         width: 185
         height: 276
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,37 +156,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloudFlower_2
-      rect:
-        serializedVersion: 2
-        x: 497
-        y: 135
-        width: 35
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e1c7a285dac460b0800000000000000
-      internalID: -5736237006994292253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: cloudFlower_3
       rect:
         serializedVersion: 2
-        x: 519
+        x: 495
         y: 18
-        width: 247
+        width: 271
         height: 334
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,33 +177,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: cloudFlower_4
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 93
-        width: 34
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09ab2ba31385cdde0800000000000000
-      internalID: -1307072823382852976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 748cdf246a9edbe44aac740efe3e0594
     internalID: 0
     vertices: []
     indices: 

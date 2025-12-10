@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Leaf Seed
   description: This plant has never appeared in this region before. Its properties
     would raise suspicion even among experienced herbalists.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: 08d6c853e41473c449b06a6327378cdd, type: 3}
+  plantStage1: {fileID: 5698780243302329749, guid: 013dc25f72368cd4c915a46934a3c99c, type: 3}
+  PlantStage2: {fileID: 6644827989307769909, guid: 013dc25f72368cd4c915a46934a3c99c, type: 3}
+  PlantStage3: {fileID: 3772724449717250022, guid: 013dc25f72368cd4c915a46934a3c99c, type: 3}
   type: 2
   actionType: 2
   stackable: 1

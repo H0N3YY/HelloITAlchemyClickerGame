@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: ChickenFoot Seed
   description: An edible plant with a unique texture. Used as a meat substitute in
     humble rural and monastic cuisine.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: 89bd9051b543a794b97975ddc64d07d6, type: 3}
+  plantStage1: {fileID: 696920634366963725, guid: c2fa24c8eee644c418d57aabb1e79132, type: 3}
+  PlantStage2: {fileID: 5410492252134725944, guid: c2fa24c8eee644c418d57aabb1e79132, type: 3}
+  PlantStage3: {fileID: 7316033689494539191, guid: c2fa24c8eee644c418d57aabb1e79132, type: 3}
   type: 2
   actionType: 2
   stackable: 1

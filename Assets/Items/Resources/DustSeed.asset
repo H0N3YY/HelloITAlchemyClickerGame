@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: SampleSeed
   description: Forms in places saturated with life energy. Used in crafting magical
     tools. Once dust - now a precious mineral.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: 7b05243b48501674dbd6a3ee16b2e98b, type: 3}
+  plantStage1: {fileID: 1526009844154989863, guid: b28a977c021cad74387c766b4cf4647c, type: 3}
+  PlantStage2: {fileID: 2720911201185293129, guid: b28a977c021cad74387c766b4cf4647c, type: 3}
+  PlantStage3: {fileID: -7550574807322911053, guid: b28a977c021cad74387c766b4cf4647c, type: 3}
   type: 2
   actionType: 2
   stackable: 1

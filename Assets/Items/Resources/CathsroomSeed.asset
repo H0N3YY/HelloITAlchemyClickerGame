@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Cathsroom Seed
   description: Though a plant, it reacts to the presence of living beings. It is
     said to grow faster near children and wild animals.
-  image: {fileID: 0}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: d2d4cb4b1e2140b479d4aa213e579313, type: 3}
+  plantStage1: {fileID: 5755627141787263857, guid: 4ca524fbc8f6ed345b0b218bc7f1144f, type: 3}
+  PlantStage2: {fileID: -868262999436201123, guid: 4ca524fbc8f6ed345b0b218bc7f1144f, type: 3}
+  PlantStage3: {fileID: -1650424559971189214, guid: 4ca524fbc8f6ed345b0b218bc7f1144f, type: 3}
   type: 2
   actionType: 2
   stackable: 1

@@ -121,9 +121,9 @@ TextureImporter:
         x: 14
         y: 19
         width: 217
-        height: 199
+        height: 226
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,28 +137,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: honeyPlant_1
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 204
-        width: 35
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7db5c47c9e9504250800000000000000
-      internalID: 5926835970225494999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: honeyPlant_2
       rect:
         serializedVersion: 2
@@ -167,7 +145,7 @@ TextureImporter:
         width: 239
         height: 301
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,7 +167,7 @@ TextureImporter:
         width: 257
         height: 305
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,55 +180,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: honeyPlant_4
-      rect:
-        serializedVersion: 2
-        x: 745
-        y: 195
-        width: 29
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7cf51dfee57577f0800000000000000
-      internalID: -615456104757461892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: honeyPlant_5
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 96
-        width: 28
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 750d6cecf20748e00800000000000000
-      internalID: 1046084364091707479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 60526070e26273243aef6dca9edd12c5
     internalID: 0
     vertices: []
     indices: 

@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Honey Seed
   description: A common substance used to sweeten food and drinks. Found in most
     homes due to easy pot cultivation.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: 5e3ffdd78ff88c8408ccce37a2f6e8f4, type: 3}
+  plantStage1: {fileID: 3142551944033905228, guid: ef45e6ebad9259f419322eefa3f02718, type: 3}
+  PlantStage2: {fileID: 9188279920326125709, guid: ef45e6ebad9259f419322eefa3f02718, type: 3}
+  PlantStage3: {fileID: 7278466797687642034, guid: ef45e6ebad9259f419322eefa3f02718, type: 3}
   type: 2
   actionType: 2
   stackable: 1

@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Flower Seed
   description: Grows near events that deeply move living beings. Its seeds resemble
     eyes watching their surroundings.
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
-  plantStage1: {fileID: 0}
-  PlantStage2: {fileID: 0}
-  PlantStage3: {fileID: 0}
+  image: {fileID: 21300000, guid: ac0c87c3f70606f41ac9dcbda760ecff, type: 3}
+  plantStage1: {fileID: -3388558052920992742, guid: f29b037787b07e3409897661901e7938, type: 3}
+  PlantStage2: {fileID: 3616477211403510292, guid: f29b037787b07e3409897661901e7938, type: 3}
+  PlantStage3: {fileID: 5339334408001130278, guid: f29b037787b07e3409897661901e7938, type: 3}
   type: 2
   actionType: 2
   stackable: 1
