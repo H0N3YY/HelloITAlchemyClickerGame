@@ -9,6 +9,8 @@ public class BuyFunction : MonoBehaviour, IPointerClickHandler
     private Transform inventoryParent;
     private GameObject draggableItemPrefab;
     private TextMeshProUGUI priceText;
+    private GameObject shopManager;
+    
 
     public void Initialise(ScriptableItem newItem, magicBallScript manaSource, Transform inventoryParentTarget, GameObject itemPrefab)
     {
@@ -66,7 +68,16 @@ public class BuyFunction : MonoBehaviour, IPointerClickHandler
                     }
                 }
 
-                Destroy(gameObject); // usuwamy kupiony przedmiot ze sklepu
+                Destroy(gameObject); // usuwamy kupiony przedmiot ze sklepu 
+                shopManager = GameObject.Find("ShopManager");
+                if (shopManager != null)
+                {
+                    ShopManager sm = shopManager.GetComponent<ShopManager>();
+                    if (sm != null)
+                    {
+                        sm.SpawnRandomItem();
+                    }
+                }
             }
             else
             {

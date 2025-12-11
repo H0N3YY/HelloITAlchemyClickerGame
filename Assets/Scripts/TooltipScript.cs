@@ -1,26 +1,38 @@
 using System;
 using UnityEngine;
 using TMPro;
-
-public class Tooltip : MonoBehaviour
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private static Tooltip instance;
     public static Tooltip Instance => instance;
+
+
     [SerializeField] private Canvas canvas;
-
-
     [SerializeField] private RectTransform canvasRectTransform;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private RectTransform backgroundRectTransform;
+
+
+    [SerializeField] private PotionManager potionManager;
+     [SerializeField] private Button useButton;
+    private DragableItem currentItem;
+
     private RectTransform rectTransform;
+    private bool isPointerOver = false;
     private void Awake()
     {
         instance = this;
         rectTransform = transform.GetComponent<RectTransform>();
 
         SetText("Item Name");
+
+        if (useButton) useButton.onClick.RemoveAllListeners();
+
     }
+    
 
     public void SetText(string tooltipText)
     {
@@ -54,6 +66,88 @@ public class Tooltip : MonoBehaviour
 
 
     // Tooltip to slot Script
+     public void OnPointerEnter(PointerEventData eventData)
+    {
+        isPointerOver = true;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isPointerOver = false;
+        HideIfNeeded();
+    }
+    public void HideIfNeeded()
+    {
+        if (!isPointerOver)
+        {
+            gameObject.SetActive(false);
+
+            if (currentItem != null)
+            {
+                currentItem.ImageCleaner();
+                currentItem = null;
+            }
+        }
+    }
+    public void ShowForItem(DragableItem drag)
+{
+    currentItem = drag;
+    gameObject.SetActive(true);
+
+    var si = GetScriptable(drag);
+
+    // Ustaw UI z danych itemu
+    if (si != null)
+    {
+        SetText(si.itemName);
+        Setdescription(si.description);
+    }
+
+    if (useButton != null)
+    {
+        useButton.onClick.RemoveAllListeners();
+
+        bool canUse = (si != null && si.effectToTrigger != PotionEffect.None);
+        useButton.gameObject.SetActive(canUse);
+        useButton.interactable = canUse;
+
+        if (canUse)
+        {
+            useButton.onClick.AddListener(() =>
+            {
+                if (potionManager == null)
+                {
+                    Debug.LogWarning("Tooltip: PotionManager is not assigned.");
+                    return;
+                }
+
+                // 1) Użyj itemu (efekt + karta on-first-use)
+                potionManager.UseItem(si);
+
+                // 2) Zapamiętaj obiekt slota do usunięcia
+                var toDestroy = currentItem;
+
+                // 3) Schowaj tooltip i wyczyść slot (wywoła ImageCleaner)
+                isPointerOver = false;
+                HideIfNeeded();
+
+                // 4) Usuń obiekt z ekwipunku (jeśli nie obsługujesz stacków)
+                if (toDestroy != null)
+                    Destroy(toDestroy.gameObject);
+            });
+        }
+    }
+    else
+    {
+        Debug.LogWarning("Tooltip: Use Button reference is missing in Inspector.");
+    }
+}
+
+
+private ScriptableItem GetScriptable(DragableItem drag)
+{
+    return drag != null ? drag.item : null;
+}
+
     public void AttachToSlot(RectTransform slotRectTransform)
     {
         Vector3[] slotCorners = new Vector3[4];
@@ -106,4 +200,8 @@ public class Tooltip : MonoBehaviour
 
 
 
+}
+public class DragableItemData : MonoBehaviour
+{
+    public ScriptableItem scriptableItem;
 }
