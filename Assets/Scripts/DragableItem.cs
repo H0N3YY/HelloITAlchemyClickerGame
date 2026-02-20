@@ -38,7 +38,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         image.sprite = newItem.image;
         if (valueText != null)
-        valueText.text = newItem.sellValue.ToString();
+            valueText.text = newItem.sellValue.ToString();
         RefreshCount();
     }
     public void RefreshCount()
@@ -59,28 +59,28 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             Debug.Log("Kursor najechał na item");
         }
     }
-public void OnPointerExit(PointerEventData eventData)
-{
-    if (inShop) return;
-
-    if (holdCoroutine != null)
+    public void OnPointerExit(PointerEventData eventData)
     {
-        StopCoroutine(holdCoroutine);
-        holdCoroutine = null;
-    }
+        if (inShop) return;
 
-    // jeśli kursor nad tooltipem, nie chowaj
-    if (eventData.pointerCurrentRaycast.gameObject != null &&
-        eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Tooltip>() != null)
-    {
-        Debug.Log("Kursor opuścił item, ale wszedł na tooltip");
-        return;
-    }
+        if (holdCoroutine != null)
+        {
+            StopCoroutine(holdCoroutine);
+            holdCoroutine = null;
+        }
 
-    Tooltip.Instance.HideIfNeeded();
-    ImageCleaner();
-    Debug.Log("Kursor opuścił item");
-}
+        // jeśli kursor nad tooltipem, nie chowaj
+        if (eventData.pointerCurrentRaycast.gameObject != null &&
+            eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Tooltip>() != null)
+        {
+            Debug.Log("Kursor opuścił item, ale wszedł na tooltip");
+            return;
+        }
+
+        Tooltip.Instance.HideIfNeeded();
+        ImageCleaner();
+        Debug.Log("Kursor opuścił item");
+    }
 
 
 
@@ -270,6 +270,15 @@ public void OnPointerExit(PointerEventData eventData)
             PlantGrowth plant = collision.gameObject.GetComponent<PlantGrowth>();
             if (plant != null)
             {
+                // ✅ najpierw sprawdzamy w PlantGrowth, czy ten item w ogóle można zasiać
+                if (!plant.CanPlant(this.item))
+                {
+                    Debug.Log("Ten item nie może być zasiany – wracam do inventory");
+                    ReturnToInventory();
+                    return;
+                }
+
+                // dopiero teraz faktycznie sadzimy
                 plant.SetPlantedItem(this.item);
 
                 if (plant.plantVisualsRenderer != null)
@@ -283,8 +292,6 @@ public void OnPointerExit(PointerEventData eventData)
                 {
                     count--;
                     RefreshCount();
-
-
                     ReturnToInventory();
                 }
                 else

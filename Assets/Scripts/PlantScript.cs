@@ -44,8 +44,38 @@ public class PlantGrowth : MonoBehaviour
         plantRenderer = GetComponent<SpriteRenderer>();
     }
 
+    public bool CanPlant(ScriptableItem item)
+    {
+        if (item == null)
+            return false;
+
+        if (item.actionType != ActionType.Plant)
+            return false;
+
+        if (item.type != ItemType.Seed)
+            return false;
+
+        return true;
+    }
+
     public void SetPlantedItem(ScriptableItem item)
     {
+        // Validate item before planting
+        if (!CanPlant(item))
+        {
+            if (item == null)
+            {
+                Debug.LogWarning("SetPlantedItem called with null item. Planting aborted.");
+            }
+            else
+            {
+                Debug.LogWarning($"Item '{item.itemName}' cannot be planted. " +
+                                 $"Required: type = Seed, actionType = Plant. " +
+                                 $"Got: type = {item.type}, actionType = {item.actionType}");
+            }
+            return;
+        }
+
         // Remember which seed was planted
         plantedItem = item;
 
@@ -70,7 +100,6 @@ public class PlantGrowth : MonoBehaviour
             Debug.LogWarning($"Seed {item.itemName} has no plant stage sprites assigned!");
         }
     }
-
     public void StartGrowth()
     {
         if (growthCoroutine != null)
