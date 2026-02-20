@@ -201,6 +201,21 @@ public class PlantGrowth : MonoBehaviour
 
         if (plantedItem != null && inventoryParent != null)
         {
+            // wybieramy, co ma wypaść po zebraniu
+            ScriptableItem rewardItem = plantedItem.harvestResultItem != null
+                ? plantedItem.harvestResultItem
+                : plantedItem; // fallback: jak nie ustawisz harvestResultItem, to dalej dropi sam siebie
+
+            int rewardCount = plantedItem.harvestResultCount > 0
+                ? plantedItem.harvestResultCount
+                : 1;
+
+            if (rewardItem == null)
+            {
+                Debug.LogWarning($"Plant '{plantedItem.itemName}' has no harvestResultItem set. No item will be spawned.");
+                return;
+            }
+
             foreach (Transform slot in inventoryParent)
             {
                 if (slot.childCount == 0)
@@ -208,16 +223,15 @@ public class PlantGrowth : MonoBehaviour
                     GameObject newItem = Instantiate(draggableItemPrefab, slot);
                     newItem.transform.localPosition = Vector3.zero;
 
-                    // Ustaw item + count = 2
                     DragableItem di = newItem.GetComponent<DragableItem>();
                     if (di != null)
                     {
-                        di.item = plantedItem;
-                        di.count = 2;
-                        di.InitialiseItem(plantedItem);
+                        di.item = rewardItem;
+                        di.count = rewardCount;
+                        di.InitialiseItem(rewardItem);
                     }
 
-                    Debug.Log("Zebrano roślinkę, dodano item z count = 2");
+                    Debug.Log($"Zebrano roślinkę, dodano item '{rewardItem.itemName}' x{rewardCount}");
                     break;
                 }
             }

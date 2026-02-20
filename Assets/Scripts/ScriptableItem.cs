@@ -25,6 +25,10 @@ public class ScriptableItem : ScriptableObject
     public int sellValue;
     public ScriptableCard associatedCard;
 
+    [Header("Plant / Harvest")]
+    public ScriptableItem harvestResultItem;
+    public int harvestResultCount = 2;
+
 
     [Header("Effect to trigger on use")]
     public PotionEffect effectToTrigger = PotionEffect.None;
