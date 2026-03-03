@@ -126,7 +126,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         if (inShop) return;
         // Drop
-        if (eventData.pointerEnter != null && eventData.pointerEnter.name == "Drop")
+        if (eventData.pointerEnter != null && eventData.pointerEnter.tag == "Drop")
         {
             bc2d.enabled = true;
             image.raycastTarget = true;
