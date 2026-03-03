@@ -11,7 +11,14 @@ public class ScriptableCard : ScriptableObject
     [Header("Card visuals")]
     public Sprite artwork;
 
+    public CardOrientation orientation = CardOrientation.Portrait;
+
     [Header("Logic properties")]
     public bool isUnlocked = false;
     public bool firstTimeObtained = true;
+}
+public enum CardOrientation
+{
+    Portrait,
+    Landscape
 }
