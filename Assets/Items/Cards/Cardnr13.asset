@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63080e6622460f44b96d34ed14ce5875, type: 3}
-  m_Name: Cardnr1
+  m_Name: Cardnr13
   m_EditorClassIdentifier: 
-  id: C1
-  itemName: Cardnr1
-  artwork: {fileID: 4200121352439859485, guid: 34cb647ac08cc534cbf4365a300527aa, type: 3}
+  id: C13
+  itemName: Cardnr13
+  artwork: {fileID: 4515054278792037285, guid: 397ed62177bcae6488d3c8293bdddf8d, type: 3}
   orientation: 0
   isUnlocked: 0
   firstTimeObtained: 1
