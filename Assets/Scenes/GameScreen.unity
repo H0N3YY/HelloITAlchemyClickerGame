@@ -1724,7 +1724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "P\u0142yn do szyb"
+  m_text: Windex
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -5375,7 +5375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Magiczne Ksi\u0119gi"
+  m_text: Enchanted Book
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0141adne \u015Awiate\u0142ka"
+  m_text: Gorgeous Lights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -6846,7 +6846,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Obrus od Babci
+  m_text: Grannies Tablecloth
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -8817,7 +8817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u015Awieca"
+  m_text: Candle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -22606,7 +22606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Okr\u0105g Runiczny"
+  m_text: Magic Circle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -27364,7 +27364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Katalizator Many
+  m_text: Mana Catalizator
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -28142,7 +28142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Magiczny Stabilizator
+  m_text: Magic Stabilisator
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
