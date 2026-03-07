@@ -1789,7 +1789,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.8680115, y: -1.361084, z: -1.2379913, w: 0}
+  m_margin: {x: 1.8680115, y: -1.361084, z: -0.16743469, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10811,7 +10811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0141apacz Koszmar\xF3w"
+  m_text: Dreamcatcher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -12907,7 +12907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zwoje przemiany
+  m_text: Scrolls
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -19738,7 +19738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kryszta\u0142owa Aura"
+  m_text: Crystal Shards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -20058,7 +20058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kamie\u0144 Filozoficzny"
+  m_text: Philosopher's Stone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -22218,7 +22218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "G\u0142owa Szkieleta"
+  m_text: Skull
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -25872,7 +25872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eteryczne Wzmocnienie
+  m_text: Etheric Enforcement
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
