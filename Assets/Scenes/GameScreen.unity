@@ -1645,7 +1645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &105643533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "P\u0142yn do szyb"
+  m_text: Windex
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -1789,7 +1789,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.8680115, y: -1.361084, z: -1.2379913, w: 0}
+  m_margin: {x: 1.8680115, y: -1.361084, z: -0.16743469, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3406,7 +3406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &343256148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5375,7 +5375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Magiczne Ksi\u0119gi"
+  m_text: Enchanted Book
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0141adne \u015Awiate\u0142ka"
+  m_text: Gorgeous Lights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -6846,7 +6846,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Obrus od Babci
+  m_text: Grannies Tablecloth
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -8817,7 +8817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u015Awieca"
+  m_text: Candle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -9271,7 +9271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &799741713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10811,7 +10811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0141apacz Koszmar\xF3w"
+  m_text: Dreamcatcher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -12907,7 +12907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zwoje przemiany
+  m_text: Scrolls
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -13349,7 +13349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.33285868, b: 0.33285868, a: 1}
+  m_Color: {r: 0.2509804, g: 0.18431373, b: 0.098039225, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14004,7 +14004,7 @@ GameObject:
   - component: {fileID: 1090120810}
   - component: {fileID: 1090120809}
   m_Layer: 5
-  m_Name: Card (1)
+  m_Name: Card2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16039,8 +16039,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1295.9609, y: 611.64}
+  m_AnchoredPosition: {x: 0.0025177002, y: 0}
+  m_SizeDelta: {x: 647.98, y: 611.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236650174
 MonoBehaviour:
@@ -17433,7 +17433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6603774, g: 0.17755428, b: 0.6433366, a: 1}
+  m_Color: {r: 0.3490566, g: 0.256473, b: 0.13665895, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19738,7 +19738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kryszta\u0142owa Aura"
+  m_text: Crystal Shards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -20058,7 +20058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kamie\u0144 Filozoficzny"
+  m_text: Philosopher's Stone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -22218,7 +22218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "G\u0142owa Szkieleta"
+  m_text: Skull
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -22315,7 +22315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1621800785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22392,19 +22392,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards:
+  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
   - {fileID: 11400000, guid: 91f90ae5ad734cf4caf0e157c367d38c, type: 2}
   - {fileID: 11400000, guid: ed0004ab8ecf4e84cbe048031805ea21, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
-  - {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
+  - {fileID: 11400000, guid: 5edf8c94689998d409410716968a3b9f, type: 2}
+  - {fileID: 11400000, guid: 10c8fc0c015118341b477ddf9f130c74, type: 2}
+  - {fileID: 11400000, guid: 076d2270558847344aa9b843a3d3fc6a, type: 2}
+  - {fileID: 11400000, guid: 0d36596756b567542a5b886be29afdc4, type: 2}
+  - {fileID: 11400000, guid: 6390575ccc27ba3459dca15c07b077c1, type: 2}
+  - {fileID: 11400000, guid: cc2a5908d62eb104e94e2642e792afc2, type: 2}
+  - {fileID: 11400000, guid: 91895ddee8ed05b4e80432e34e77be8e, type: 2}
+  - {fileID: 11400000, guid: c358cb36f18d3a54f955e5248d6054c7, type: 2}
+  - {fileID: 11400000, guid: 0f2419db02f9fba45be6f7218f02c9e9, type: 2}
+  - {fileID: 11400000, guid: 0617ac879ffb41147beb8cfe2079e86d, type: 2}
   doubleRoot: {fileID: 105643532}
   leftCardImage: {fileID: 1340705981}
   rightCardImage: {fileID: 1090120809}
@@ -22606,7 +22606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Okr\u0105g Runiczny"
+  m_text: Magic Circle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -25872,7 +25872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eteryczne Wzmocnienie
+  m_text: Etheric Enforcement
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -27364,7 +27364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Katalizator Many
+  m_text: Mana Catalizator
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -27908,8 +27908,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1295.9609, y: 611.64}
+  m_AnchoredPosition: {x: -0.0025024, y: 0}
+  m_SizeDelta: {x: 647.97, y: 611.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2016218553
 MonoBehaviour:
@@ -28142,7 +28142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Magiczny Stabilizator
+  m_text: Magic Stabilisator
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
