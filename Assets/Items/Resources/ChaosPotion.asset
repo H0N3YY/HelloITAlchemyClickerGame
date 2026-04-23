@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Chaos Potion
   description: Always found on black markets. Rumors claim it is pure, untamed magic
     itself.
-  image: {fileID: 0}
+  image: {fileID: 6168983234077002592, guid: d7419e3431ea6534c8820aebeb9b7d19, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -26,4 +26,6 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
+  harvestResultItem: {fileID: 0}
+  harvestResultCount: 2
   effectToTrigger: 17
