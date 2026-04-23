@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Garden Spirit Potion
   description: "You\u2019ve never seen this potion before; something inside it seems
     to twist and grow."
-  image: {fileID: 21300000, guid: 7a4707269056d504fb6aa0db3c773a4c, type: 3}
+  image: {fileID: -3832669272075589270, guid: c812914729867404398a875dcc64ddd7, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -26,4 +26,6 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
+  harvestResultItem: {fileID: 0}
+  harvestResultCount: 2
   effectToTrigger: 0
