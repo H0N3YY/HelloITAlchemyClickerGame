@@ -99,7 +99,8 @@ public class GameManager : MonoBehaviour
                 data.upgrades.Add(new UpgradeSave
                 {
                     index = i,
-                    cost = u.cost
+                    cost = u.cost,
+                    isPurchased = u.isPurchased
                 });
             }
         }
@@ -243,6 +244,9 @@ public class GameManager : MonoBehaviour
                     magicBall.upgrades[i].cost = data.upgrades[i].cost;
                     if (magicBall.upgrades[i].priceText != null)
                         magicBall.upgrades[i].priceText.text = ((int)data.upgrades[i].cost).ToString();
+                    magicBall.upgrades[i].isPurchased = data.upgrades[i].isPurchased;
+                    if (magicBall.upgrades[i].upgradeImage != null)                        magicBall.upgrades[i].upgradeImage.SetActive(magicBall.upgrades[i].isPurchased);
+                    if (magicBall.upgrades[i].blockedImage != null)                        magicBall.upgrades[i].blockedImage.SetActive(!magicBall.upgrades[i].isPurchased);
                 }
             }
         }
