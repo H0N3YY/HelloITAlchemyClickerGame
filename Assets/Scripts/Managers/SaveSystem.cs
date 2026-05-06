@@ -11,8 +11,6 @@ public static class SaveSystem
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(path, json);
         Debug.Log("Zapisano grę: " + path);
-        Debug.Log($"[SAVE SYSTEM] Plants count: {(data.plants != null ? data.plants.Count : -1)}");
-        Debug.Log($"[SAVE SYSTEM] JSON:\n{json}");
     }
 
     public static SaveData LoadGame()

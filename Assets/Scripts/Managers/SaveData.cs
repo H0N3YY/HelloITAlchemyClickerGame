@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
 public class SaveData
@@ -32,6 +33,7 @@ public class UpgradeSave
 {
     public int index;
     public double cost;
+    public bool isPurchased;
 }
 
 [Serializable]
