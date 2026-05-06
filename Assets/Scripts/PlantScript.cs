@@ -22,7 +22,7 @@ public class PlantGrowth : MonoBehaviour
     public Transform spawnPoint;
 
     [Header("Growth Interval")]
-    public float growthInterval = 20f;
+    public float growthInterval = 60f;
 
     [Header("Equipment")]
     public Transform inventoryParent;
@@ -78,6 +78,8 @@ public class PlantGrowth : MonoBehaviour
 
         // Remember which seed was planted
         plantedItem = item;
+        Debug.Log($"[PLANT][SetPlantedItem] Ustawiono plantedItem | Object={gameObject.name}, " +
+          $"PlantedItem={plantedItem.itemName}, ID={plantedItem.id}");
 
         // Make sure the list exists
         if (growthStages == null)
@@ -249,5 +251,104 @@ public class PlantGrowth : MonoBehaviour
         Debug.Log("Kliknięto roślinkę");
 
         Harvest();
+    }
+    //\/ --- SAVE/LOAD SUPPORT --- \/
+    public ScriptableItem PlantedItem => plantedItem;
+    public int CurrentStage => currentStage;
+    public bool IsReadyToHarvest => isReadyToHarvest;
+    public bool IsGrowing => growthCoroutine != null;
+
+    public void LoadPlantState(ScriptableItem item, int stage, bool ready, bool growing)
+    {
+        if (growthCoroutine != null)
+        {
+            StopCoroutine(growthCoroutine);
+            growthCoroutine = null;
+        }
+
+        if (item == null)
+        {
+            ClearPlantState();
+            return;
+        }
+
+        // Ustawia plantedItem oraz uzupełnia growthStages z ScriptableItem
+        SetPlantedItem(item);
+
+        if (plantedItem == null)
+            return;
+
+        if (growthStages == null || growthStages.Count == 0)
+            return;
+
+        currentStage = Mathf.Clamp(stage, 0, growthStages.Count);
+        isReadyToHarvest = ready;
+
+        // W Twoim GrowthCycle currentStage zwiększa się PO ustawieniu sprite'a.
+        // Czyli jeśli zapisano currentStage=1, to widoczny powinien być sprite index 0.
+        int visibleStageIndex = Mathf.Clamp(currentStage - 1, 0, growthStages.Count - 1);
+
+        SetSprite(growthStages[visibleStageIndex]);
+
+        if (plantVisualsImage != null)
+        {
+            plantVisualsImage.gameObject.SetActive(true);
+            plantVisualsImage.enabled = true;
+        }
+        else if (plantVisualsRenderer != null)
+        {
+            plantVisualsRenderer.gameObject.SetActive(true);
+            plantVisualsRenderer.enabled = true;
+        }
+        else if (plantImage != null)
+        {
+            plantImage.enabled = true;
+        }
+        else if (plantRenderer != null)
+        {
+            plantRenderer.enabled = true;
+        }
+
+        if (growing && !isReadyToHarvest && currentStage < growthStages.Count)
+        {
+            growthCoroutine = StartCoroutine(GrowthCycle());
+        }
+    }
+
+    public void ClearPlantState()
+    {
+        if (growthCoroutine != null)
+        {
+            StopCoroutine(growthCoroutine);
+            growthCoroutine = null;
+        }
+
+        plantedItem = null;
+        currentStage = 0;
+        isReadyToHarvest = false;
+
+        if (growthStages != null)
+            growthStages.Clear();
+
+        if (plantVisualsImage != null)
+        {
+            plantVisualsImage.sprite = null;
+            plantVisualsImage.gameObject.SetActive(false);
+        }
+        else if (plantVisualsRenderer != null)
+        {
+            plantVisualsRenderer.sprite = null;
+            plantVisualsRenderer.gameObject.SetActive(false);
+        }
+        else if (plantImage != null)
+        {
+            plantImage.sprite = null;
+            plantImage.enabled = false;
+        }
+        else if (plantRenderer != null)
+        {
+            plantRenderer.sprite = null;
+            plantRenderer.enabled = false;
+        }
     }
 }
