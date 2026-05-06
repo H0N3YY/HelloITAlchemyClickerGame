@@ -306,5 +306,5 @@ MonoBehaviour:
   plantVisualsRenderer: {fileID: 0}
   draggableItemPrefab: {fileID: 7949600683141586301, guid: cb037a149e484d84ebefa95978e28cca, type: 3}
   spawnPoint: {fileID: 2384022984385139910}
-  growthInterval: 2
+  growthInterval: 60
   inventoryParent: {fileID: 0}
