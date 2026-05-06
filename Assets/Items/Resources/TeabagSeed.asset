@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Teabag Seed
   description: "Its leaves make an infusion that calms dreams. In old tales, it was
     drunk during forest journeys to avoid encounters with nature\u2019s dwellers."
-  image: {fileID: 21300000, guid: 6baefef6229dab044b64ee353e3c6309, type: 3}
+  image: {fileID: -7075540801484235962, guid: 89bcbbe16e4f1ec42ad55fbe3cbd2da6, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
