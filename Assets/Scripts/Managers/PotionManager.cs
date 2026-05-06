@@ -294,7 +294,7 @@ public class PotionManager : MonoBehaviour
         SceneManager.SetActiveScene(tempScene);
 
         yield return new WaitForSeconds(15f);
-        Debug.Log("Mineło 15 sec");
+        Debug.Log("15 secoonds pased");
 
         SceneManager.SetActiveScene(originalScene);
 
