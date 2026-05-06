@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: TeaBag
   description: "Its leaves make an infusion that calms dreams. In old tales, it was
     drunk during forest journeys to avoid encounters with nature\u2019s dwellers."
-  image: {fileID: 0}
+  image: {fileID: -7075540801484235962, guid: 89bcbbe16e4f1ec42ad55fbe3cbd2da6, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -26,4 +26,6 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
+  harvestResultItem: {fileID: 0}
+  harvestResultCount: 2
   effectToTrigger: 0
