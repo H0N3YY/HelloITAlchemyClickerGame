@@ -5170,6 +5170,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1156919104}
     blockedImage: {fileID: 1662558056}
+    isPurchased: 0
   - type: 1
     cost: 100
     effectAmount: 10
@@ -5177,6 +5178,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1567894013}
     blockedImage: {fileID: 900048859}
+    isPurchased: 0
   - type: 1
     cost: 1100
     effectAmount: 100
@@ -5184,6 +5186,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 793959042}
     blockedImage: {fileID: 1194644142}
+    isPurchased: 0
   - type: 1
     cost: 12000
     effectAmount: 1000
@@ -5191,6 +5194,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1870997590}
     blockedImage: {fileID: 765392259}
+    isPurchased: 0
   - type: 1
     cost: 130000
     effectAmount: 10000
@@ -5198,6 +5202,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1163500062}
     blockedImage: {fileID: 2090867453}
+    isPurchased: 0
   - type: 1
     cost: 1400000
     effectAmount: 100000
@@ -5205,6 +5210,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 660144219}
     blockedImage: {fileID: 1834219021}
+    isPurchased: 0
   - type: 1
     cost: 20000000
     effectAmount: 1500000
@@ -5212,6 +5218,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1867850252}
     blockedImage: {fileID: 1389826796}
+    isPurchased: 0
   - type: 1
     cost: 330000000
     effectAmount: 7000000
@@ -5219,6 +5226,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1832644372}
     blockedImage: {fileID: 1892956021}
+    isPurchased: 0
   - type: 1
     cost: 5100000000
     effectAmount: 100000000
@@ -5226,6 +5234,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 933386372}
     blockedImage: {fileID: 1396202313}
+    isPurchased: 0
   - type: 1
     cost: 5100000000
     effectAmount: 100000000
@@ -5233,6 +5242,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1200731328}
     blockedImage: {fileID: 974169454}
+    isPurchased: 0
   - type: 1
     cost: 5100000000
     effectAmount: 100000000
@@ -5240,6 +5250,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 861090991}
     blockedImage: {fileID: 674320921}
+    isPurchased: 0
   - type: 1
     cost: 5100000000
     effectAmount: 100000000
@@ -5247,6 +5258,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1149094763}
     blockedImage: {fileID: 645966306}
+    isPurchased: 0
   - type: 1
     cost: 5100000000
     effectAmount: 100000000
@@ -5254,6 +5266,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1208768425}
     blockedImage: {fileID: 2000932957}
+    isPurchased: 0
   - type: 1
     cost: 5100000000
     effectAmount: 100000000
@@ -5261,6 +5274,7 @@ MonoBehaviour:
     descText: {fileID: 0}
     upgradeImage: {fileID: 1045488123}
     blockedImage: {fileID: 1614692784}
+    isPurchased: 0
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22044,9 +22058,9 @@ MonoBehaviour:
   - ingredient1: {fileID: 11400000, guid: 39e8c16569d867f44acb28b709b2b6fa, type: 2}
     ingredient2: {fileID: 11400000, guid: 2a635b32ded717e4c9b733a1a95b03bf, type: 2}
     result: {fileID: 11400000, guid: bd166f5656965004c9536ee78e7aaa95, type: 2}
-  - ingredient1: {fileID: 11400000, guid: 03d75f9d9cf833747b3b762b586e8617, type: 2}
-    ingredient2: {fileID: 11400000, guid: 5eb46e867139a114cae23f333ffec4ff, type: 2}
-    result: {fileID: 11400000, guid: 7d731038c6b23e447aa9215dea068c7e, type: 2}
+  - ingredient1: {fileID: 11400000, guid: e0f16ec101ac4164b8be5dffe3e36efc, type: 2}
+    ingredient2: {fileID: 11400000, guid: 288e8683cbe2bb44fa24db61ae976b12, type: 2}
+    result: {fileID: 11400000, guid: 4332f7b895c258241b3b959b73c9b0d3, type: 2}
 --- !u!1001 &1599919484
 PrefabInstance:
   m_ObjectHideFlags: 0
