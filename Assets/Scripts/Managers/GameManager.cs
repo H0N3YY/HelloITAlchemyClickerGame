@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
 
-            //ApplySaveData(SaveSystem.LoadGame()); // loading save
+            ApplySaveData(SaveSystem.LoadGame()); // loading save
         }
         else
         {
