@@ -96,10 +96,18 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < magicBall.upgrades.Count; i++)
             {
                 var u = magicBall.upgrades[i];
+                double safeCost = u.cost;
+
+                if (safeCost <= 0 || double.IsNaN(safeCost) || double.IsInfinity(safeCost))
+                {
+                    Debug.LogWarning($"[SAVE][UPGRADE] Błędny koszt upgrade {i}: {safeCost}. Zapisuję koszt 50.");
+                    safeCost = 50;
+                }
+
                 data.upgrades.Add(new UpgradeSave
                 {
                     index = i,
-                    cost = u.cost,
+                    cost = safeCost,
                     isPurchased = u.isPurchased
                 });
             }
@@ -241,12 +249,30 @@ public class GameManager : MonoBehaviour
             {
                 if (i < magicBall.upgrades.Count)
                 {
-                    magicBall.upgrades[i].cost = data.upgrades[i].cost;
+                    double loadedCost = data.upgrades[i].cost;
+
+                    // Zabezpieczenie przed starym uszkodzonym save'em, np. -2147483648
+                    if (loadedCost > 0 && !double.IsNaN(loadedCost) && !double.IsInfinity(loadedCost))
+                    {
+                        magicBall.upgrades[i].cost = loadedCost;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"[LOAD][UPGRADE] Błędny koszt upgrade {i}: {loadedCost}. Zostawiam wartość z Inspectora: {magicBall.upgrades[i].cost}");
+                    }
+
                     if (magicBall.upgrades[i].priceText != null)
-                        magicBall.upgrades[i].priceText.text = ((int)data.upgrades[i].cost).ToString();
+                    {
+                        magicBall.upgrades[i].priceText.text = magicBall.FormatBigNumberEnglish2(magicBall.upgrades[i].cost);
+                    }
+
                     magicBall.upgrades[i].isPurchased = data.upgrades[i].isPurchased;
-                    if (magicBall.upgrades[i].upgradeImage != null) magicBall.upgrades[i].upgradeImage.SetActive(magicBall.upgrades[i].isPurchased);
-                    if (magicBall.upgrades[i].blockedImage != null) magicBall.upgrades[i].blockedImage.SetActive(!magicBall.upgrades[i].isPurchased);
+
+                    if (magicBall.upgrades[i].upgradeImage != null)
+                        magicBall.upgrades[i].upgradeImage.SetActive(magicBall.upgrades[i].isPurchased);
+
+                    if (magicBall.upgrades[i].blockedImage != null)
+                        magicBall.upgrades[i].blockedImage.SetActive(!magicBall.upgrades[i].isPurchased);
                 }
             }
         }
