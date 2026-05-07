@@ -12090,7 +12090,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8, y: -712.33057, z: 90}
-  m_LocalScale: {x: 2602.9136, y: 13.40778, z: 1.3333334}
+  m_LocalScale: {x: 7778.0264, y: -9.695166, z: 1.3333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 316836348}
@@ -22193,7 +22193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1621800785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22289,6 +22289,7 @@ MonoBehaviour:
   rightCardImage: {fileID: 1090120809}
   panoramicRoot: {fileID: 343256147}
   panoramicCardImage: {fileID: 343256149}
+  panoramicCardMask: {fileID: 720510320}
   SingleRoot: {fileID: 732634316}
   singleCardImage: {fileID: 732634317}
   lockedFrameSprite: {fileID: 21300000, guid: bfe80542b6d2f044a815ee302ac94ed6, type: 3}
@@ -28356,7 +28357,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.2449, y: 0.0000038146973}
-  m_SizeDelta: {x: 468.8624, y: 611.64}
+  m_SizeDelta: {x: 462.6438, y: 611.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052914664
 MonoBehaviour:
