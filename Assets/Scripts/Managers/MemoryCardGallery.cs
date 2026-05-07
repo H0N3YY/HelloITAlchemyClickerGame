@@ -19,6 +19,7 @@ public class MemoryCardGallery : MonoBehaviour
 
     [Tooltip("Image karty panoramicznej.")]
     public Image panoramicCardImage;
+    public GameObject panoramicCardMask;
 
     [Header("UI references - single (1x portrait)")]
     public GameObject SingleRoot;
@@ -139,6 +140,20 @@ public class MemoryCardGallery : MonoBehaviour
 
         RefreshPage();
     }
+    private void TogglePanoramicFrame(int cardIndex)
+    {
+        if (panoramicCardMask == null) return;
+
+        if (cards == null || cardIndex < 0 || cardIndex >= cards.Count)
+        {
+            panoramicCardMask.SetActive(false);
+            return;
+        }
+
+        ScriptableCard card = cards[cardIndex];
+
+        panoramicCardMask.SetActive(card != null && card.isUnlocked);
+    }
 
     private int GetTotalPages()
     {
@@ -168,6 +183,7 @@ public class MemoryCardGallery : MonoBehaviour
             TogglePanoramic(true);
 
             SetupSlot(panoramicCardImage, page.leftIndex);
+            TogglePanoramicFrame(page.leftIndex);
         }
         else if (page.isSingle)
         {
