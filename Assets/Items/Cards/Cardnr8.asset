@@ -15,6 +15,6 @@ MonoBehaviour:
   id: C8
   itemName: Cardnr8
   artwork: {fileID: 1657250586837244038, guid: 62a9a8b0a0a52fb44a28a392e6655395, type: 3}
-  orientation: 0
+  orientation: 2
   isUnlocked: 0
   firstTimeObtained: 1
