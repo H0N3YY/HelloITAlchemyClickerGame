@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 public class PotionManager : MonoBehaviour
 {
+    [SerializeField] private MemoryCardCounterScript memoryCardCounterScript;
     public Volume volume;
     public VolumeProfile defaultProfile;
     [Header("Post Processing Profiles")]
@@ -40,50 +41,51 @@ public class PotionManager : MonoBehaviour
     private Coroutine furryCoroutine;
 
     public void UseItem(ScriptableItem item)
-{
-    if (!item) return;
-
-    // 1) Efekt potki
-    ExecuteEffect(item.effectToTrigger);
-
-    // 2) Obsługa karty powiązanej z tym itemem (pierwsze wypicie -> popup)
-    var card = item.associatedCard;
-    if (!card) return;
-
-    Debug.Log($"[PotionManager] UseItem -> associated card = {card.itemName}", this);
-
-    // jeśli karta jeszcze nie była odblokowana – odblokuj ją
-    if (!card.isUnlocked)
     {
-        card.isUnlocked = true;
+        if (!item) return;
+
+        // 1) Efekt potki
+        ExecuteEffect(item.effectToTrigger);
+
+        // 2) Obsługa karty powiązanej z tym itemem (pierwsze wypicie -> popup)
+        var card = item.associatedCard;
+        if (!card) return;
+
+        Debug.Log($"[PotionManager] UseItem -> associated card = {card.itemName}", this);
+
+        // jeśli karta jeszcze nie była odblokowana – odblokuj ją
+        if (!card.isUnlocked)
+        {
+            card.isUnlocked = true;
+            memoryCardCounterScript.RefreshCounter();
 
 #if UNITY_EDITOR
-        UnityEditor.EditorUtility.SetDirty(card);
+            UnityEditor.EditorUtility.SetDirty(card);
 #endif
-    }
-
-    // popup tylko przy pierwszym wypiciu potki związanej z tą kartą
-    if (card.firstTimeObtained)
-    {
-        Debug.Log($"[PotionManager] First time obtained card: {card.itemName}", this);
-
-        if (memoryCardPopup != null)
-        {
-            Debug.Log("[PotionManager] Calling memoryCardPopup.ShowCard()", this);
-            memoryCardPopup.ShowCard(card); // pokazuje kartę na 8 sekund
-        }
-        else
-        {
-            Debug.LogWarning("PotionManager: Memory_Card_Popup nie jest podpięty w inspectorze.", this);
         }
 
-        card.firstTimeObtained = false;
+        // popup tylko przy pierwszym wypiciu potki związanej z tą kartą
+        if (card.firstTimeObtained)
+        {
+            Debug.Log($"[PotionManager] First time obtained card: {card.itemName}", this);
+
+            if (memoryCardPopup != null)
+            {
+                Debug.Log("[PotionManager] Calling memoryCardPopup.ShowCard()", this);
+                memoryCardPopup.ShowCard(card); // pokazuje kartę na 8 sekund
+            }
+            else
+            {
+                Debug.LogWarning("PotionManager: Memory_Card_Popup nie jest podpięty w inspectorze.", this);
+            }
+
+            card.firstTimeObtained = false;
 
 #if UNITY_EDITOR
-        UnityEditor.EditorUtility.SetDirty(card);
+            UnityEditor.EditorUtility.SetDirty(card);
 #endif
+        }
     }
-}
 
 
     public void ChaosPotion()

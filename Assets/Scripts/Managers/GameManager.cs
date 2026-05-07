@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
 
-            ApplySaveData(SaveSystem.LoadGame()); // loading save
+            //ApplySaveData(SaveSystem.LoadGame()); // loading save
         }
         else
         {
@@ -245,8 +245,8 @@ public class GameManager : MonoBehaviour
                     if (magicBall.upgrades[i].priceText != null)
                         magicBall.upgrades[i].priceText.text = ((int)data.upgrades[i].cost).ToString();
                     magicBall.upgrades[i].isPurchased = data.upgrades[i].isPurchased;
-                    if (magicBall.upgrades[i].upgradeImage != null)                        magicBall.upgrades[i].upgradeImage.SetActive(magicBall.upgrades[i].isPurchased);
-                    if (magicBall.upgrades[i].blockedImage != null)                        magicBall.upgrades[i].blockedImage.SetActive(!magicBall.upgrades[i].isPurchased);
+                    if (magicBall.upgrades[i].upgradeImage != null) magicBall.upgrades[i].upgradeImage.SetActive(magicBall.upgrades[i].isPurchased);
+                    if (magicBall.upgrades[i].blockedImage != null) magicBall.upgrades[i].blockedImage.SetActive(!magicBall.upgrades[i].isPurchased);
                 }
             }
         }

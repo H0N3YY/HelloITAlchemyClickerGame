@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Cardnr3
   artwork: {fileID: 1750626789564384936, guid: 326f59682c6bb674797fcbf651ab752b, type: 3}
   orientation: 0
-  isUnlocked: 1
+  isUnlocked: 0
   firstTimeObtained: 1
