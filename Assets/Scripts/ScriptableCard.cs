@@ -20,5 +20,6 @@ public class ScriptableCard : ScriptableObject
 public enum CardOrientation
 {
     Portrait,
-    Landscape
+    Landscape,
+    Single
 }

@@ -11,22 +11,42 @@ public class MemoryCardGallery : MonoBehaviour
 
     [Header("UI references - double (2x portrait)")]
     public GameObject doubleRoot;
-
     public Image leftCardImage;
     public Image rightCardImage;
+
+    [Header("UI references - panoramic")]
     public GameObject panoramicRoot;
 
     [Tooltip("Image karty panoramicznej.")]
     public Image panoramicCardImage;
+
+    [Header("UI references - single (1x portrait)")]
+    public GameObject SingleRoot;
+    public Image singleCardImage;
 
     [Header("Locked frame")]
     public Sprite lockedFrameSprite;
 
     public TextMeshProUGUI pageText;
 
-    // lista indeksów początkowych dla każdej „strony”
-    private readonly List<int> pageStartIndices = new List<int>();
-    private int currentPage = 0; // 0-based
+    private readonly List<PageData> pages = new List<PageData>();
+    private int currentPage = 0;
+
+    private struct PageData
+    {
+        public int leftIndex;
+        public int rightIndex;
+        public bool isPanoramic;
+        public bool isSingle;
+
+        public PageData(int leftIndex, int rightIndex, bool isPanoramic, bool isSingle)
+        {
+            this.leftIndex = leftIndex;
+            this.rightIndex = rightIndex;
+            this.isPanoramic = isPanoramic;
+            this.isSingle = isSingle;
+        }
+    }
 
     private void Start()
     {
@@ -36,34 +56,62 @@ public class MemoryCardGallery : MonoBehaviour
 
     public void RebuildPages()
     {
-        pageStartIndices.Clear();
+        pages.Clear();
 
         if (cards == null || cards.Count == 0)
         {
-            pageStartIndices.Add(0);
+            pages.Add(new PageData(-1, -1, false, false));
             return;
         }
 
         int i = 0;
+
         while (i < cards.Count)
         {
-            pageStartIndices.Add(i);
+            ScriptableCard currentCard = cards[i];
 
-            ScriptableCard c = cards[i];
+            bool currentIsLandscape =
+                currentCard != null &&
+                currentCard.orientation == CardOrientation.Landscape;
 
-            if (c != null && c.orientation == CardOrientation.Landscape)
+            if (currentIsLandscape)
             {
+                // Landscape zawsze dostaje osobną stronę panoramiczną
+                pages.Add(new PageData(i, -1, true, false));
+                i++;
+                continue;
+            }
 
-                i += 1;
+            if (i + 1 < cards.Count)
+            {
+                ScriptableCard nextCard = cards[i + 1];
+
+                bool nextIsPortrait =
+                    nextCard != null &&
+                    nextCard.orientation != CardOrientation.Landscape;
+
+                if (nextIsPortrait)
+                {
+                    // Dwie karty Portrait na jednej stronie Double
+                    pages.Add(new PageData(i, i + 1, false, false));
+                    i += 2;
+                }
+                else
+                {
+                    // Aktualna karta Portrait sama, bo następna jest Landscape
+                    pages.Add(new PageData(i, -1, false, true));
+                    i++;
+                }
             }
             else
             {
-
-                i += 2;
+                // Ostatnia karta Portrait sama
+                pages.Add(new PageData(i, -1, false, true));
+                i++;
             }
         }
 
-        currentPage = Mathf.Clamp(currentPage, 0, pageStartIndices.Count - 1);
+        currentPage = Mathf.Clamp(currentPage, 0, pages.Count - 1);
     }
 
     public void NextPage()
@@ -72,8 +120,9 @@ public class MemoryCardGallery : MonoBehaviour
         if (totalPages <= 0) return;
 
         currentPage++;
+
         if (currentPage >= totalPages)
-            currentPage = 0; // pętla
+            currentPage = 0;
 
         RefreshPage();
     }
@@ -84,15 +133,16 @@ public class MemoryCardGallery : MonoBehaviour
         if (totalPages <= 0) return;
 
         currentPage--;
+
         if (currentPage < 0)
-            currentPage = totalPages - 1; // pętla
+            currentPage = totalPages - 1;
 
         RefreshPage();
     }
 
     private int GetTotalPages()
     {
-        return Mathf.Max(1, pageStartIndices.Count);
+        return Mathf.Max(1, pages.Count);
     }
 
     private void RefreshPage()
@@ -100,60 +150,64 @@ public class MemoryCardGallery : MonoBehaviour
         int totalPages = GetTotalPages();
         currentPage = Mathf.Clamp(currentPage, 0, totalPages - 1);
 
-        if (pageStartIndices.Count == 0)
+        if (pages.Count == 0)
         {
             ToggleDouble(false);
             TogglePanoramic(false);
-            if (pageText != null) pageText.text = "0/0";
+            ToggleSingle(false);
+            UpdatePageText();
             return;
         }
 
-        int startIndex = pageStartIndices[currentPage];
-        ScriptableCard firstCard =
-            (cards != null && startIndex < cards.Count) ? cards[startIndex] : null;
+        PageData page = pages[currentPage];
 
-
-        if (pageText != null && cards != null && cards.Count > 0)
+        if (page.isPanoramic)
         {
-            pageText.text = $"{startIndex + 1}/{cards.Count}";
-        }
-
-        bool isPanoramic =
-            firstCard != null && firstCard.orientation == CardOrientation.Landscape;
-
-        if (isPanoramic)
-        {
-
             ToggleDouble(false);
+            ToggleSingle(false);
             TogglePanoramic(true);
 
-            SetupSlot(panoramicCardImage, startIndex);
+            SetupSlot(panoramicCardImage, page.leftIndex);
+        }
+        else if (page.isSingle)
+        {
+            ToggleDouble(false);
+            TogglePanoramic(false);
+            ToggleSingle(true);
+
+            SetupSlot(singleCardImage, page.leftIndex);
         }
         else
         {
-
             TogglePanoramic(false);
+            ToggleSingle(false);
             ToggleDouble(true);
 
-            SetupSlot(leftCardImage, startIndex);
-            SetupSlot(rightCardImage, startIndex + 1);
+            SetupSlot(leftCardImage, page.leftIndex);
+            SetupSlot(rightCardImage, page.rightIndex);
         }
+
+        UpdatePageText();
     }
 
     private void SetupSlot(Image slotImage, int cardIndex)
     {
         if (slotImage == null) return;
 
-        if (cards == null || cardIndex >= cards.Count)
+        if (cards == null || cardIndex < 0 || cardIndex >= cards.Count)
         {
             slotImage.gameObject.SetActive(false);
             return;
         }
+
         slotImage.gameObject.SetActive(true);
 
         ScriptableCard card = cards[cardIndex];
+
         bool unlockedAndHasArt =
-            card != null && card.isUnlocked && card.artwork != null;
+            card != null &&
+            card.isUnlocked &&
+            card.artwork != null;
 
         if (unlockedAndHasArt)
         {
@@ -167,6 +221,13 @@ public class MemoryCardGallery : MonoBehaviour
         slotImage.preserveAspect = true;
     }
 
+    private void UpdatePageText()
+    {
+        if (pageText == null) return;
+
+        pageText.text = $"{currentPage + 1}/{GetTotalPages()}";
+    }
+
     private void ToggleDouble(bool active)
     {
         if (doubleRoot != null)
@@ -177,5 +238,11 @@ public class MemoryCardGallery : MonoBehaviour
     {
         if (panoramicRoot != null)
             panoramicRoot.SetActive(active);
+    }
+
+    private void ToggleSingle(bool active)
+    {
+        if (SingleRoot != null)
+            SingleRoot.SetActive(active);
     }
 }
