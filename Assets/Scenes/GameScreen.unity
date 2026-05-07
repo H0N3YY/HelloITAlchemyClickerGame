@@ -4061,7 +4061,7 @@ GameObject:
   - component: {fileID: 411153620}
   - component: {fileID: 411153619}
   m_Layer: 0
-  m_Name: Cost (1)
+  m_Name: Cost 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4119,7 +4119,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 150
+  m_Text: 5100000000
 --- !u!222 &411153620
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5228,47 +5228,47 @@ MonoBehaviour:
     isPurchased: 0
   - type: 1
     cost: 5100000000
-    effectAmount: 100000000
-    priceText: {fileID: 1808642278}
+    effectAmount: 7000000
+    priceText: {fileID: 989662061}
     descText: {fileID: 0}
     upgradeImage: {fileID: 933386372}
     blockedImage: {fileID: 1396202313}
     isPurchased: 0
   - type: 1
     cost: 5100000000
-    effectAmount: 100000000
-    priceText: {fileID: 1808642278}
+    effectAmount: 7000000
+    priceText: {fileID: 1780725432}
     descText: {fileID: 0}
     upgradeImage: {fileID: 1200731328}
     blockedImage: {fileID: 974169454}
     isPurchased: 0
   - type: 1
     cost: 5100000000
-    effectAmount: 100000000
-    priceText: {fileID: 1808642278}
+    effectAmount: 7000000
+    priceText: {fileID: 1238216201}
     descText: {fileID: 0}
     upgradeImage: {fileID: 861090991}
     blockedImage: {fileID: 674320921}
     isPurchased: 0
   - type: 1
     cost: 5100000000
-    effectAmount: 100000000
-    priceText: {fileID: 1808642278}
+    effectAmount: 7000000
+    priceText: {fileID: 411153619}
     descText: {fileID: 0}
     upgradeImage: {fileID: 1149094763}
     blockedImage: {fileID: 645966306}
     isPurchased: 0
   - type: 1
     cost: 5100000000
-    effectAmount: 100000000
-    priceText: {fileID: 1808642278}
+    effectAmount: 7000000
+    priceText: {fileID: 2012805655}
     descText: {fileID: 0}
     upgradeImage: {fileID: 1208768425}
     blockedImage: {fileID: 2000932957}
     isPurchased: 0
   - type: 1
     cost: 5100000000
-    effectAmount: 100000000
+    effectAmount: 7000000
     priceText: {fileID: 1346506406}
     descText: {fileID: 0}
     upgradeImage: {fileID: 1045488123}
@@ -13338,7 +13338,7 @@ GameObject:
   - component: {fileID: 989662062}
   - component: {fileID: 989662061}
   m_Layer: 0
-  m_Name: Cost (1)
+  m_Name: Cost9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13396,7 +13396,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 150
+  m_Text: 5100000000
 --- !u!222 &989662062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16116,7 +16116,7 @@ GameObject:
   - component: {fileID: 1238216202}
   - component: {fileID: 1238216201}
   m_Layer: 0
-  m_Name: Cost (1)
+  m_Name: Cost 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16174,7 +16174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 150
+  m_Text: 5100000000
 --- !u!222 &1238216202
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17722,7 +17722,7 @@ GameObject:
   - component: {fileID: 1346506407}
   - component: {fileID: 1346506406}
   m_Layer: 0
-  m_Name: Cost (1)
+  m_Name: Cost 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22193,7 +22193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1621800785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24740,7 +24740,7 @@ GameObject:
   - component: {fileID: 1780725433}
   - component: {fileID: 1780725432}
   m_Layer: 0
-  m_Name: Cost (1)
+  m_Name: Cost10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24798,7 +24798,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 150
+  m_Text: 5100000000
 --- !u!222 &1780725433
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27690,7 +27690,7 @@ GameObject:
   - component: {fileID: 2012805656}
   - component: {fileID: 2012805655}
   m_Layer: 0
-  m_Name: Cost (1)
+  m_Name: Cost 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27748,7 +27748,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 150
+  m_Text: 5100000000
 --- !u!222 &2012805656
 CanvasRenderer:
   m_ObjectHideFlags: 0
