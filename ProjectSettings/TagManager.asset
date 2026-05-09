@@ -8,6 +8,7 @@ TagManager:
   - Back
   - Pot
   - Plant
+  - Drop
   layers:
   - Default
   - TransparentFX

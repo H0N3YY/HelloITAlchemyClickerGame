@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Reggae Potion
   description: A symbol of love and tranquility; its scent has intoxicating, relaxing
     qualities.
-  image: {fileID: 21300000, guid: be83f0059d7b7144b92c811f3cf862e6, type: 3}
+  image: {fileID: 21300000, guid: 7a4707269056d504fb6aa0db3c773a4c, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -25,5 +25,7 @@ MonoBehaviour:
   stackable: 1
   manaCost: 0
   sellValue: 0
-  associatedCard: {fileID: 11400000, guid: c84ccc442ab30e146afe5aa43965eeaa, type: 2}
+  associatedCard: {fileID: 11400000, guid: 076d2270558847344aa9b843a3d3fc6a, type: 2}
+  harvestResultItem: {fileID: 0}
+  harvestResultCount: 2
   effectToTrigger: 2

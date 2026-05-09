@@ -27,7 +27,7 @@ public class PotionBrewer : MonoBehaviour
     [Header("Lista przepisów")]
     public List<Recipe> recipes;
 
-    
+
     private void Update()
     {
         if (fireActive)
@@ -82,7 +82,7 @@ public class PotionBrewer : MonoBehaviour
             if ((recipe.ingredient1 == s1 && recipe.ingredient2 == s2) ||
                 (recipe.ingredient1 == s2 && recipe.ingredient2 == s1))
             {
-                Debug.Log($"Ugotowano: {s1.name} + {s2.name} == {recipe.result.name}");
+                Debug.Log($"Cooked: {s1.name} + {s2.name} == {recipe.result.name}");
 
                 SpawnPotion(recipe.result);
 
@@ -92,9 +92,9 @@ public class PotionBrewer : MonoBehaviour
             }
         }
 
-        Debug.Log("Brak pasującego przepisu");
-        item1.ReturnToInventory();
-        item2.ReturnToInventory();
+        Debug.Log("No available recipe for this combination.");
+        Destroy(item1.gameObject);
+        Destroy(item2.gameObject);
     }
     public void StirPot()
     {

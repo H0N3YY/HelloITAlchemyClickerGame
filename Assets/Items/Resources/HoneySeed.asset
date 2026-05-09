@@ -26,4 +26,6 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
+  harvestResultItem: {fileID: 11400000, guid: e0f16ec101ac4164b8be5dffe3e36efc, type: 2}
+  harvestResultCount: 2
   effectToTrigger: 0

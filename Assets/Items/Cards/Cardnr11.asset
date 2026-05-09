@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63080e6622460f44b96d34ed14ce5875, type: 3}
+  m_Name: Cardnr11
+  m_EditorClassIdentifier: 
+  id: C11
+  itemName: Cardnr11
+  artwork: {fileID: -4021487864369918744, guid: 0f738f9d6e23a03408bb0eb27ada1e8d, type: 3}
+  orientation: 0
+  isUnlocked: 0
+  firstTimeObtained: 1
