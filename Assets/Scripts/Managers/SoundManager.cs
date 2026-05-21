@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource button;
     public AudioSource gardenBackground;
     public AudioSource workshopMusic;
+    public AudioSource mainRoomBackground;
     public AudioSource sphere;
     public void ButtonClick()
     {
@@ -27,6 +28,14 @@ public class SoundManager : MonoBehaviour
     public void WorkshopStop()
     {
         workshopMusic.Stop();
+    }
+    public void MainRoomPlay()
+    {
+        mainRoomBackground.Play();
+    }
+    public void MainRoomStop()
+    {
+        mainRoomBackground.Stop();
     }
     public void sphereClick()
     {
