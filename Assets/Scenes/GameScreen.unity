@@ -15823,6 +15823,18 @@ MonoBehaviour:
   workshopMusic: {fileID: 1656536911}
   mainRoomBackground: {fileID: 571562734}
   sphere: {fileID: 1117118756}
+  buying: {fileID: 0}
+  takeItem: {fileID: 0}
+  drinking: {fileID: 0}
+  takePotion: {fileID: 0}
+  feedPlant: {fileID: 0}
+  pickupPlant: {fileID: 0}
+  plantingPlant: {fileID: 0}
+  finalCard: {fileID: 0}
+  deathMetal: {fileID: 0}
+  regge: {fileID: 0}
+  switchRoom: {fileID: 0}
+  putbackPotion: {fileID: 0}
 --- !u!1 &1224137730
 GameObject:
   m_ObjectHideFlags: 0
