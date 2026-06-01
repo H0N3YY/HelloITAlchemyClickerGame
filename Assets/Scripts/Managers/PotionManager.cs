@@ -28,7 +28,6 @@ public class PotionManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip reggaeClip;
     public AudioClip metalMusicClip;
-    [Range(0f, 1f)] public float targetMusicVolume = 0.8f;
     public float musicFadeTime = 0.35f;
 
 
@@ -421,7 +420,7 @@ public class PotionManager : MonoBehaviour
             musicSource.clip = reggaeClip;
             musicSource.loop = true;
             musicSource.Play();
-            yield return StartCoroutine(FadeAudio(musicSource, targetMusicVolume, musicFadeTime));
+            yield return StartCoroutine(FadeAudio(musicSource, PlayerPrefs.GetFloat("MusicVolume", .5f), musicFadeTime));
         }
 
         yield return new WaitForSeconds(duration);

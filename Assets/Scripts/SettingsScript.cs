@@ -7,17 +7,30 @@ using  TMPro;
 public class SettingsScript : MonoBehaviour
 {
     public Slider masterVol, musicVol;
-    public AudioMixer mainAudioMixer;
+
+    [SerializeField]
+    private SoundManager soundManager;
+
     public void ChangeMasterVolume()
     {
-        mainAudioMixer.SetFloat("MasterVol", masterVol.value);
+        PlayerPrefs.SetFloat("MasterVol", masterVol.value);
+        PlayerPrefs.Save();
+        soundManager.UpdateVolumes();
     }
     public void ChangeMusicVolume()
     {
-        mainAudioMixer.SetFloat("MusicVol", musicVol.value);
+        PlayerPrefs.SetFloat("MusicVol", masterVol.value);
+        PlayerPrefs.Save();
+        soundManager.UpdateVolumes();
     }
     public void OpenLink(string link)
     {
         Application.OpenURL(link);
+    }
+
+    private void Start()
+    {
+        masterVol.value = PlayerPrefs.GetFloat("MasterVol", .5f);
+        musicVol.value = PlayerPrefs.GetFloat("MusicVol", .5f);
     }
 }
