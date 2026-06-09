@@ -30,6 +30,12 @@ public class SoundManager : MonoBehaviour
     public AudioSource regge;
     public AudioSource switchRoom;
     public AudioSource putbackPotion;
+    public AudioSource scroll;
+    public AudioSource lightFire;
+    public AudioSource selling;
+    public AudioSource unlockSound;
+    public AudioSource petAnimal;
+    public AudioSource boiling;
 
     private void Start()
     {
@@ -151,6 +157,37 @@ public class SoundManager : MonoBehaviour
     {
         finalCard.Play();
     }
+
+    public void ScrollSound()
+    {
+        scroll.Play();
+    }
+
+    public void LightFireSound()
+    {
+        lightFire.Play();
+    }
+
+    public void SellingSound()
+    {
+        selling.Play();
+    }
+
+    public void UnlockSound()
+    {
+        unlockSound.Play();
+    }
+
+    public void PetAnimalSound()
+    {
+        petAnimal.Play();
+    }
+
+    public void BoilingSound()
+    {
+        boiling.Play();
+    }
+
 
     /*
      * Generalnie to w PotionManager te 2 maj¹ swoje wywo³anie, a mi (Anirze) nie chce sie jebac ze znacznymi zmianami w kodzie XDDDD
