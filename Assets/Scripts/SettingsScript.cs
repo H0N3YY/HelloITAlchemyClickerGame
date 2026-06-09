@@ -11,17 +11,22 @@ public class SettingsScript : MonoBehaviour
     [SerializeField]
     private SoundManager soundManager;
 
-    public void ChangeMasterVolume()
+    public void ChangeMasterVolume(float value)
     {
-        PlayerPrefs.SetFloat("MasterVolume", masterVol.value);
+        PlayerPrefs.SetFloat("MasterVolume", value);
         PlayerPrefs.Save();
-        soundManager.UpdateVolumes();
+
+        if (soundManager != null)
+            soundManager.UpdateVolumes();
     }
-    public void ChangeMusicVolume()
+
+    public void ChangeMusicVolume(float value)
     {
-        PlayerPrefs.SetFloat("MusicVolume", musicVol.value);
+        PlayerPrefs.SetFloat("MusicVolume", value);
         PlayerPrefs.Save();
-        soundManager.UpdateVolumes();
+
+        if (soundManager != null)
+            soundManager.UpdateVolumes();
     }
     public void OpenLink(string link)
     {
@@ -30,8 +35,8 @@ public class SettingsScript : MonoBehaviour
 
     private void Start()
     {
-        masterVol.value = PlayerPrefs.GetFloat("MasterVolume", .5f);
-        musicVol.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
+        masterVol.SetValueWithoutNotify(PlayerPrefs.GetFloat("MasterVolume", .5f));
+        musicVol.SetValueWithoutNotify(PlayerPrefs.GetFloat("MusicVolume", .5f));
 
         if (soundManager != null)
         {

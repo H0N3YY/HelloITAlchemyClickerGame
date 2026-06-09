@@ -42,19 +42,23 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.Save();
 
         UpdateVolumes();
+
+        // jeœli gra startuje w main roomie i muzyka ma graæ od razu:
+        MainRoomPlay();
     }
 
     public void UpdateVolumes()
     {
-        musicSource.volume = PlayerPrefs.GetFloat("MusicVolume", .5f);
+        float masterVolume = PlayerPrefs.GetFloat("MasterVolume", .5f);
+        float musicVolume = PlayerPrefs.GetFloat("MusicVolume", .5f);
 
-        float sfxVolume = PlayerPrefs.GetFloat("MasterVolume", .5f);
+        musicSource.volume = masterVolume * musicVolume;
 
         foreach (AudioSource source in GetComponentsInChildren<AudioSource>())
         {
             if (source != musicSource)
             {
-                source.volume = sfxVolume;
+                source.volume = masterVolume;
             }
         }
     }
