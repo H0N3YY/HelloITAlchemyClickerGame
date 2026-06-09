@@ -3612,7 +3612,7 @@ MonoBehaviour:
   gardenBackground: {fileID: 8300000, guid: 84d2a86cf27f1104ab081ee684a82aec, type: 3}
   workshopMusic: {fileID: 8300000, guid: c2600a4a8dd1ed34b944e41245392357, type: 3}
   mainRoomBackground: {fileID: 8300000, guid: 9408d111721a79d43a1238f3d2723a55, type: 3}
-  button: {fileID: 818594478}
+  button: {fileID: 8300000, guid: ea4537d091071d046b2d4d62f31837e1, type: 3}
   sphere: {fileID: 1718737429}
   buying: {fileID: 1957749354}
   takeItem: {fileID: 1859807813}
@@ -3626,6 +3626,12 @@ MonoBehaviour:
   regge: {fileID: 945234936}
   switchRoom: {fileID: 1719354914}
   putbackPotion: {fileID: 190011204}
+  scroll: {fileID: 970364094}
+  lightFire: {fileID: 759586010}
+  selling: {fileID: 1247137316}
+  unlockSound: {fileID: 1230558378}
+  petAnimal: {fileID: 1356088460}
+  boiling: {fileID: 183815901}
 --- !u!1 &1479096573
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,6 +5348,18 @@ MonoBehaviour:
       - m_Target: {fileID: 927157386}
         m_TargetAssemblyTypeName: MainScript, Assembly-CSharp
         m_MethodName: StartSetup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1476601830}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
