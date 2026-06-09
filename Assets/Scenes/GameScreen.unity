@@ -8418,18 +8418,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 980249376}
-        m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
-        m_MethodName: SettingsOpened
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &672317148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14396,7 +14384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVol: {fileID: 1324122880}
   musicVol: {fileID: 1646268534}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 1209875711}
 --- !u!114 &980249377
 MonoBehaviour:
   m_ObjectHideFlags: 0
