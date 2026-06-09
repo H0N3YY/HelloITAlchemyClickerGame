@@ -6863,7 +6863,7 @@ MonoBehaviour:
   - {fileID: -6031184311471840413, guid: 532c620c548316346afd37b69427f477, type: 3}
   - {fileID: 8752944745669271896, guid: 314eecc59ea8e4e428acb33da017d3f2, type: 3}
   memoryCardPopup: {fileID: 799741714}
-  musicSource: {fileID: 1117118756}
+  musicSource: {fileID: 1342123673}
   reggaeClip: {fileID: 8300000, guid: 1a7249b55789b484d99f32021e522412, type: 3}
   metalMusicClip: {fileID: 8300000, guid: 862c8809480c4d04db78a75db2c49a10, type: 3}
   musicFadeTime: 0.35
@@ -19546,7 +19546,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8932784272623797459, guid: 5a82ec0fd8ac1e34786f627df7a3abbb, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 84d2a86cf27f1104ab081ee684a82aec, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9408d111721a79d43a1238f3d2723a55, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

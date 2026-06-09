@@ -33,15 +33,21 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        musicSource.volume = PlayerPrefs.GetFloat("MusicVolume", .5f);
+        UpdateVolumes();
     }
 
     public void UpdateVolumes()
     {
         musicSource.volume = PlayerPrefs.GetFloat("MusicVolume", .5f);
-        foreach (AudioSource source in sfxSourceGameObject.GetComponents<AudioSource>())
+
+        float sfxVolume = PlayerPrefs.GetFloat("MasterVolume", .5f);
+
+        foreach (AudioSource source in GetComponentsInChildren<AudioSource>())
         {
-            source.volume = PlayerPrefs.GetFloat("MasterVolume", .5f);
+            if (source != musicSource)
+            {
+                source.volume = sfxVolume;
+            }
         }
     }
 

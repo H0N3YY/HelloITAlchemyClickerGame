@@ -13,13 +13,13 @@ public class SettingsScript : MonoBehaviour
 
     public void ChangeMasterVolume()
     {
-        PlayerPrefs.SetFloat("MasterVol", masterVol.value);
+        PlayerPrefs.SetFloat("MasterVolume", masterVol.value);
         PlayerPrefs.Save();
         soundManager.UpdateVolumes();
     }
     public void ChangeMusicVolume()
     {
-        PlayerPrefs.SetFloat("MusicVol", masterVol.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicVol.value);
         PlayerPrefs.Save();
         soundManager.UpdateVolumes();
     }
@@ -30,7 +30,12 @@ public class SettingsScript : MonoBehaviour
 
     private void Start()
     {
-        masterVol.value = PlayerPrefs.GetFloat("MasterVol", .5f);
-        musicVol.value = PlayerPrefs.GetFloat("MusicVol", .5f);
+        masterVol.value = PlayerPrefs.GetFloat("MasterVolume", .5f);
+        musicVol.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
+
+        if (soundManager != null)
+        {
+            soundManager.UpdateVolumes();
+        }
     }
 }
