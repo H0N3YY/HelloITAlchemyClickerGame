@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource unlockSound;
     public AudioSource petAnimal;
     public AudioSource boiling;
-
+    public AudioClip wormSquish;
     private void Start()
     {
         if (!PlayerPrefs.HasKey("MasterVolume"))
@@ -188,6 +188,10 @@ public class SoundManager : MonoBehaviour
         boiling.Play();
     }
 
+    public void WormSquishSound()
+    {
+        PlaySFX(wormSquish);
+    }
 
     /*
      * Generalnie to w PotionManager te 2 maj¹ swoje wywo³anie, a mi (Anirze) nie chce sie jebac ze znacznymi zmianami w kodzie XDDDD
