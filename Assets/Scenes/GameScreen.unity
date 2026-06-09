@@ -17148,6 +17148,12 @@ MonoBehaviour:
   regge: {fileID: 138479652}
   switchRoom: {fileID: 1706113495}
   putbackPotion: {fileID: 894684184}
+  scroll: {fileID: 1523325595}
+  lightFire: {fileID: 948724009}
+  selling: {fileID: 1141499471}
+  unlockSound: {fileID: 845809984}
+  petAnimal: {fileID: 1209353955}
+  boiling: {fileID: 1236618648}
 --- !u!1 &1224137730
 GameObject:
   m_ObjectHideFlags: 0
@@ -20575,6 +20581,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1209875711}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: LightFireSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1391333533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21950,7 +21968,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1209875711}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: ButtonClick
+        m_MethodName: ScrollSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28850,6 +28868,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1596904554}
         m_TargetAssemblyTypeName: PotionBrewer, Assembly-CSharp
         m_MethodName: StirPot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1209875711}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
