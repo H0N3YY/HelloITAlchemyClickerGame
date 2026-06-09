@@ -932,7 +932,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2125360266}
         m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1035,7 +1035,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2125360266}
         m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3344,7 +3344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVol: {fileID: 0}
   musicVol: {fileID: 0}
-  mainAudioMixer: {fileID: 24100000, guid: 5a82ec0fd8ac1e34786f627df7a3abbb, type: 2}
+  soundManager: {fileID: 0}
 --- !u!114 &1963265883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3812,7 +3812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVol: {fileID: 875422912}
   musicVol: {fileID: 771647940}
-  mainAudioMixer: {fileID: 24100000, guid: 5a82ec0fd8ac1e34786f627df7a3abbb, type: 2}
+  soundManager: {fileID: 0}
 --- !u!1 &2145321824
 GameObject:
   m_ObjectHideFlags: 0
