@@ -43,8 +43,6 @@ public class SoundManager : MonoBehaviour
 
         UpdateVolumes();
 
-        // jeœli gra startuje w main roomie i muzyka ma graæ od razu:
-        MainRoomPlay();
     }
 
     public void UpdateVolumes()
