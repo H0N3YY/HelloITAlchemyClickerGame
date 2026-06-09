@@ -33,6 +33,14 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("MasterVolume"))
+            PlayerPrefs.SetFloat("MasterVolume", .5f);
+
+        if (!PlayerPrefs.HasKey("MusicVolume"))
+            PlayerPrefs.SetFloat("MusicVolume", .5f);
+
+        PlayerPrefs.Save();
+
         UpdateVolumes();
     }
 
