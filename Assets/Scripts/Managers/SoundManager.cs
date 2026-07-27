@@ -40,27 +40,37 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         if (!PlayerPrefs.HasKey("MasterVolume"))
-            PlayerPrefs.SetFloat("MasterVolume", .5f);
+            PlayerPrefs.SetFloat("MasterVolume", 1f);
 
         if (!PlayerPrefs.HasKey("MusicVolume"))
-            PlayerPrefs.SetFloat("MusicVolume", .5f);
+            PlayerPrefs.SetFloat("MusicVolume", 1f);
 
         PlayerPrefs.Save();
-
         UpdateVolumes();
+    }
 
+    private float ConvertSliderVolume(float value)
+    {
+        value = Mathf.Clamp01(value);
+        return Mathf.Sqrt(value);
     }
 
     public void UpdateVolumes()
     {
-        float masterVolume = PlayerPrefs.GetFloat("MasterVolume", .5f);
-        float musicVolume = PlayerPrefs.GetFloat("MusicVolume", .5f);
+        float masterSlider = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        float musicSlider = PlayerPrefs.GetFloat("MusicVolume", 1f);
 
-        musicSource.volume = masterVolume * musicVolume;
+        float masterVolume = ConvertSliderVolume(masterSlider);
+        float musicVolume = ConvertSliderVolume(musicSlider);
 
-        foreach (AudioSource source in GetComponentsInChildren<AudioSource>())
+        if (musicSource != null)
         {
-            if (source != musicSource)
+            musicSource.volume = masterVolume * musicVolume;
+        }
+
+        foreach (AudioSource source in GetComponentsInChildren<AudioSource>(true))
+        {
+            if (source != null && source != musicSource)
             {
                 source.volume = masterVolume;
             }
@@ -93,7 +103,9 @@ public class SoundManager : MonoBehaviour
     #region SFX functions
     private IEnumerator SFXCoroutine(AudioSource source)
     {
-        source.volume = PlayerPrefs.GetFloat("MasterVolume", .5f);
+        source.volume = ConvertSliderVolume(
+    PlayerPrefs.GetFloat("MasterVolume", 1f)
+);
         source.Play();
         yield return new WaitForSeconds(source.clip.length);
         source.Stop();

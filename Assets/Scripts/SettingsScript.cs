@@ -1,51 +1,50 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
-using UnityEngine.Animations;
-using  TMPro;
 
 public class SettingsScript : MonoBehaviour
 {
-    public Slider masterVol, musicVol;
-
-    [SerializeField]
-    private SoundManager soundManager;
+    [SerializeField] private Slider masterVol;
+    [SerializeField] private Slider musicVol;
+    [SerializeField] private SoundManager soundManager;
 
     public void ChangeMasterVolume(float value)
     {
+        value = Mathf.Clamp01(value);
+
         PlayerPrefs.SetFloat("MasterVolume", value);
         PlayerPrefs.Save();
 
-        if (soundManager != null)
-            soundManager.UpdateVolumes();
+        soundManager?.UpdateVolumes();
     }
 
     public void ChangeMusicVolume(float value)
     {
+        value = Mathf.Clamp01(value);
+
         PlayerPrefs.SetFloat("MusicVolume", value);
         PlayerPrefs.Save();
 
-        if (soundManager != null)
-            soundManager.UpdateVolumes();
-    }
-    public void OpenLink(string link)
-    {
-        Application.OpenURL(link);
+        soundManager?.UpdateVolumes();
     }
 
     private void Start()
     {
-        masterVol.SetValueWithoutNotify(
-    PlayerPrefs.GetFloat("MasterVolume", 0f)
-);
-
-        musicVol.SetValueWithoutNotify(
-            PlayerPrefs.GetFloat("MusicVolume", 0f)
+        float master = Mathf.Clamp01(
+            PlayerPrefs.GetFloat("MasterVolume", 1f)
         );
 
-        if (soundManager != null)
-        {
-            soundManager.UpdateVolumes();
-        }
+        float music = Mathf.Clamp01(
+            PlayerPrefs.GetFloat("MusicVolume", 1f)
+        );
+
+        masterVol.SetValueWithoutNotify(master);
+        musicVol.SetValueWithoutNotify(music);
+
+        soundManager?.UpdateVolumes();
+    }
+
+    public void OpenLink(string link)
+    {
+        Application.OpenURL(link);
     }
 }
