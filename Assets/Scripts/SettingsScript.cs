@@ -35,8 +35,13 @@ public class SettingsScript : MonoBehaviour
 
     private void Start()
     {
-        masterVol.SetValueWithoutNotify(PlayerPrefs.GetFloat("MasterVolume", .5f));
-        musicVol.SetValueWithoutNotify(PlayerPrefs.GetFloat("MusicVolume", .5f));
+        masterVol.SetValueWithoutNotify(
+    PlayerPrefs.GetFloat("MasterVolume", 0f)
+);
+
+        musicVol.SetValueWithoutNotify(
+            PlayerPrefs.GetFloat("MusicVolume", 0f)
+        );
 
         if (soundManager != null)
         {
