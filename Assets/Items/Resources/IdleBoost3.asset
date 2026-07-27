@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: IdleBoost3
   description: Legends say it holds a web of connections within. Whoever drinks it
     becomes part of a network from which the strength of past users can be drawn.
-  image: {fileID: 21300000, guid: 116edb73a195c3047b4ff7e48da87128, type: 3}
+  image: {fileID: 21300000, guid: df5c807f2cb16bd47b303d8ad0d00643, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -26,4 +26,6 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
-  effectToTrigger: 0
+  harvestResultItem: {fileID: 0}
+  harvestResultCount: 2
+  effectToTrigger: 13

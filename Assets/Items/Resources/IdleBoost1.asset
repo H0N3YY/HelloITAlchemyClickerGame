@@ -15,7 +15,7 @@ MonoBehaviour:
   id: IdleBoost1
   itemName: IdleBoost1
   description: Kept in homes beside candles - believed to bring peaceful sleep.
-  image: {fileID: 21300000, guid: df0a3dff8d1856d419afcec4430c0aa1, type: 3}
+  image: {fileID: 21300000, guid: a0af45d60f96f2344ada1f7faf0d1668, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -25,4 +25,6 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
-  effectToTrigger: 0
+  harvestResultItem: {fileID: 0}
+  harvestResultCount: 2
+  effectToTrigger: 11

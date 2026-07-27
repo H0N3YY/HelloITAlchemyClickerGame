@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: IdleBoost2
   description: Said to teach patience - it grants nothing instantly but lets the
     world work for you. Drop by drop, it gathers what others overlook.
-  image: {fileID: 21300000, guid: f08a9164cb9bf024295a690c9970dae4, type: 3}
+  image: {fileID: 21300000, guid: bee825f0d5824904c9736f20c416369c, type: 3}
   plantStage1: {fileID: 0}
   PlantStage2: {fileID: 0}
   PlantStage3: {fileID: 0}
@@ -26,4 +26,6 @@ MonoBehaviour:
   manaCost: 0
   sellValue: 0
   associatedCard: {fileID: 0}
-  effectToTrigger: 0
+  harvestResultItem: {fileID: 0}
+  harvestResultCount: 2
+  effectToTrigger: 12
