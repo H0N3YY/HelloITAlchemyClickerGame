@@ -7874,7 +7874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Though humble, it proves a high level of science - its makers must possess
+  m_text: Though humble, it proves a high level of science, its makers must possess
     advanced chemical knowledge and a developed hygiene system.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -17823,7 +17823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A carrier of memories and data. Used to record recollections; some believe
+  m_text: A carrier of memories and data. Used to record recollections, some believe
     it can also steal or erase them.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -22446,9 +22446,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A multifunctional artifact aiding chemical, mechanical, and magical processes.
-    Accelerates reactions, purifies essences, and some claim it reveals the very
-    structure of reality.
+  m_text: A multifunctional artifact aiding magical processes. Accelerates reactions
+    and some claim it reveals the structure of reality.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -27895,7 +27894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Standard gear for mages and alchemists; the necklace protects against harmful
+  m_text: Standard gear for mages and alchemists, the necklace protects against harmful
     mana emissions from magical tools.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -30061,7 +30060,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Regulates energy flow and prevents overloads. A vital part of any serious
-    magical installation - especially when working with enchanted cores.
+    magical installation especially when working with enchanted cores.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -34752,7 +34751,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: An inseparable part of moving out. With so many around, they always find
-    a use - for example, when a table leg is uneven.
+    a use for example, when a table leg is uneven.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
@@ -43341,7 +43340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Modest yet indispensable; the most widespread means of illumination.
+  m_text: Modest yet indispensable, the most widespread means of illumination.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
   m_sharedMaterial: {fileID: -2792171572746088969, guid: 5549b94a4b0202942a8a8c58f0556377, type: 2}
