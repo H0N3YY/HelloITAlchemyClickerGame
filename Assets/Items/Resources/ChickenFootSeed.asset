@@ -24,7 +24,7 @@ MonoBehaviour:
   actionType: 2
   stackable: 1
   manaCost: 0
-  sellValue: 0
+  sellValue: 1
   associatedCard: {fileID: 0}
   harvestResultItem: {fileID: 11400000, guid: 4c405ff7a294d5b4096ad5fae205181b, type: 2}
   harvestResultCount: 2
