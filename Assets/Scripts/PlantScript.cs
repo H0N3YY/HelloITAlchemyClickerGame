@@ -27,6 +27,9 @@ public class PlantGrowth : MonoBehaviour
     [Header("Equipment")]
     public Transform inventoryParent;
 
+    [Header("Sound")]
+    [SerializeField] private SoundManager soundManager;
+
     // Optional components on the same GameObject (fallbacks)
     private Image plantImage;
     private SpriteRenderer plantRenderer;
@@ -42,6 +45,11 @@ public class PlantGrowth : MonoBehaviour
         // Fallback components on the same GameObject
         plantImage = GetComponent<Image>();
         plantRenderer = GetComponent<SpriteRenderer>();
+
+        if (soundManager == null)
+        {
+            soundManager = FindFirstObjectByType<SoundManager>();
+        }
     }
 
     public bool CanPlant(ScriptableItem item)
@@ -129,6 +137,11 @@ public class PlantGrowth : MonoBehaviour
             return;
         }
 
+        if (soundManager != null)
+        {
+            soundManager.plantingPlantSound();
+        }
+
         growthCoroutine = StartCoroutine(GrowthCycle());
     }
 
@@ -194,6 +207,11 @@ public class PlantGrowth : MonoBehaviour
         }
 
         Debug.Log("Zbieram roślinkę");
+
+        if (soundManager != null)
+        {
+            soundManager.pickUpPlantSound();
+        }
 
         // Hide plant visuals
         if (plantVisualsImage != null)

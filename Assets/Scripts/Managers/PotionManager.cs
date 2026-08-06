@@ -15,6 +15,7 @@ public class PotionManager : MonoBehaviour
     public VolumeProfile photofobiaProfile;
     private Coroutine revertCoroutine;
     private Coroutine reggaeCoroutine;
+    private Coroutine metalCoroutine;
     private Coroutine manaWeakenCoroutine;
     private Coroutine boostIdleCoroutine;
     private Coroutine clickBoostCoroutine;
@@ -28,7 +29,6 @@ public class PotionManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip reggaeClip;
     public AudioClip metalMusicClip;
-    [Range(0f, 1f)] public float targetMusicVolume = 0.8f;
     public float musicFadeTime = 0.35f;
 
 
@@ -157,7 +157,13 @@ public class PotionManager : MonoBehaviour
 
             revertCoroutine = StartCoroutine(Revert(30f));
         }
+
+        if (metalCoroutine != null)
+            StopCoroutine(metalCoroutine);
+
+        metalCoroutine = StartCoroutine(Metal(30f));
     }
+
     public void reggaePotion()
     {
         if (volume != null && reggaeProfile != null)
@@ -421,7 +427,7 @@ public class PotionManager : MonoBehaviour
             musicSource.clip = reggaeClip;
             musicSource.loop = true;
             musicSource.Play();
-            yield return StartCoroutine(FadeAudio(musicSource, targetMusicVolume, musicFadeTime));
+            yield return StartCoroutine(FadeAudio(musicSource, PlayerPrefs.GetFloat("MusicVolume", .5f), musicFadeTime));
         }
 
         yield return new WaitForSeconds(duration);
@@ -483,6 +489,48 @@ public class PotionManager : MonoBehaviour
         unstableCoroutine = null;
         Debug.Log("Niestabilna potka skończyła się.");
     }
+
+    private IEnumerator Metal(float duration)
+    {
+        AudioClip prevClip = null;
+        float prevVol = 1f;
+        bool prevWasPlaying = false;
+        bool prevLoop = false;
+
+        if (musicSource)
+        {
+            prevClip = musicSource.clip;
+            prevVol = musicSource.volume;
+            prevWasPlaying = musicSource.isPlaying;
+            prevLoop = musicSource.loop;
+
+            if (prevWasPlaying && prevClip != metalMusicClip)
+                yield return StartCoroutine(FadeAudio(musicSource, 0f, musicFadeTime));
+
+            musicSource.clip = metalMusicClip;
+            musicSource.loop = true;
+            musicSource.Play();
+
+            yield return StartCoroutine(FadeAudio(musicSource, PlayerPrefs.GetFloat("MusicVolume", .5f), musicFadeTime));
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        if (musicSource)
+        {
+            yield return StartCoroutine(FadeAudio(musicSource, 0f, musicFadeTime));
+            musicSource.Stop();
+            musicSource.clip = prevClip;
+            musicSource.volume = prevVol;
+            musicSource.loop = prevLoop;
+
+            if (prevClip && prevWasPlaying)
+                musicSource.Play();
+        }
+
+        metalCoroutine = null;
+    }
+
     private IEnumerator FadeAudio(AudioSource src, float target, float time)
     {
         if (!src || time <= 0f)
