@@ -1,22 +1,50 @@
+using System.Collections;
 using UnityEngine;
 
 public class StirAnimation : MonoBehaviour
 {
-    [SerializeField] private float angle = 12f;
-    [SerializeField] private float speed = 3f;
+    [SerializeField] private float distance = 20f;
+    [SerializeField] private float speed = 15f;
+    [SerializeField] private float duration = 1f;
 
-    private Quaternion startRotation;
+    private RectTransform rectTransform;
+    private Vector2 startPosition;
+    private Coroutine animationCoroutine;
 
     private void Awake()
     {
-        startRotation = transform.localRotation;
+        rectTransform = GetComponent<RectTransform>();
+        startPosition = rectTransform.anchoredPosition;
     }
 
-    private void Update()
+    public void StartStirring()
     {
-        float rotationZ = Mathf.Sin(Time.time * speed) * angle;
+        Debug.Log("Start mieszania");
 
-        transform.localRotation =
-            startRotation * Quaternion.Euler(0f, 0f, rotationZ);
+        if (animationCoroutine != null)
+        {
+            StopCoroutine(animationCoroutine);
+        }
+
+        animationCoroutine = StartCoroutine(Stir());
+    }
+
+    private IEnumerator Stir()
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float offsetX = Mathf.Sin(elapsedTime * speed) * distance;
+
+            rectTransform.anchoredPosition =
+                startPosition + new Vector2(offsetX, 0f);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        rectTransform.anchoredPosition = startPosition;
+        animationCoroutine = null;
     }
 }
