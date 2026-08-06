@@ -30072,7 +30072,7 @@ MonoBehaviour:
   - {fileID: 1584806277}
   - {fileID: 286515171}
   - {fileID: 194788004}
-  spawnInterval: 100
+  spawnInterval: 50
 --- !u!224 &1434573947 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451378439999881749, guid: b92e1e0f0d0837c40ad18636bd7fb963, type: 3}
