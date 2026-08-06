@@ -23528,7 +23528,7 @@ MonoBehaviour:
   unlockSound: {fileID: 845809984}
   petAnimal: {fileID: 1209353955}
   boiling: {fileID: 1236618648}
-  wormSquish: {fileID: 0}
+  wormSquish: {fileID: 8300000, guid: f9183d12c46333f4d871d0a6bcc42038, type: 3}
 --- !u!1 &1224137730
 GameObject:
   m_ObjectHideFlags: 0
